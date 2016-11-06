@@ -10,7 +10,7 @@ package csc640project;
  * @author Alex
  */
 public class CSC640Project {
-
+//Main class for execution of project
     /**
      * @param args the command line arguments
      */

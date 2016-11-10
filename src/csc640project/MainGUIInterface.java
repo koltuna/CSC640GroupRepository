@@ -35,8 +35,8 @@ public class MainGUIInterface extends javax.swing.JFrame {
         Enter_New_Service_Button = new javax.swing.JButton();
         Look_Up_Service_Code = new javax.swing.JButton();
         Calculate_Weekly_Fees_Button = new javax.swing.JButton();
-        Enter_New_Service_Button1 = new javax.swing.JButton();
-        OneButton1 = new javax.swing.JButton();
+        Check_In_Button = new javax.swing.JButton();
+        Login_Button = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(166, 83, 0));
@@ -68,9 +68,9 @@ public class MainGUIInterface extends javax.swing.JFrame {
 
         Calculate_Weekly_Fees_Button.setText("Calculate Weekly Fees");
 
-        Enter_New_Service_Button1.setText("Check-In");
+        Check_In_Button.setText("Check-In");
 
-        OneButton1.setText("Login ");
+        Login_Button.setText("Login ");
 
         javax.swing.GroupLayout MainPanelLayout = new javax.swing.GroupLayout(MainPanel);
         MainPanel.setLayout(MainPanelLayout);
@@ -82,7 +82,7 @@ public class MainGUIInterface extends javax.swing.JFrame {
                     .addGroup(MainPanelLayout.createSequentialGroup()
                         .addComponent(CommandDisplayArea, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(OneButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(Login_Button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(MainPanelLayout.createSequentialGroup()
                         .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(MainPanelLayout.createSequentialGroup()
@@ -95,7 +95,7 @@ public class MainGUIInterface extends javax.swing.JFrame {
                             .addComponent(Calculate_Weekly_Fees_Button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(Look_Up_Service_Code, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(Enter_New_Service_Button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Enter_New_Service_Button1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(Check_In_Button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(79, Short.MAX_VALUE))
         );
         MainPanelLayout.setVerticalGroup(
@@ -104,11 +104,11 @@ public class MainGUIInterface extends javax.swing.JFrame {
                 .addGap(47, 47, 47)
                 .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(CommandDisplayArea, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
-                    .addComponent(OneButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(Login_Button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(20, 20, 20)
                 .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(MainPanelLayout.createSequentialGroup()
-                        .addComponent(Enter_New_Service_Button1)
+                        .addComponent(Check_In_Button)
                         .addGap(13, 13, 13)
                         .addComponent(Enter_New_Service_Button)
                         .addGap(18, 18, 18)
@@ -181,14 +181,14 @@ public class MainGUIInterface extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Calculate_Weekly_Fees_Button;
+    private javax.swing.JButton Check_In_Button;
     private javax.swing.JTextField CommandDisplayArea;
     private javax.swing.JTextArea DataEntryArea;
     private javax.swing.JButton EnterButton;
     private javax.swing.JButton Enter_New_Service_Button;
-    private javax.swing.JButton Enter_New_Service_Button1;
+    private javax.swing.JButton Login_Button;
     private javax.swing.JButton Look_Up_Service_Code;
     private javax.swing.JPanel MainPanel;
-    private javax.swing.JButton OneButton1;
     private javax.swing.JScrollPane TerminalScrollPane;
     // End of variables declaration//GEN-END:variables
 }

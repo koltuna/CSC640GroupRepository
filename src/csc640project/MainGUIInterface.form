@@ -61,7 +61,7 @@
                       <Group type="102" attributes="0">
                           <Component id="CommandDisplayArea" min="-2" pref="289" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="OneButton1" max="32767" attributes="0"/>
+                          <Component id="Login_Button" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -78,7 +78,7 @@
                               <Component id="Calculate_Weekly_Fees_Button" max="32767" attributes="0"/>
                               <Component id="Look_Up_Service_Code" alignment="0" max="32767" attributes="0"/>
                               <Component id="Enter_New_Service_Button" max="32767" attributes="0"/>
-                              <Component id="Enter_New_Service_Button1" alignment="0" max="32767" attributes="0"/>
+                              <Component id="Check_In_Button" alignment="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -92,12 +92,12 @@
                   <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="CommandDisplayArea" pref="32" max="32767" attributes="0"/>
-                      <Component id="OneButton1" max="32767" attributes="0"/>
+                      <Component id="Login_Button" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Group type="102" attributes="0">
-                          <Component id="Enter_New_Service_Button1" min="-2" max="-2" attributes="0"/>
+                          <Component id="Check_In_Button" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                           <Component id="Enter_New_Service_Button" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -174,12 +174,12 @@
             <Property name="text" type="java.lang.String" value="Calculate Weekly Fees"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="Enter_New_Service_Button1">
+        <Component class="javax.swing.JButton" name="Check_In_Button">
           <Properties>
             <Property name="text" type="java.lang.String" value="Check-In"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="OneButton1">
+        <Component class="javax.swing.JButton" name="Login_Button">
           <Properties>
             <Property name="text" type="java.lang.String" value="Login "/>
           </Properties>

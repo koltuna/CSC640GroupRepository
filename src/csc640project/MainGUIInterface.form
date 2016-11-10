@@ -168,6 +168,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Look Up Service Code"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Look_Up_Service_CodeActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="Calculate_Weekly_Fees_Button">
           <Properties>
@@ -183,6 +186,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Login "/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Login_ButtonActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

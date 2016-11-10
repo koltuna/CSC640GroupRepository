@@ -5,12 +5,20 @@
  */
 package csc640project;
 
-/**
- *
- * @author Alex
- */
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.lang.Class;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 public class MainGUIInterface extends javax.swing.JFrame {
 
+    
+
+private static final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +  
+					   "databaseName=csc550_fall2015_akoltun;user=csc550_fall2015_akoltun;password=480772;";
     /**
      * Creates new form MainGUIInterface
      */
@@ -65,12 +73,22 @@ public class MainGUIInterface extends javax.swing.JFrame {
         Enter_New_Service_Button.setText("Enter New Service");
 
         Look_Up_Service_Code.setText("Look Up Service Code");
+        Look_Up_Service_Code.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Look_Up_Service_CodeActionPerformed(evt);
+            }
+        });
 
         Calculate_Weekly_Fees_Button.setText("Calculate Weekly Fees");
 
         Check_In_Button.setText("Check-In");
 
         Login_Button.setText("Login ");
+        Login_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Login_ButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout MainPanelLayout = new javax.swing.GroupLayout(MainPanel);
         MainPanel.setLayout(MainPanelLayout);
@@ -140,6 +158,29 @@ public class MainGUIInterface extends javax.swing.JFrame {
     private void EnterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnterButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_EnterButtonActionPerformed
+
+    private void Login_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Login_ButtonActionPerformed
+    try {
+        
+        Connection con = DriverManager.getConnection(connectionUrl);
+        DataEntryArea.setText(DataEntryArea.getText()+"\nSuccess");
+        Statement statement = con.createStatement();
+       String query = "SELECT * FROM Task";
+       ResultSet resultSet = statement.executeQuery(query);
+	while(resultSet.next()){
+	DataEntryArea.setText(DataEntryArea.getText()+"\n"+resultSet.getString("Status"));
+	 }
+	con.close();
+			
+    } catch (SQLException ex) {
+        Logger.getLogger(MainGUIInterface.class.getName()).log(Level.SEVERE, null, ex);
+    }
+        
+    }//GEN-LAST:event_Login_ButtonActionPerformed
+
+    private void Look_Up_Service_CodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Look_Up_Service_CodeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Look_Up_Service_CodeActionPerformed
 
     /**
      * @param args the command line arguments

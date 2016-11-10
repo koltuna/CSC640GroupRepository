@@ -11,6 +11,7 @@ package csc640project;
  */
 public class CSC640Project {
 //Main class for execution of project
+    //This is a group project
     /**
      * @param args the command line arguments
      */

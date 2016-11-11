@@ -19,6 +19,7 @@ public class MainGUIInterface extends javax.swing.JFrame {
 
 private static final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +  
 					   "databaseName=csc550_fall2015_akoltun;user=csc550_fall2015_akoltun;password=480772;";
+private boolean textReady = false;
     /**
      * Creates new form MainGUIInterface
      */
@@ -45,6 +46,7 @@ private static final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.e
         Calculate_Weekly_Fees_Button = new javax.swing.JButton();
         Check_In_Button = new javax.swing.JButton();
         Login_Button = new javax.swing.JButton();
+        Interactive_Record_Mode_Button = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(166, 83, 0));
@@ -90,53 +92,57 @@ private static final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.e
             }
         });
 
+        Interactive_Record_Mode_Button.setText("Interactive Record Mode");
+        Interactive_Record_Mode_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Interactive_Record_Mode_ButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout MainPanelLayout = new javax.swing.GroupLayout(MainPanel);
         MainPanel.setLayout(MainPanelLayout);
         MainPanelLayout.setHorizontalGroup(
             MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MainPanelLayout.createSequentialGroup()
-                .addGap(49, 49, 49)
-                .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(MainPanelLayout.createSequentialGroup()
-                        .addComponent(CommandDisplayArea, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(Login_Button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(MainPanelLayout.createSequentialGroup()
-                        .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(MainPanelLayout.createSequentialGroup()
-                                .addComponent(EnterButton)
-                                .addGap(248, 248, 248))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainPanelLayout.createSequentialGroup()
-                                .addComponent(TerminalScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)))
-                        .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(Calculate_Weekly_Fees_Button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Look_Up_Service_Code, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Enter_New_Service_Button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Check_In_Button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addGap(22, 22, 22)
+                .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(CommandDisplayArea, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(EnterButton)
+                    .addComponent(TerminalScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(45, 45, 45)
+                .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Login_Button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(Calculate_Weekly_Fees_Button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Look_Up_Service_Code, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Enter_New_Service_Button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Check_In_Button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Interactive_Record_Mode_Button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap(79, Short.MAX_VALUE))
         );
         MainPanelLayout.setVerticalGroup(
             MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MainPanelLayout.createSequentialGroup()
-                .addGap(47, 47, 47)
-                .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(CommandDisplayArea, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
-                    .addComponent(Login_Button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(20, 20, 20)
-                .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGap(25, 25, 25)
+                .addComponent(CommandDisplayArea, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43)
+                .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(MainPanelLayout.createSequentialGroup()
-                        .addComponent(Check_In_Button)
-                        .addGap(13, 13, 13)
-                        .addComponent(Enter_New_Service_Button)
-                        .addGap(18, 18, 18)
-                        .addComponent(Look_Up_Service_Code)
-                        .addGap(11, 11, 11)
-                        .addComponent(Calculate_Weekly_Fees_Button))
-                    .addComponent(TerminalScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
+                        .addComponent(Login_Button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Check_In_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Interactive_Record_Mode_Button)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Enter_New_Service_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Look_Up_Service_Code, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Calculate_Weekly_Fees_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TerminalScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addComponent(EnterButton)
-                .addContainerGap(122, Short.MAX_VALUE))
+                .addContainerGap(81, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -157,6 +163,7 @@ private static final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.e
 
     private void EnterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnterButtonActionPerformed
         // TODO add your handling code here:
+        textReady = true;
     }//GEN-LAST:event_EnterButtonActionPerformed
 
     private void Login_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Login_ButtonActionPerformed
@@ -182,6 +189,34 @@ private static final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.e
         // TODO add your handling code here:
     }//GEN-LAST:event_Look_Up_Service_CodeActionPerformed
 
+    private void Interactive_Record_Mode_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Interactive_Record_Mode_ButtonActionPerformed
+        // TODO add your handling code here:
+        
+        String determinant = "Do you wish to insert new member (mi), update member (mu), delete member (md), insert new provider (pi), update provider (pu), or delete provider (pd)?\n";
+      CommandDisplayArea.setText(determinant);
+       String input = DataEntryArea.getText();
+       while(!textReady||!isValidModeSymbol(input)){
+           input = DataEntryArea.getText();
+       }
+       
+      if(input.equalsIgnoreCase("mi"))
+          CommandDisplayArea.setText("Inserting member record");
+      else if (input.equalsIgnoreCase("mu"))
+          CommandDisplayArea.setText("Updating member record");
+      else if (input.equalsIgnoreCase("md"))
+          CommandDisplayArea.setText("Deleting member record");
+      else if (input.equalsIgnoreCase("pi"))
+          CommandDisplayArea.setText("Inserting provider record");
+      else if (input.equalsIgnoreCase("pu"))
+          CommandDisplayArea.setText("Updating provider record");
+      else if (input.equalsIgnoreCase("pd"))
+          CommandDisplayArea.setText("Deleting provider record");
+    }//GEN-LAST:event_Interactive_Record_Mode_ButtonActionPerformed
+
+    private boolean isValidModeSymbol(String symbol){
+        String str = symbol.trim();
+        return str.equalsIgnoreCase("mi")||str.equalsIgnoreCase("mu")||str.equalsIgnoreCase("md")||str.equalsIgnoreCase("pi")||str.equalsIgnoreCase("pu")||str.equalsIgnoreCase("pd");
+    }
     /**
      * @param args the command line arguments
      */
@@ -229,6 +264,7 @@ private static final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.e
     private javax.swing.JTextArea DataEntryArea;
     private javax.swing.JButton EnterButton;
     private javax.swing.JButton Enter_New_Service_Button;
+    private javax.swing.JButton Interactive_Record_Mode_Button;
     private javax.swing.JButton Login_Button;
     private javax.swing.JButton Look_Up_Service_Code;
     private javax.swing.JPanel MainPanel;

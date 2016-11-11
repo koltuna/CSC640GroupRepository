@@ -215,7 +215,9 @@ private static final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.e
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MainGUIInterface().setVisible(true);
+               MainGUIInterface main_gui = new MainGUIInterface();
+               main_gui.setVisible(true);
+               main_gui.setDefaultCloseOperation(EXIT_ON_CLOSE);
             }
         });
     }

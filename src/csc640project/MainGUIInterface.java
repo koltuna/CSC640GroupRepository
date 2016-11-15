@@ -9,17 +9,18 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.lang.Class;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 public class MainGUIInterface extends javax.swing.JFrame {
 
     
-
-private static final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +  
+//URL for connecting to database
+private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +  
 					   "databaseName=csc550_fall2015_akoltun;user=csc550_fall2015_akoltun;password=480772;";
-private boolean textReady = false;
+//Flag to indicate the enter button has been pushed on the terminal
+private boolean textReady = false,interactiveRecordMode=false;
+
     /**
      * Creates new form MainGUIInterface
      */
@@ -63,6 +64,14 @@ private boolean textReady = false;
         DataEntryArea.setColumns(20);
         DataEntryArea.setRows(5);
         DataEntryArea.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        DataEntryArea.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                DataEntryAreaKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                DataEntryAreaKeyTyped(evt);
+            }
+        });
         TerminalScrollPane.setViewportView(DataEntryArea);
 
         EnterButton.setText("Enter");
@@ -105,20 +114,22 @@ private boolean textReady = false;
             MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MainPanelLayout.createSequentialGroup()
                 .addGap(22, 22, 22)
-                .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(CommandDisplayArea, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(EnterButton)
-                    .addComponent(TerminalScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(45, 45, 45)
-                .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Login_Button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(Calculate_Weekly_Fees_Button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Look_Up_Service_Code, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Enter_New_Service_Button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Check_In_Button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Interactive_Record_Mode_Button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap(79, Short.MAX_VALUE))
+                .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(CommandDisplayArea)
+                    .addGroup(MainPanelLayout.createSequentialGroup()
+                        .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(EnterButton)
+                            .addComponent(TerminalScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(45, 45, 45)
+                        .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Login_Button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(Calculate_Weekly_Fees_Button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(Look_Up_Service_Code, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(Enter_New_Service_Button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(Check_In_Button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(Interactive_Record_Mode_Button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                .addGap(79, 79, 79))
         );
         MainPanelLayout.setVerticalGroup(
             MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -164,10 +175,35 @@ private boolean textReady = false;
     private void EnterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnterButtonActionPerformed
         // TODO add your handling code here:
         textReady = true;
+        System.out.println("Entered");
+             if(!textReady)
+            return;
+        if(interactiveRecordMode){
+            System.out.println("Interactive Record Mode");
+            String input = DataEntryArea.getText();
+             if(input.equalsIgnoreCase("mi"))
+          CommandDisplayArea.setText("Inserting member record");
+      else if (input.equalsIgnoreCase("mu"))
+          CommandDisplayArea.setText("Updating member record");
+      else if (input.equalsIgnoreCase("md"))
+          CommandDisplayArea.setText("Deleting member record");
+      else if (input.equalsIgnoreCase("pi"))
+          CommandDisplayArea.setText("Inserting provider record");
+      else if (input.equalsIgnoreCase("pu"))
+          CommandDisplayArea.setText("Updating provider record");
+      else if (input.equalsIgnoreCase("pd"))
+          CommandDisplayArea.setText("Deleting provider record");
+      else 
+          CommandDisplayArea.setText("");
+            interactiveRecordMode = false;
+        }
+            
+        textReady=false;
     }//GEN-LAST:event_EnterButtonActionPerformed
 
     private void Login_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Login_ButtonActionPerformed
-    try {
+    //This text will be replaced, but I wanted to test out SQL Connection
+        try {
         
         Connection con = DriverManager.getConnection(connectionUrl);
         DataEntryArea.setText(DataEntryArea.getText()+"\nSuccess");
@@ -191,15 +227,22 @@ private boolean textReady = false;
 
     private void Interactive_Record_Mode_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Interactive_Record_Mode_ButtonActionPerformed
         // TODO add your handling code here:
-        
+        //String asking for which option they want to select and is displayed on the top text area
         String determinant = "Do you wish to insert new member (mi), update member (mu), delete member (md), insert new provider (pi), update provider (pu), or delete provider (pd)?\n";
       CommandDisplayArea.setText(determinant);
        String input = DataEntryArea.getText();
-       while(!textReady||!isValidModeSymbol(input)){
-           input = DataEntryArea.getText();
-       }
-       
-      if(input.equalsIgnoreCase("mi"))
+    interactiveRecordMode = true;
+       //Wait for the enter button on the terminal to be pressed and the text in the lower display area to be in the proper format
+    }//GEN-LAST:event_Interactive_Record_Mode_ButtonActionPerformed
+
+    private void DataEntryAreaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_DataEntryAreaKeyPressed
+        // TODO add your handling code here:
+     /*   if(!textReady)
+            return;
+        if(interactiveRecordMode){
+            System.out.println("Interactive Record Mode");
+            String input = DataEntryArea.getText();
+             if(input.equalsIgnoreCase("mi"))
           CommandDisplayArea.setText("Inserting member record");
       else if (input.equalsIgnoreCase("mu"))
           CommandDisplayArea.setText("Updating member record");
@@ -211,7 +254,41 @@ private boolean textReady = false;
           CommandDisplayArea.setText("Updating provider record");
       else if (input.equalsIgnoreCase("pd"))
           CommandDisplayArea.setText("Deleting provider record");
-    }//GEN-LAST:event_Interactive_Record_Mode_ButtonActionPerformed
+      else 
+          CommandDisplayArea.setText("");
+            interactiveRecordMode = false;
+        }
+            
+        textReady=false;*/
+    }//GEN-LAST:event_DataEntryAreaKeyPressed
+
+    private void DataEntryAreaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_DataEntryAreaKeyTyped
+        // TODO add your handling code here:
+     /*   System.out.println("Key Typed");
+             if(!textReady)
+            return;
+        if(interactiveRecordMode){
+            System.out.println("Interactive Record Mode");
+            String input = DataEntryArea.getText();
+             if(input.equalsIgnoreCase("mi"))
+          CommandDisplayArea.setText("Inserting member record");
+      else if (input.equalsIgnoreCase("mu"))
+          CommandDisplayArea.setText("Updating member record");
+      else if (input.equalsIgnoreCase("md"))
+          CommandDisplayArea.setText("Deleting member record");
+      else if (input.equalsIgnoreCase("pi"))
+          CommandDisplayArea.setText("Inserting provider record");
+      else if (input.equalsIgnoreCase("pu"))
+          CommandDisplayArea.setText("Updating provider record");
+      else if (input.equalsIgnoreCase("pd"))
+          CommandDisplayArea.setText("Deleting provider record");
+      else 
+          CommandDisplayArea.setText("");
+            interactiveRecordMode = false;
+        }
+            
+        textReady=false;*/
+    }//GEN-LAST:event_DataEntryAreaKeyTyped
 
     private boolean isValidModeSymbol(String symbol){
         String str = symbol.trim();

@@ -12,6 +12,7 @@ import java.sql.Statement;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.awt.Font;
 public class MainGUIInterface extends javax.swing.JFrame {
 
     
@@ -177,7 +178,7 @@ private boolean interactiveRecordMode=false;
     
         //If interactive record mode has been entered     
         if(interactiveRecordMode){
-            System.out.println("Interactive Record Mode");
+            
             String input = DataEntryArea.getText();
              if(input.equalsIgnoreCase("mi"))
           CommandDisplayArea.setText("Inserting member record");

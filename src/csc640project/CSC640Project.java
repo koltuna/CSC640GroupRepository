@@ -25,16 +25,8 @@ public class CSC640Project {
 //Main class for execution of project
 
     //This is a group project simulating ChocAn for CSC640(Software Engineering) at Carroll University
-
-
-
     //This is a group project simulating ChocAn for the Software Engineering Class
-
-
-
-    
-
-    //This is going to be a valuable learning experience
+    //This is going to be a valuable learning experience for us all
 
 
 

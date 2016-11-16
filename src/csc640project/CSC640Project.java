@@ -12,6 +12,7 @@ package csc640project;
 public class CSC640Project {
 //Main class for execution of project
     //This is a group project simulating ChocAn
+    //I love software engineering!
     /**
      * @param args the command line arguments
      */

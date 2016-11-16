@@ -178,10 +178,11 @@ private boolean interactiveRecordMode=false;
     
         //If interactive record mode has been entered     
         if(interactiveRecordMode){
-           CommandDisplayArea.setFont(new Font(null,Font.PLAIN,12));
+           
             String input = DataEntryArea.getText();
             if(!isValidModeSymbol(input))
                 return;
+            CommandDisplayArea.setFont(new Font(null,Font.PLAIN,12));
              if(input.equalsIgnoreCase("mi"))
           CommandDisplayArea.setText("Inserting member record");
       else if (input.equalsIgnoreCase("mu"))

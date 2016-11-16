@@ -17,6 +17,7 @@ public class CSC640Project {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+       //This calls the main method of MainGUIInterface 
         MainGUIInterface.main(null);
     }
     

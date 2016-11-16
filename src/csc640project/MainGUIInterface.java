@@ -18,8 +18,8 @@ public class MainGUIInterface extends javax.swing.JFrame {
 //URL for connecting to database
 private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +  
 					   "databaseName=csc550_fall2015_akoltun;user=csc550_fall2015_akoltun;password=480772;";
-//Flag to indicate the enter button has been pushed on the terminal
-private boolean textReady = false,interactiveRecordMode=false;
+//Flag to indicate Interactive Record Mode has been entered
+private boolean interactiveRecordMode=false;
 
     /**
      * Creates new form MainGUIInterface
@@ -174,10 +174,8 @@ private boolean textReady = false,interactiveRecordMode=false;
 
     private void EnterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnterButtonActionPerformed
         // TODO add your handling code here:
-        textReady = true;
-        System.out.println("Entered");
-             if(!textReady)
-            return;
+    
+        //If interactive record mode has been entered     
         if(interactiveRecordMode){
             System.out.println("Interactive Record Mode");
             String input = DataEntryArea.getText();
@@ -198,7 +196,7 @@ private boolean textReady = false,interactiveRecordMode=false;
             interactiveRecordMode = false;
         }
             
-        textReady=false;
+        
     }//GEN-LAST:event_EnterButtonActionPerformed
 
     private void Login_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Login_ButtonActionPerformed

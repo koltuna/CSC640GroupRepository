@@ -11,11 +11,10 @@ package csc640project;
  */
 public class CSC640Project {
 //Main class for execution of project
-<<<<<<< HEAD
     //This is a group project simulating ChocAn for CSC640(Software Engineering) at Carroll University
-=======
+
     //This is a group project simulating ChocAn for the Software Engineering Class
->>>>>>> refs/remotes/origin/master
+
     /**
      * @param args the command line arguments
      */

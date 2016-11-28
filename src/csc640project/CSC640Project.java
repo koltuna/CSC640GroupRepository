@@ -50,7 +50,8 @@ public class CSC640Project {
 
        //This calls the main method of MainGUIInterface 
 
-        MainGUIInterface.main(null);
+        MainGUIInterface gui = new MainGUIInterface();
+        gui.setVisible(true);
 
     }
 

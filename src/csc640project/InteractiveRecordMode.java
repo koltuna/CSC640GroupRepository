@@ -122,7 +122,8 @@ private boolean enterButtonClicked,insertMemberMode;
 
     private void InsertMemberButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InsertMemberButtonActionPerformed
         // TODO add your handling code here:
-       
+       InsertMemberGUI insertMemberGUI = new InsertMemberGUI();
+       insertMemberGUI.setVisible(true);
     }//GEN-LAST:event_InsertMemberButtonActionPerformed
 
     /**

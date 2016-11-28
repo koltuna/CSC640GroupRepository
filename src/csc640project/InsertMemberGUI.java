@@ -39,8 +39,18 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        NameTextField = new javax.swing.JTextField();
+        FirstNameTextField = new javax.swing.JTextField();
         EnterButton = new javax.swing.JButton();
+        LastNameTextField = new javax.swing.JTextField();
+        FirstNameLabel = new javax.swing.JLabel();
+        LastNameLabel = new javax.swing.JLabel();
+        DOBField = new javax.swing.JTextField();
+        DOBLabel = new javax.swing.JLabel();
+        StreetField = new javax.swing.JTextField();
+        StreetLabel = new javax.swing.JLabel();
+        CityField = new javax.swing.JTextField();
+        StreetLabel1 = new javax.swing.JLabel();
+        StateChoice = new java.awt.Choice();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -53,23 +63,71 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
             }
         });
 
+        FirstNameLabel.setText("First Name");
+
+        LastNameLabel.setText("Last Name");
+
+        DOBLabel.setText("Date of Birth (yyyy-mm-dd)");
+
+        StreetLabel.setText("Street");
+
+        StreetLabel1.setText("City");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(75, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(EnterButton)
-                    .addComponent(NameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(StateChoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(FirstNameLabel)
+                            .addComponent(LastNameLabel)
+                            .addComponent(DOBLabel)
+                            .addComponent(StreetLabel)
+                            .addComponent(StreetLabel1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(CityField, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
+                            .addComponent(StreetField, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(DOBField)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(EnterButton)
+                                .addGap(9, 9, 9))
+                            .addComponent(FirstNameTextField, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(LastNameTextField, javax.swing.GroupLayout.Alignment.LEADING))))
                 .addGap(51, 51, 51))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(69, 69, 69)
-                .addComponent(NameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 243, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(FirstNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FirstNameLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LastNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LastNameLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(DOBField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(DOBLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(StreetField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(StreetLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(CityField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(StreetLabel1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(StateChoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
                 .addComponent(EnterButton)
                 .addGap(19, 19, 19))
         );
@@ -78,7 +136,7 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 304, Short.MAX_VALUE)
+            .addGap(0, 375, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -92,10 +150,62 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void EnterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnterButtonActionPerformed
-        // TODO add your handling code here:
+    public void setUpStateChoice(){
+        StateChoice.add("AL");
+        StateChoice.add("AK");
+        StateChoice.add("AZ");
+        StateChoice.add("AR");
+        StateChoice.add("CA");
+        StateChoice.add("CO");
+        StateChoice.add("CT");
+        StateChoice.add("DE");
+        StateChoice.add("FL");
+        StateChoice.add("GA");
+        StateChoice.add("HI");
+        StateChoice.add("ID");
+        StateChoice.add("IL");
+        StateChoice.add("IN");
+        StateChoice.add("IA");
+        StateChoice.add("KS");
+        StateChoice.add("KY");
+        StateChoice.add("LA");
+        StateChoice.add("ME");
+        StateChoice.add("MD");
+        StateChoice.add("MA");
+        StateChoice.add("MI");
+        StateChoice.add("MN");
+        StateChoice.add("MS");
+        StateChoice.add("MO");
+        StateChoice.add("MT");
+        StateChoice.add("NE");
+        StateChoice.add("NV");
+        StateChoice.add("NH");
+        StateChoice.add("NJ");
+        StateChoice.add("NM");
+        StateChoice.add("NY");
+        StateChoice.add("NC");
+        StateChoice.add("ND");
+        StateChoice.add("OH");
+        StateChoice.add("OK");
+        StateChoice.add("OR");
+        StateChoice.add("PA");
+        StateChoice.add("RI");
+        StateChoice.add("SC");
+        StateChoice.add("SD");
+        StateChoice.add("TN");
+        StateChoice.add("TX");
+        StateChoice.add("UT");
+        StateChoice.add("VT");
+        StateChoice.add("VA");
+        StateChoice.add("WA");
+        StateChoice.add("WV");
+        StateChoice.add("WI");
+        StateChoice.add("WY");
+    }
+    private int getMemberCount(){
+        int count=-1;   
         try {
-        int count=0;
+        count=0;
         Connection con = DriverManager.getConnection(connectionUrl);
         
         Statement statement = con.createStatement();
@@ -106,6 +216,24 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
 	 }
         System.out.println("The count is "+count);
 	con.close();
+			
+    } catch (SQLException ex) {
+        Logger.getLogger(MainGUIInterface.class.getName()).log(Level.SEVERE, null, ex);
+    }
+   return count;
+    }
+    
+    private void EnterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnterButtonActionPerformed
+        // TODO add your handling code here:
+        try {
+        int count=0;
+        Connection con = DriverManager.getConnection(connectionUrl);
+        
+        Statement statement = con.createStatement();
+       String sql = "INSERT INTO Employees " +
+              "VALUES ("+700000000+getMemberCount()+",\""+FirstNameTextField.getText()+"\",\""+ LastNameTextField.getText()+"\",\""+DOBField.getText()+"\",\""+StreetField.getText()+"\",\""+"\")";
+
+       
 			
     } catch (SQLException ex) {
         Logger.getLogger(MainGUIInterface.class.getName()).log(Level.SEVERE, null, ex);
@@ -142,14 +270,26 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new InsertMemberGUI().setVisible(true);
+                InsertMemberGUI gui = new InsertMemberGUI();
+                gui.setVisible(true);
+                gui.setUpStateChoice();
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField CityField;
+    private javax.swing.JTextField DOBField;
+    private javax.swing.JLabel DOBLabel;
     private javax.swing.JButton EnterButton;
-    private javax.swing.JTextField NameTextField;
+    private javax.swing.JLabel FirstNameLabel;
+    private javax.swing.JTextField FirstNameTextField;
+    private javax.swing.JLabel LastNameLabel;
+    private javax.swing.JTextField LastNameTextField;
+    private java.awt.Choice StateChoice;
+    private javax.swing.JTextField StreetField;
+    private javax.swing.JLabel StreetLabel;
+    private javax.swing.JLabel StreetLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

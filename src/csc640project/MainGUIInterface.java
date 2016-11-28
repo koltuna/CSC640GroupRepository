@@ -235,7 +235,8 @@ private boolean interactiveRecordMode=false;
       CommandDisplayArea.setText(determinant);
        String input = DataEntryArea.getText();
     interactiveRecordMode = true;*/
-       
+      InteractiveRecordMode InteractiveGUI = new InteractiveRecordMode();
+      InteractiveGUI.setVisible(true);
        //Wait for the enter button on the terminal to be pressed and the text in the lower display area to be in the proper format
     }//GEN-LAST:event_Interactive_Record_Mode_ButtonActionPerformed
 

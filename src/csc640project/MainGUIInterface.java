@@ -230,11 +230,12 @@ private boolean interactiveRecordMode=false;
     private void Interactive_Record_Mode_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Interactive_Record_Mode_ButtonActionPerformed
         // TODO add your handling code here:
         //String asking for which option they want to select and is displayed on the top text area
-        CommandDisplayArea.setFont(new Font(null,Font.PLAIN,7));
+       /* CommandDisplayArea.setFont(new Font(null,Font.PLAIN,7));
         String determinant = "Do you wish to insert new member (mi), update member (mu), delete member (md), insert new provider (pi), update provider (pu), or delete provider (pd)?\n";
       CommandDisplayArea.setText(determinant);
        String input = DataEntryArea.getText();
-    interactiveRecordMode = true;
+    interactiveRecordMode = true;*/
+       
        //Wait for the enter button on the terminal to be pressed and the text in the lower display area to be in the proper format
     }//GEN-LAST:event_Interactive_Record_Mode_ButtonActionPerformed
 

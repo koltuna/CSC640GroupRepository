@@ -62,6 +62,11 @@ private boolean enterButtonClicked,insertMemberMode;
 
         UpdateMemberButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         UpdateMemberButton.setText("Update Member");
+        UpdateMemberButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UpdateMemberButtonActionPerformed(evt);
+            }
+        });
 
         UpdateProviderButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         UpdateProviderButton.setText("Update Provider");
@@ -158,6 +163,12 @@ private boolean enterButtonClicked,insertMemberMode;
            DeleteProviderGUI deleteProviderGUI = new DeleteProviderGUI();
        deleteProviderGUI.setVisible(true);
     }//GEN-LAST:event_DeleteProviderButtonActionPerformed
+
+    private void UpdateMemberButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateMemberButtonActionPerformed
+        // TODO add your handling code here:
+        UpdateMemberGUI updateMemberGUI = new UpdateMemberGUI();
+       updateMemberGUI.setVisible(true);
+    }//GEN-LAST:event_UpdateMemberButtonActionPerformed
 
     /**
      * @param args the command line arguments

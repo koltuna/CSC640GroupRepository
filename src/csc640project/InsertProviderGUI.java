@@ -209,7 +209,7 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
         Statement statement = con.createStatement();
         java.util.Calendar date = java.util.GregorianCalendar.getInstance();
         long time = date.getTimeInMillis();
-       String sql = "INSERT INTO Member(MemberID,MemberFirstName,MemberLastName,MemberDOB,Street,City,State,Country,ZipCode,StatusID,CreatedDate,ModifiedDate) " +   "VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
+       String sql = "INSERT INTO Provider(ProviderID,ProviderFirstName,ProviderLastName,ProviderStreet,ProviderCity,ProviderState,ProviderZipCode,Specialization,StatusID,CreatedDate,ModifiedDate) " +   "VALUES(?,?,?,?,?,?,?,?,?,?,?)";
        System.out.println(sql);
        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
        System.out.println(formatter.format(Calendar.getInstance().getTime()));

@@ -49,36 +49,38 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="1" attributes="0">
+              <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="FirstNameLabel" min="-2" max="-2" attributes="0"/>
+                      <Component id="LastNameLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="DOBLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="StreetLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="StreetLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="ZipCodeLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="StateLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          <Component id="StateChoice" min="-2" max="-2" attributes="0"/>
+                          <Component id="EnterButton" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="170" max="32767" attributes="0"/>
                       </Group>
-                      <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="FirstNameLabel" min="-2" max="-2" attributes="0"/>
-                              <Component id="LastNameLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="DOBLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="StreetLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="StreetLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="CityField" pref="178" max="32767" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="CountryField" alignment="0" max="32767" attributes="0"/>
+                              <Component id="CityField" max="32767" attributes="0"/>
                               <Component id="StreetField" alignment="0" max="32767" attributes="0"/>
                               <Component id="DOBField" alignment="1" max="32767" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="EnterButton" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
-                              </Group>
                               <Component id="FirstNameTextField" alignment="0" max="32767" attributes="0"/>
                               <Component id="LastNameTextField" alignment="0" max="32767" attributes="0"/>
+                              <Component id="ZipCodeField" max="32767" attributes="0"/>
+                              <Component id="StateField" alignment="0" max="32767" attributes="0"/>
                           </Group>
+                          <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -86,33 +88,50 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="StateLabel" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="FirstNameTextField" min="-2" max="-2" attributes="0"/>
+                              <Component id="FirstNameLabel" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="LastNameLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="LastNameTextField" min="-2" pref="20" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="DOBField" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="DOBLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="StreetField" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="StreetLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="CityField" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="StreetLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="StateField" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="CountryField" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="FirstNameTextField" min="-2" max="-2" attributes="0"/>
-                      <Component id="FirstNameLabel" min="-2" max="-2" attributes="0"/>
+                      <Component id="ZipCodeLabel" min="-2" max="-2" attributes="0"/>
+                      <Component id="ZipCodeField" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="LastNameTextField" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                      <Component id="LastNameLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="DOBField" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="DOBLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="StreetField" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="StreetLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="CityField" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="StreetLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="StateChoice" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="89" max="32767" attributes="0"/>
+                  <EmptySpace pref="39" max="32767" attributes="0"/>
                   <Component id="EnterButton" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
               </Group>
@@ -163,7 +182,26 @@
             <Property name="text" type="java.lang.String" value="City"/>
           </Properties>
         </Component>
-        <Component class="java.awt.Choice" name="StateChoice">
+        <Component class="javax.swing.JLabel" name="StateLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="State"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="ZipCodeLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Zip Code"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="ZipCodeField">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Country"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="StateField">
+        </Component>
+        <Component class="javax.swing.JTextField" name="CountryField">
         </Component>
       </SubComponents>
     </Container>

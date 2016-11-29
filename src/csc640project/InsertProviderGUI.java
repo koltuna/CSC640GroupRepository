@@ -220,8 +220,8 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
        prest.setString(4,StreetField.getText());
        prest.setString(5,CityField.getText());
        prest.setString(6,StateField.getText());
-       prest.setString(7,SpecializationField.getText());
-       prest.setString(8,ZipCodeField.getText());
+       prest.setString(7,ZipCodeField.getText());
+       prest.setString(8,SpecializationField.getText());
        prest.setInt(9,1);
        prest.setDate(10, java.sql.Date.valueOf(formatter.format(Calendar.getInstance().getTime())));
        prest.setDate(11, java.sql.Date.valueOf(formatter.format(Calendar.getInstance().getTime())));

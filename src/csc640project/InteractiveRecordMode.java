@@ -54,6 +54,11 @@ private boolean enterButtonClicked,insertMemberMode;
         });
 
         InsertProviderButton.setText("Insert Provider");
+        InsertProviderButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                InsertProviderButtonActionPerformed(evt);
+            }
+        });
 
         UpdateMemberButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         UpdateMemberButton.setText("Update Member");
@@ -125,6 +130,12 @@ private boolean enterButtonClicked,insertMemberMode;
        InsertMemberGUI insertMemberGUI = new InsertMemberGUI();
        insertMemberGUI.setVisible(true);
     }//GEN-LAST:event_InsertMemberButtonActionPerformed
+
+    private void InsertProviderButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InsertProviderButtonActionPerformed
+        // TODO add your handling code here:
+        InsertProviderGUI insertProviderGUI = new InsertProviderGUI();
+       insertProviderGUI.setVisible(true);
+    }//GEN-LAST:event_InsertProviderButtonActionPerformed
 
     /**
      * @param args the command line arguments

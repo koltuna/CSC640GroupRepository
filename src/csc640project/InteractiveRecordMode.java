@@ -37,8 +37,8 @@ private boolean enterButtonClicked,insertMemberMode;
         InsertProviderButton = new javax.swing.JButton();
         UpdateMemberButton = new javax.swing.JButton();
         UpdateProviderButton = new javax.swing.JButton();
-        UpdateMemberButton1 = new javax.swing.JButton();
-        UpdateMemberButton2 = new javax.swing.JButton();
+        DeleteMemberButton = new javax.swing.JButton();
+        DeleteProviderButton = new javax.swing.JButton();
 
         jTextField1.setText("jTextField1");
 
@@ -66,16 +66,21 @@ private boolean enterButtonClicked,insertMemberMode;
         UpdateProviderButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         UpdateProviderButton.setText("Update Provider");
 
-        UpdateMemberButton1.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        UpdateMemberButton1.setText("Delete Member");
-        UpdateMemberButton1.addActionListener(new java.awt.event.ActionListener() {
+        DeleteMemberButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        DeleteMemberButton.setText("Delete Member");
+        DeleteMemberButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UpdateMemberButton1ActionPerformed(evt);
+                DeleteMemberButtonActionPerformed(evt);
             }
         });
 
-        UpdateMemberButton2.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        UpdateMemberButton2.setText("Delete Provider");
+        DeleteProviderButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        DeleteProviderButton.setText("Delete Provider");
+        DeleteProviderButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DeleteProviderButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout MainPanelLayout = new javax.swing.GroupLayout(MainPanel);
         MainPanel.setLayout(MainPanelLayout);
@@ -85,9 +90,9 @@ private boolean enterButtonClicked,insertMemberMode;
                 .addContainerGap()
                 .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(MainPanelLayout.createSequentialGroup()
-                        .addComponent(UpdateMemberButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(DeleteMemberButton, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(UpdateMemberButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(DeleteProviderButton, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(MainPanelLayout.createSequentialGroup()
                         .addComponent(InsertMemberButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -111,8 +116,8 @@ private boolean enterButtonClicked,insertMemberMode;
                     .addComponent(UpdateProviderButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(UpdateMemberButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(UpdateMemberButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(DeleteMemberButton, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(DeleteProviderButton, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(23, Short.MAX_VALUE))
         );
 
@@ -142,11 +147,17 @@ private boolean enterButtonClicked,insertMemberMode;
        insertProviderGUI.setVisible(true);
     }//GEN-LAST:event_InsertProviderButtonActionPerformed
 
-    private void UpdateMemberButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateMemberButton1ActionPerformed
+    private void DeleteMemberButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteMemberButtonActionPerformed
         // TODO add your handling code here:
          DeleteMemberGUI deleteMemberGUI = new DeleteMemberGUI();
        deleteMemberGUI.setVisible(true);
-    }//GEN-LAST:event_UpdateMemberButton1ActionPerformed
+    }//GEN-LAST:event_DeleteMemberButtonActionPerformed
+
+    private void DeleteProviderButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteProviderButtonActionPerformed
+        // TODO add your handling code here:
+           DeleteProviderGUI deleteProviderGUI = new DeleteProviderGUI();
+       deleteProviderGUI.setVisible(true);
+    }//GEN-LAST:event_DeleteProviderButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -184,12 +195,12 @@ private boolean enterButtonClicked,insertMemberMode;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton DeleteMemberButton;
+    private javax.swing.JButton DeleteProviderButton;
     private javax.swing.JButton InsertMemberButton;
     private javax.swing.JButton InsertProviderButton;
     private javax.swing.JPanel MainPanel;
     private javax.swing.JButton UpdateMemberButton;
-    private javax.swing.JButton UpdateMemberButton1;
-    private javax.swing.JButton UpdateMemberButton2;
     private javax.swing.JButton UpdateProviderButton;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables

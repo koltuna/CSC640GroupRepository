@@ -136,6 +136,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Delete Member"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="UpdateMemberButton1ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="UpdateMemberButton2">
           <Properties>

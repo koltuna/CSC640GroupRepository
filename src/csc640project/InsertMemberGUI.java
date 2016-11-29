@@ -189,7 +189,7 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
         Connection con = DriverManager.getConnection(connectionUrl);
         
         Statement statement = con.createStatement();
-       String query = "SELECT * FROM Member";
+       String query = "SELECT * FROM Provider";
        ResultSet resultSet = statement.executeQuery(query);
 	while(resultSet.next()){
 	count++;

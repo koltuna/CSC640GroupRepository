@@ -176,6 +176,28 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+     private boolean idExists(int id){
+        
+        try {
+        
+        Connection con = DriverManager.getConnection(connectionUrl);
+        
+        Statement statement = con.createStatement();
+       String query = "SELECT * FROM Provider";
+       ResultSet resultSet = statement.executeQuery(query);
+	while(resultSet.next()){
+	int rowID = resultSet.getInt("ProviderID");
+        if(rowID==id)
+            return true;
+	 }
+	con.close();
+			
+    } catch (SQLException ex) {
+        Logger.getLogger(MainGUIInterface.class.getName()).log(Level.SEVERE, null, ex);
+    }
+   return false;
+    }
+    
       private int getProviderCount(){
         int count=-1;   
         try {
@@ -214,7 +236,13 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
        System.out.println(formatter.format(Calendar.getInstance().getTime()));
        PreparedStatement prest = con.prepareStatement(sql);
-       prest.setInt(1, 900000000+getProviderCount()+(int)(100*Math.random()));
+       int newID = 900000000+getProviderCount();
+       int count = 0;
+       while(idExists(newID)){
+           count++;
+           newID = 900000000+getProviderCount()+count;
+       }
+       prest.setInt(1, newID);
        prest.setString(2, FirstNameTextField.getText());
        prest.setString(3,LastNameTextField.getText());
        prest.setString(4,StreetField.getText());

@@ -87,7 +87,7 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
         MainPanelLayout.setHorizontalGroup(
             MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainPanelLayout.createSequentialGroup()
-                .addContainerGap(20, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(FeeCalculationDisplay)
                     .addGroup(MainPanelLayout.createSequentialGroup()
@@ -115,7 +115,9 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(MainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(MainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(49, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -132,8 +134,9 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
         Connection con = DriverManager.getConnection(connectionUrl);
         
         
-       String sql = "SELECT sd.ProviderId AS Provider_Number,sd.ServiceDate AS ServiceDate,SUM(s.Cost) AS Cost FROM Service s JOIN ServiceDetails sd ON s.ServiceId = sd.ServiceId GROUP BY sd.ProviderId,sd.ServiceDate Having sd.ProviderId = 900000000 ORDER BY Provider_Number ";
+       String sql = "SELECT sd.ProviderId AS Provider_Number,sd.ServiceDate AS ServiceDate,SUM(s.Cost) AS Cost FROM Service s JOIN ServiceDetails sd ON s.ServiceId = sd.ServiceId GROUP BY sd.ProviderId,sd.ServiceDate Having sd.ProviderId = ? ORDER BY Provider_Number ";
        PreparedStatement prest = con.prepareStatement(sql);
+       prest.setInt(1,Integer.parseInt(ProviderIDChoice.getSelectedItem()));
        ResultSet resultSet = prest.executeQuery();
        double total=0;
 	while(resultSet.next()){

@@ -111,6 +111,7 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
        statement.executeUpdate(sql);
 	
 	con.close();
+        this.setVisible(false);
 			
     } catch (SQLException ex) {
         Logger.getLogger(MainGUIInterface.class.getName()).log(Level.SEVERE, null, ex);
@@ -131,7 +132,7 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
 	MemberChoice.add(resultSet.getString("MemberID"));
 	 }
 	con.close();
-			
+       this.setVisible(false);
     } catch (SQLException ex) {
         Logger.getLogger(MainGUIInterface.class.getName()).log(Level.SEVERE, null, ex);
     }

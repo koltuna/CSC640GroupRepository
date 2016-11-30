@@ -124,12 +124,13 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
         Statement statement = con.createStatement();
        String sql = "Delete FROM Provider WHERE ProviderID = "+ProviderChoice.getSelectedItem();
        statement.executeUpdate(sql);
-	
+       this.setVisible(false);
 	con.close();
 			
     } catch (SQLException ex) {
         Logger.getLogger(MainGUIInterface.class.getName()).log(Level.SEVERE, null, ex);
     }
+         this.setVisible(false);
     }//GEN-LAST:event_DeleteButtonActionPerformed
 
     /**

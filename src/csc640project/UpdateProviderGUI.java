@@ -214,7 +214,7 @@ public class UpdateProviderGUI extends javax.swing.JFrame {
        prest.setInt(9,Integer.parseInt(ProviderIDChoice.getSelectedItem())) ;
        prest.executeUpdate();
        con.close();
-			
+	this.setVisible(false);
     } catch (SQLException ex) {
         Logger.getLogger(MainGUIInterface.class.getName()).log(Level.SEVERE, null, ex);
     }

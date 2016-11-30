@@ -256,7 +256,7 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
        prest.setDate(11, java.sql.Date.valueOf(formatter.format(Calendar.getInstance().getTime())));
        prest.executeUpdate();
         //Got code from http://stackoverflow.com/questions/9119481/how-to-present-a-simple-alert-message-in-java
-       JOptionPane.showMessageDialog(null, "Member# "+newID+": "+FirstNameTextField.getText()+" "+LastNameTextField.getText());
+       JOptionPane.showMessageDialog(null, "Provider# "+newID+": "+FirstNameTextField.getText()+" "+LastNameTextField.getText());
 	this.setVisible(false);	
         con.close();
     } catch (SQLException ex) {

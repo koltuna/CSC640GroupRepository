@@ -13,6 +13,7 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.awt.Font;
+import javax.swing.JFrame;
 public class MainGUIInterface extends javax.swing.JFrame {
 
     
@@ -230,67 +231,20 @@ private boolean interactiveRecordMode=false;
     private void Interactive_Record_Mode_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Interactive_Record_Mode_ButtonActionPerformed
         // TODO add your handling code here:
         //String asking for which option they want to select and is displayed on the top text area
-        CommandDisplayArea.setFont(new Font(null,Font.PLAIN,7));
-        String determinant = "Do you wish to insert new member (mi), update member (mu), delete member (md), insert new provider (pi), update provider (pu), or delete provider (pd)?\n";
-      CommandDisplayArea.setText(determinant);
-       String input = DataEntryArea.getText();
-    interactiveRecordMode = true;
-       //Wait for the enter button on the terminal to be pressed and the text in the lower display area to be in the proper format
+       
+       //Found default code at https://docs.oracle.com/javase/8/docs/api/javax/swing/JFrame.html#setDefaultCloseOperation-int-
+      InteractiveRecordMode InteractiveGUI = new InteractiveRecordMode();
+      InteractiveGUI.setVisible(true);
+      InteractiveGUI.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+       
     }//GEN-LAST:event_Interactive_Record_Mode_ButtonActionPerformed
 
     private void DataEntryAreaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_DataEntryAreaKeyPressed
         // TODO add your handling code here:
-     /*   if(!textReady)
-            return;
-        if(interactiveRecordMode){
-            System.out.println("Interactive Record Mode");
-            String input = DataEntryArea.getText();
-             if(input.equalsIgnoreCase("mi"))
-          CommandDisplayArea.setText("Inserting member record");
-      else if (input.equalsIgnoreCase("mu"))
-          CommandDisplayArea.setText("Updating member record");
-      else if (input.equalsIgnoreCase("md"))
-          CommandDisplayArea.setText("Deleting member record");
-      else if (input.equalsIgnoreCase("pi"))
-          CommandDisplayArea.setText("Inserting provider record");
-      else if (input.equalsIgnoreCase("pu"))
-          CommandDisplayArea.setText("Updating provider record");
-      else if (input.equalsIgnoreCase("pd"))
-          CommandDisplayArea.setText("Deleting provider record");
-      else 
-          CommandDisplayArea.setText("");
-            interactiveRecordMode = false;
-        }
-            
-        textReady=false;*/
     }//GEN-LAST:event_DataEntryAreaKeyPressed
 
     private void DataEntryAreaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_DataEntryAreaKeyTyped
         // TODO add your handling code here:
-     /*   System.out.println("Key Typed");
-             if(!textReady)
-            return;
-        if(interactiveRecordMode){
-            System.out.println("Interactive Record Mode");
-            String input = DataEntryArea.getText();
-             if(input.equalsIgnoreCase("mi"))
-          CommandDisplayArea.setText("Inserting member record");
-      else if (input.equalsIgnoreCase("mu"))
-          CommandDisplayArea.setText("Updating member record");
-      else if (input.equalsIgnoreCase("md"))
-          CommandDisplayArea.setText("Deleting member record");
-      else if (input.equalsIgnoreCase("pi"))
-          CommandDisplayArea.setText("Inserting provider record");
-      else if (input.equalsIgnoreCase("pu"))
-          CommandDisplayArea.setText("Updating provider record");
-      else if (input.equalsIgnoreCase("pd"))
-          CommandDisplayArea.setText("Deleting provider record");
-      else 
-          CommandDisplayArea.setText("");
-            interactiveRecordMode = false;
-        }
-            
-        textReady=false;*/
     }//GEN-LAST:event_DataEntryAreaKeyTyped
 
     private boolean isValidModeSymbol(String symbol){
@@ -332,7 +286,7 @@ private boolean interactiveRecordMode=false;
             public void run() {
                MainGUIInterface main_gui = new MainGUIInterface();
                main_gui.setVisible(true);
-               main_gui.setDefaultCloseOperation(EXIT_ON_CLOSE);
+               main_gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             }
         });
     }

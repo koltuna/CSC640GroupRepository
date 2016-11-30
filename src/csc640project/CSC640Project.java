@@ -10,6 +10,8 @@
 
 package csc640project;
 
+import javax.swing.JFrame;
+
 
 
 /**
@@ -47,7 +49,9 @@ public class CSC640Project {
 
        //This calls the main method of MainGUIInterface 
 
-        MainGUIInterface.main(null);
+        MainGUIInterface gui = new MainGUIInterface();
+        gui.setVisible(true);
+        gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
     }
 

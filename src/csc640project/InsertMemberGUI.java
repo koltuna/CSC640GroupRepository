@@ -182,6 +182,28 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private boolean idExists(int id){
+        
+        try {
+        
+        Connection con = DriverManager.getConnection(connectionUrl);
+        
+        Statement statement = con.createStatement();
+       String query = "SELECT * FROM Member";
+       ResultSet resultSet = statement.executeQuery(query);
+	while(resultSet.next()){
+	int rowID = resultSet.getInt("MemberID");
+        if(rowID==id)
+            return true;
+	 }
+	con.close();
+			
+    } catch (SQLException ex) {
+        Logger.getLogger(MainGUIInterface.class.getName()).log(Level.SEVERE, null, ex);
+    }
+   return false;
+    }
+    
     private int getMemberCount(){
         int count=-1;   
         try {
@@ -189,7 +211,7 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
         Connection con = DriverManager.getConnection(connectionUrl);
         
         Statement statement = con.createStatement();
-       String query = "SELECT * FROM Provider";
+       String query = "SELECT * FROM Member";
        ResultSet resultSet = statement.executeQuery(query);
 	while(resultSet.next()){
 	count++;
@@ -216,7 +238,13 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
        System.out.println(formatter.format(Calendar.getInstance().getTime()));
        PreparedStatement prest = con.prepareStatement(sql);
-       prest.setInt(1, 700000000+getMemberCount()+(int)(100*Math.random()));
+       int newID = 700000000+getMemberCount();
+       int count = 0;
+       while(idExists(newID)){
+           count++;
+           newID = 700000000+getMemberCount()+count;
+       }
+       prest.setInt(1, newID);
        prest.setString(2, FirstNameTextField.getText());
        prest.setString(3,LastNameTextField.getText());
        prest.setString(4, DOBField.getText());

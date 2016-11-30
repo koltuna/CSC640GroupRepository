@@ -6,6 +6,7 @@
 package csc640project;
 
 import com.sun.glass.events.KeyEvent;
+import javax.swing.JFrame;
 
 /**
  *
@@ -149,36 +150,42 @@ private boolean enterButtonClicked,insertMemberMode;
         // TODO add your handling code here:
        InsertMemberGUI insertMemberGUI = new InsertMemberGUI();
        insertMemberGUI.setVisible(true);
+       insertMemberGUI.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
     }//GEN-LAST:event_InsertMemberButtonActionPerformed
 
     private void InsertProviderButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InsertProviderButtonActionPerformed
         // TODO add your handling code here:
         InsertProviderGUI insertProviderGUI = new InsertProviderGUI();
        insertProviderGUI.setVisible(true);
+       insertProviderGUI.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
     }//GEN-LAST:event_InsertProviderButtonActionPerformed
 
     private void DeleteMemberButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteMemberButtonActionPerformed
         // TODO add your handling code here:
          DeleteMemberGUI deleteMemberGUI = new DeleteMemberGUI();
        deleteMemberGUI.setVisible(true);
+       deleteMemberGUI.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
     }//GEN-LAST:event_DeleteMemberButtonActionPerformed
 
     private void DeleteProviderButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteProviderButtonActionPerformed
         // TODO add your handling code here:
            DeleteProviderGUI deleteProviderGUI = new DeleteProviderGUI();
        deleteProviderGUI.setVisible(true);
+       deleteProviderGUI.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
     }//GEN-LAST:event_DeleteProviderButtonActionPerformed
 
     private void UpdateMemberButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateMemberButtonActionPerformed
         // TODO add your handling code here:
         UpdateMemberGUI updateMemberGUI = new UpdateMemberGUI();
        updateMemberGUI.setVisible(true);
+       updateMemberGUI.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
     }//GEN-LAST:event_UpdateMemberButtonActionPerformed
 
     private void UpdateProviderButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateProviderButtonActionPerformed
         // TODO add your handling code here:
          UpdateProviderGUI updateProviderGUI = new UpdateProviderGUI();
        updateProviderGUI.setVisible(true);
+       updateProviderGUI.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
     }//GEN-LAST:event_UpdateProviderButtonActionPerformed
 
     /**

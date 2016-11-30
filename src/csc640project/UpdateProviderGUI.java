@@ -11,8 +11,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -202,8 +200,6 @@ public class UpdateProviderGUI extends javax.swing.JFrame {
         Connection con = DriverManager.getConnection(connectionUrl);
         
         Statement statement = con.createStatement();
-        java.util.Calendar date = java.util.GregorianCalendar.getInstance();
-        long time = date.getTimeInMillis();
        String sql = "Update Provider Set ProviderFirstName = ?, ProviderLastName = ?, ProviderStreet = ?, ProviderCity = ?, ProviderState = ?, ProviderZipCode = ?, Specialization = ?, StatusID = ? Where ProviderID = ?";
        System.out.println(sql);
        PreparedStatement prest = con.prepareStatement(sql);  

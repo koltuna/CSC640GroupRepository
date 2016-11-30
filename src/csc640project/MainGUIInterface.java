@@ -93,6 +93,11 @@ private boolean interactiveRecordMode=false;
         });
 
         Calculate_Weekly_Fees_Button.setText("Calculate Weekly Fees");
+        Calculate_Weekly_Fees_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Calculate_Weekly_Fees_ButtonActionPerformed(evt);
+            }
+        });
 
         Check_In_Button.setText("Check-In");
 
@@ -246,6 +251,14 @@ private boolean interactiveRecordMode=false;
     private void DataEntryAreaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_DataEntryAreaKeyTyped
         // TODO add your handling code here:
     }//GEN-LAST:event_DataEntryAreaKeyTyped
+
+    private void Calculate_Weekly_Fees_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Calculate_Weekly_Fees_ButtonActionPerformed
+        // TODO add your handling code here:
+         //Found default code at https://docs.oracle.com/javase/8/docs/api/javax/swing/JFrame.html#setDefaultCloseOperation-int-
+      CalculateWeeklyFeeGUI weeklyFeeGUI = new CalculateWeeklyFeeGUI();
+      weeklyFeeGUI.setVisible(true);
+     weeklyFeeGUI.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+    }//GEN-LAST:event_Calculate_Weekly_Fees_ButtonActionPerformed
 
     private boolean isValidModeSymbol(String symbol){
         String str = symbol.trim();

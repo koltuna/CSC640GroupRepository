@@ -242,6 +242,7 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
        prest.setInt(10,Integer.parseInt(MemberIDChoice.getSelectedItem())) ;
        prest.executeUpdate();
        con.close();
+       this.setVisible(false);
 			
     } catch (SQLException ex) {
         Logger.getLogger(MainGUIInterface.class.getName()).log(Level.SEVERE, null, ex);

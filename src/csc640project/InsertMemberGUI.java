@@ -15,6 +15,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -58,7 +59,7 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
         StateLabel = new javax.swing.JLabel();
         ZipCodeLabel = new javax.swing.JLabel();
         ZipCodeField = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
+        CountryLabel = new javax.swing.JLabel();
         StateField = new javax.swing.JTextField();
         CountryField = new javax.swing.JTextField();
 
@@ -87,7 +88,7 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
 
         ZipCodeLabel.setText("Zip Code");
 
-        jLabel1.setText("Country");
+        CountryLabel.setText("Country");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -103,7 +104,7 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
                     .addComponent(StreetLabel1)
                     .addComponent(ZipCodeLabel)
                     .addComponent(StateLabel)
-                    .addComponent(jLabel1))
+                    .addComponent(CountryLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -129,7 +130,7 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(StateLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel1)
+                        .addComponent(CountryLabel)
                         .addGap(10, 10, 10))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -258,6 +259,9 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
        prest.setDate(12, java.sql.Date.valueOf(formatter.format(Calendar.getInstance().getTime())));
        prest.executeUpdate();
        con.close();
+       //Got code from http://stackoverflow.com/questions/9119481/how-to-present-a-simple-alert-message-in-java
+       JOptionPane.showMessageDialog(null, "Member# "+newID+": "+FirstNameTextField.getText()+" "+LastNameTextField.getText());
+       this.setVisible(false);
 			
     } catch (SQLException ex) {
         Logger.getLogger(MainGUIInterface.class.getName()).log(Level.SEVERE, null, ex);
@@ -304,6 +308,7 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField CityField;
     private javax.swing.JTextField CountryField;
+    private javax.swing.JLabel CountryLabel;
     private javax.swing.JTextField DOBField;
     private javax.swing.JLabel DOBLabel;
     private javax.swing.JButton EnterButton;
@@ -318,7 +323,6 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
     private javax.swing.JLabel StreetLabel1;
     private javax.swing.JTextField ZipCodeField;
     private javax.swing.JLabel ZipCodeLabel;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

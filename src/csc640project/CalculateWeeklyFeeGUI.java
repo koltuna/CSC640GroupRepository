@@ -14,6 +14,8 @@ import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.text.DecimalFormat;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 /**
  *
@@ -134,15 +136,23 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
         Connection con = DriverManager.getConnection(connectionUrl);
         
         
-       String sql = "SELECT sd.ProviderId AS Provider_Number,sd.ServiceDate AS ServiceDate,SUM(s.Cost) AS Cost FROM Service s JOIN ServiceDetails sd ON s.ServiceId = sd.ServiceId GROUP BY sd.ProviderId,sd.ServiceDate Having sd.ProviderId = ? ORDER BY Provider_Number ";
+       String sql = "EXECUTE GetProviderServiceDetails_Report ?,?,?";
        PreparedStatement prest = con.prepareStatement(sql);
-       prest.setInt(1,Integer.parseInt(ProviderIDChoice.getSelectedItem()));
+       prest.setString(1,ProviderIDChoice.getSelectedItem());
+       Calendar currentDate = GregorianCalendar.getInstance();
+       Calendar prevDate = (Calendar) currentDate.clone();
+        prevDate.add(Calendar.DAY_OF_YEAR,-6);
+       String currentDateString = currentDate.get(Calendar.YEAR)+"-"+(currentDate.get(Calendar.MONTH)+1)+"-"+(currentDate.get(Calendar.DAY_OF_MONTH));
+       String prevDateString = prevDate.get(Calendar.YEAR)+"-"+(prevDate.get(Calendar.MONTH)+1)+"-"+(prevDate.get(Calendar.DAY_OF_MONTH));
+       prest.setString(2, prevDateString);
+       prest.setString(3, currentDateString);
        ResultSet resultSet = prest.executeQuery();
+       
        double total=0;
 	while(resultSet.next()){
            total+= resultSet.getDouble("Cost");
 	 }
-        FeeCalculationDisplay.setText("The weekly sum of fees is $"+new DecimalFormat(".00").format(total));
+        FeeCalculationDisplay.setText("The weekly sum of fees is $"+new DecimalFormat("0.00").format(total));
 	con.close();
 			
     } catch (SQLException ex) {

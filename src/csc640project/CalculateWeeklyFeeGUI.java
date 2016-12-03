@@ -132,10 +132,9 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
     private void CalculateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CalculateButtonActionPerformed
         // TODO add your handling code here:
         try {
-        
+        //Connect
         Connection con = DriverManager.getConnection(connectionUrl);
-        
-        
+        //Generate report and set up prepared statement
        String sql = "EXECUTE GetProviderServiceDetails_Report ?,?,?";
        PreparedStatement prest = con.prepareStatement(sql);
        prest.setString(1,ProviderIDChoice.getSelectedItem());

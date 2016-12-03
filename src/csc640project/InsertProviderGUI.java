@@ -225,6 +225,10 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
 
     private void EnterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnterButtonActionPerformed
         // TODO add your handling code here:
+        if(anyFieldsEmpty()){
+            JOptionPane.showMessageDialog(null, "Need to complete all fields");
+            return;
+        }
         try {
     
         Connection con = DriverManager.getConnection(connectionUrl);
@@ -264,6 +268,17 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
     }
     }//GEN-LAST:event_EnterButtonActionPerformed
 
+    
+    private boolean anyFieldsEmpty(){
+        boolean firstNameEmpty = FirstNameTextField.getText().trim().equals("");
+       boolean lastNameEmpty = LastNameTextField.getText().trim().equals("");
+       boolean streetEmpty = StreetField.getText().trim().equals("");
+       boolean cityEmpty = CityField.getText().trim().equals("");
+       boolean stateEmpty = StateField.getText().trim().equals("");
+       boolean zipCodeEmpty = ZipCodeField.getText().trim().equals("");
+       boolean specializationEmpty = SpecializationField.getText().trim().equals("");
+       return firstNameEmpty||lastNameEmpty||streetEmpty||cityEmpty||stateEmpty||zipCodeEmpty||specializationEmpty;
+    }
     /**
      * @param args the command line arguments
      */

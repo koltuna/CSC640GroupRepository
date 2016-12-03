@@ -61,10 +61,10 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
         StateField = new javax.swing.JTextField();
         CountryField = new javax.swing.JTextField();
         YearChoice = new java.awt.Choice();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        YearLabel = new javax.swing.JLabel();
+        MonthLabel = new javax.swing.JLabel();
         MonthChoice = new java.awt.Choice();
-        jLabel3 = new javax.swing.JLabel();
+        DayLabel = new javax.swing.JLabel();
         DayChoice = new java.awt.Choice();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -100,9 +100,9 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
             }
         });
 
-        jLabel1.setText("yyyy");
+        YearLabel.setText("year");
 
-        jLabel2.setText("MM");
+        MonthLabel.setText("Month");
 
         MonthChoice.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
@@ -110,7 +110,7 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
             }
         });
 
-        jLabel3.setText("dd");
+        DayLabel.setText("Day");
 
         javax.swing.GroupLayout dayChoiceLayout = new javax.swing.GroupLayout(dayChoice);
         dayChoice.setLayout(dayChoiceLayout);
@@ -146,15 +146,15 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
                                 .addGap(51, 51, 51))))
                     .addGroup(dayChoiceLayout.createSequentialGroup()
                         .addGap(6, 6, 6)
-                        .addComponent(jLabel1)
+                        .addComponent(YearLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(YearChoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel2)
+                        .addComponent(MonthLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(MonthChoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(1, 1, 1)
-                        .addComponent(jLabel3)
+                        .addComponent(DayLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(DayChoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))))
@@ -181,12 +181,12 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
                         .addGroup(dayChoiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(dayChoiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(DOBLabel)
-                                .addComponent(jLabel1))
+                                .addComponent(YearLabel))
                             .addComponent(YearChoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2)
+                            .addComponent(MonthLabel)
                             .addComponent(MonthChoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(DayChoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3))
+                            .addComponent(DayLabel))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(dayChoiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(StreetField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -226,17 +226,17 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //Check to see whether a member with the given id exists
     private boolean idExists(int id){
-        
+        //Check Member table
         try {
-        
         Connection con = DriverManager.getConnection(connectionUrl);
-        
         Statement statement = con.createStatement();
        String query = "SELECT * FROM Member";
        ResultSet resultSet = statement.executeQuery(query);
 	while(resultSet.next()){
 	int rowID = resultSet.getInt("MemberID");
+        //Return true when you find the appropriate id
         if(rowID==id)
             return true;
 	 }
@@ -245,15 +245,17 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
     } catch (SQLException ex) {
         Logger.getLogger(MainGUIInterface.class.getName()).log(Level.SEVERE, null, ex);
     }
+    //Return false if the given id was found
    return false;
     }
     
+    //Find the given member
     private int getMemberCount(){
-        int count=-1;   
+        //Initialize count
+        int count=0;  
+        //Search the Member table and count
         try {
-        count=0;
         Connection con = DriverManager.getConnection(connectionUrl);
-        
         Statement statement = con.createStatement();
        String query = "SELECT * FROM Member";
        ResultSet resultSet = statement.executeQuery(query);
@@ -267,7 +269,7 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
     }
    return count;
     }
-    
+    //Setup the date menu
     private void setUpDateMenu(){
         //Set up the years
         for(int year=1900;year<=2010;year++){
@@ -277,11 +279,11 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
         for(int month=1;month<=12;month++){
             MonthChoice.add(""+month);
         }
-       
+       //Add the days
         for(int day=1;day<=31;day++)
             DayChoice.add(""+day);
     }
-    
+    //Check if any fields are empty
     private boolean anyFieldsEmpty(){
         boolean firstNameEmpty = FirstNameTextField.getText().trim().equals("");
        boolean lastNameEmpty = LastNameTextField.getText().trim().equals("");
@@ -292,6 +294,8 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
        boolean zipCodeEmpty = ZipCodeField.getText().trim().equals("");
        return firstNameEmpty||lastNameEmpty||streetEmpty||cityEmpty||stateEmpty||countryEmpty||zipCodeEmpty;
     }
+    
+    //What happens when enter button is entered
     private void EnterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnterButtonActionPerformed
         // TODO add your handling code here:
         //If any fields are empty, alert user
@@ -300,20 +304,23 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
             return;
         }
         try {
-    
         Connection con = DriverManager.getConnection(connectionUrl);
        String sql = "INSERT INTO Member(MemberID,MemberFirstName,MemberLastName,MemberDOB,Street,City,State,Country,ZipCode,StatusID,CreatedDate,ModifiedDate) " +   "VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
        PreparedStatement prest = con.prepareStatement(sql);
+       //Create a new id
        int newID = 700000000+getMemberCount();
        int count = 0;
+       //Look for new id if it conflicts with an already existing id 
        while(idExists(newID)){
            count++;
            newID = 700000000+getMemberCount()+count;
        }
+       //Add the fields
        prest.setInt(1, newID);
        prest.setString(2, FirstNameTextField.getText());
        prest.setString(3,LastNameTextField.getText());
+       //Construct date string based on menu selections
        String dateString = YearChoice.getSelectedItem()+"-"+MonthChoice.getSelectedItem()+"-"+DayChoice.getSelectedItem();
        prest.setString(4, dateString);
        prest.setString(5,StreetField.getText());
@@ -326,18 +333,22 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
        prest.setDate(12, java.sql.Date.valueOf(formatter.format(Calendar.getInstance().getTime())));
        prest.executeUpdate();
        con.close();
+       //Alert the user a new id has been created
        //Got code from http://stackoverflow.com/questions/9119481/how-to-present-a-simple-alert-message-in-java
        JOptionPane.showMessageDialog(null, "Member# "+newID+": "+FirstNameTextField.getText()+" "+LastNameTextField.getText());
+       //Close and hide the window
        this.setVisible(false);
 			
     } catch (SQLException ex) {
         Logger.getLogger(MainGUIInterface.class.getName()).log(Level.SEVERE, null, ex);
     }
     }//GEN-LAST:event_EnterButtonActionPerformed
-
+     //What happens when year menu is selected
     private void YearChoiceItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_YearChoiceItemStateChanged
         // TODO add your handling code here:
+        //We are resetting
         DayChoice.removeAll();
+        //Come up with number of days based on month and year
         int currentMonth = Integer.parseInt(MonthChoice.getSelectedItem());
         int currentYear = Integer.parseInt(YearChoice.getSelectedItem());
         int maxDay = 0;
@@ -349,14 +360,16 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
             maxDay=30;
         else
             maxDay=31;
-        
+        //Add the days
         for(int day=1;day<=maxDay;day++)
             DayChoice.add(""+day);
     }//GEN-LAST:event_YearChoiceItemStateChanged
-
+     //What happens when the month choice is selected
     private void MonthChoiceItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_MonthChoiceItemStateChanged
         // TODO add your handling code here:
+        //We are resetting
         DayChoice.removeAll();
+        //Choose number of days based on month and year
          int currentMonth = Integer.parseInt(MonthChoice.getSelectedItem());
         int currentYear = Integer.parseInt(YearChoice.getSelectedItem());
         int maxDay = 0;
@@ -368,7 +381,7 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
             maxDay=30;
         else
             maxDay=31;
-        
+        //Add the days
         for(int day=1;day<=maxDay;day++)
             DayChoice.add(""+day);
     }//GEN-LAST:event_MonthChoiceItemStateChanged
@@ -416,23 +429,23 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
     private javax.swing.JLabel CountryLabel;
     private javax.swing.JLabel DOBLabel;
     private java.awt.Choice DayChoice;
+    private javax.swing.JLabel DayLabel;
     private javax.swing.JButton EnterButton;
     private javax.swing.JLabel FirstNameLabel;
     private javax.swing.JTextField FirstNameTextField;
     private javax.swing.JLabel LastNameLabel;
     private javax.swing.JTextField LastNameTextField;
     private java.awt.Choice MonthChoice;
+    private javax.swing.JLabel MonthLabel;
     private javax.swing.JTextField StateField;
     private javax.swing.JLabel StateLabel;
     private javax.swing.JTextField StreetField;
     private javax.swing.JLabel StreetLabel;
     private javax.swing.JLabel StreetLabel1;
     private java.awt.Choice YearChoice;
+    private javax.swing.JLabel YearLabel;
     private javax.swing.JTextField ZipCodeField;
     private javax.swing.JLabel ZipCodeLabel;
     private javax.swing.JPanel dayChoice;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }

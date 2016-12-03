@@ -13,13 +13,10 @@ import javax.swing.JFrame;
  * @author Alex
  */
 public class InteractiveRecordMode extends javax.swing.JFrame {
-private boolean enterButtonClicked,insertMemberMode;
     /**
      * Creates new form InteractiveRecordMode
      */
     public InteractiveRecordMode() {
-        enterButtonClicked = false;
-        insertMemberMode=false;
         initComponents();
     }
 
@@ -143,44 +140,51 @@ private boolean enterButtonClicked,insertMemberMode;
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+//Activated when insert member button is pressed
     private void InsertMemberButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InsertMemberButtonActionPerformed
         // TODO add your handling code here:
+        //Create and display Insert Member GUI
        InsertMemberGUI insertMemberGUI = new InsertMemberGUI();
        insertMemberGUI.setVisible(true);
+       //Closes only when x button is hit
        insertMemberGUI.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
     }//GEN-LAST:event_InsertMemberButtonActionPerformed
-
+    //Activated when insert provider button is pressed
     private void InsertProviderButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InsertProviderButtonActionPerformed
         // TODO add your handling code here:
+        //Create and display Insert Provider GUI
         InsertProviderGUI insertProviderGUI = new InsertProviderGUI();
        insertProviderGUI.setVisible(true);
        insertProviderGUI.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
     }//GEN-LAST:event_InsertProviderButtonActionPerformed
-
+//Activated when delete member button is pressed
     private void DeleteMemberButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteMemberButtonActionPerformed
         // TODO add your handling code here:
+        //Create and display Delete Member GUI
          DeleteMemberGUI deleteMemberGUI = new DeleteMemberGUI();
        deleteMemberGUI.setVisible(true);
        deleteMemberGUI.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
     }//GEN-LAST:event_DeleteMemberButtonActionPerformed
-
+//Activated when delete provider button is pressed
     private void DeleteProviderButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteProviderButtonActionPerformed
         // TODO add your handling code here:
+        //Create and display Delete Provider GUI
            DeleteProviderGUI deleteProviderGUI = new DeleteProviderGUI();
        deleteProviderGUI.setVisible(true);
        deleteProviderGUI.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
     }//GEN-LAST:event_DeleteProviderButtonActionPerformed
-
+//Activate when update member button is pressed
     private void UpdateMemberButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateMemberButtonActionPerformed
         // TODO add your handling code here:
+        //Create and display Update Member GUI
         UpdateMemberGUI updateMemberGUI = new UpdateMemberGUI();
        updateMemberGUI.setVisible(true);
        updateMemberGUI.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
     }//GEN-LAST:event_UpdateMemberButtonActionPerformed
-
+//Activate when update provider is pressed
     private void UpdateProviderButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateProviderButtonActionPerformed
         // TODO add your handling code here:
+        //Create and display Update Provider GUI
          UpdateProviderGUI updateProviderGUI = new UpdateProviderGUI();
        updateProviderGUI.setVisible(true);
        updateProviderGUI.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);

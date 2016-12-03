@@ -176,35 +176,35 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+     //Return whether the given id exists
      private boolean idExists(int id){
-        
+        //Search the Provider table for the given id
         try {
-        
         Connection con = DriverManager.getConnection(connectionUrl);
-        
         Statement statement = con.createStatement();
        String query = "SELECT * FROM Provider";
        ResultSet resultSet = statement.executeQuery(query);
 	while(resultSet.next()){
 	int rowID = resultSet.getInt("ProviderID");
+        //Return true when the id is found
         if(rowID==id)
             return true;
 	 }
 	con.close();
-			
     } catch (SQLException ex) {
         Logger.getLogger(MainGUIInterface.class.getName()).log(Level.SEVERE, null, ex);
     }
+     //Return false when the id is not found
    return false;
     }
     
+     //Counts number of provider records
       private int getProviderCount(){
-        int count=-1;   
+        //Initialize count
+        int count=0;   
+        //Search the Provider table
         try {
-        count=0;
         Connection con = DriverManager.getConnection(connectionUrl);
-        
         Statement statement = con.createStatement();
        String query = "SELECT * FROM Provider";
        ResultSet resultSet = statement.executeQuery(query);
@@ -223,25 +223,28 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
         // TODO add your handling code here:
     }//GEN-LAST:event_CityFieldActionPerformed
 
+    //Activated when enter button is clicked
     private void EnterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnterButtonActionPerformed
         // TODO add your handling code here:
+        //If any fields are empty, alert the user
         if(anyFieldsEmpty()){
             JOptionPane.showMessageDialog(null, "Need to complete all fields");
             return;
         }
         try {
-    
         Connection con = DriverManager.getConnection(connectionUrl);
-        java.util.Calendar date = java.util.GregorianCalendar.getInstance();
        String sql = "INSERT INTO Provider(ProviderID,ProviderFirstName,ProviderLastName,ProviderStreet,ProviderCity,ProviderState,ProviderZipCode,Specialization,StatusID,CreateDate,ModifiedDate) " +   "VALUES(?,?,?,?,?,?,?,?,?,?,?)";
        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
        PreparedStatement prest = con.prepareStatement(sql);
+       //Create a new id
        int newID = 900000000+getProviderCount();
        int count = 0;
+       //Look for a new id if it conflicts with another id
        while(idExists(newID)){
            count++;
            newID = 900000000+getProviderCount()+count;
        }
+       //Enter other fields
        prest.setInt(1, newID);
        prest.setString(2, FirstNameTextField.getText());
        prest.setString(3,LastNameTextField.getText());
@@ -255,15 +258,17 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
        prest.setDate(11, java.sql.Date.valueOf(formatter.format(Calendar.getInstance().getTime())));
        prest.executeUpdate();
         //Got code from http://stackoverflow.com/questions/9119481/how-to-present-a-simple-alert-message-in-java
-       JOptionPane.showMessageDialog(null, "Provider# "+newID+": "+FirstNameTextField.getText()+" "+LastNameTextField.getText());
-	this.setVisible(false);	
+        //Alert the user a new provider record has been entered
+        JOptionPane.showMessageDialog(null, "Provider# "+newID+": "+FirstNameTextField.getText()+" "+LastNameTextField.getText());
+	//Close and hide the window
+        this.setVisible(false);	
         con.close();
     } catch (SQLException ex) {
         Logger.getLogger(MainGUIInterface.class.getName()).log(Level.SEVERE, null, ex);
     }
     }//GEN-LAST:event_EnterButtonActionPerformed
 
-    
+    //Returns when any other fields are empty
     private boolean anyFieldsEmpty(){
         boolean firstNameEmpty = FirstNameTextField.getText().trim().equals("");
        boolean lastNameEmpty = LastNameTextField.getText().trim().equals("");

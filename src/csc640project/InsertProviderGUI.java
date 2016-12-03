@@ -237,9 +237,7 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
         java.util.Calendar date = java.util.GregorianCalendar.getInstance();
         long time = date.getTimeInMillis();
        String sql = "INSERT INTO Provider(ProviderID,ProviderFirstName,ProviderLastName,ProviderStreet,ProviderCity,ProviderState,ProviderZipCode,Specialization,StatusID,CreateDate,ModifiedDate) " +   "VALUES(?,?,?,?,?,?,?,?,?,?,?)";
-       System.out.println(sql);
        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-       System.out.println(formatter.format(Calendar.getInstance().getTime()));
        PreparedStatement prest = con.prepareStatement(sql);
        int newID = 900000000+getProviderCount();
        int count = 0;

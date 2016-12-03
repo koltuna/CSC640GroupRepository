@@ -44,8 +44,8 @@ public class UpdateProviderGUI extends javax.swing.JFrame {
         MainPanel = new javax.swing.JPanel();
         ProviderIDChoice = new java.awt.Choice();
         ProviderIDLabel = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        FirstNameLabel = new javax.swing.JLabel();
+        LastNameLabel = new javax.swing.JLabel();
         FirstNameTextField = new javax.swing.JTextField();
         LastNameTextField = new javax.swing.JTextField();
         StreetField = new javax.swing.JTextField();
@@ -56,9 +56,9 @@ public class UpdateProviderGUI extends javax.swing.JFrame {
         StateLabel = new javax.swing.JLabel();
         StateField = new javax.swing.JTextField();
         ZipCodeField = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
+        SpecializationLabel = new javax.swing.JLabel();
         SpecializationField = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
+        StatusLabel = new javax.swing.JLabel();
         StatusChoice = new java.awt.Choice();
         UpdateButton = new javax.swing.JButton();
 
@@ -68,9 +68,9 @@ public class UpdateProviderGUI extends javax.swing.JFrame {
 
         ProviderIDLabel.setText("ProviderID");
 
-        jLabel1.setText("First Name");
+        FirstNameLabel.setText("First Name");
 
-        jLabel2.setText("Last Name");
+        LastNameLabel.setText("Last Name");
 
         StreetLabel.setText("Street");
 
@@ -80,9 +80,9 @@ public class UpdateProviderGUI extends javax.swing.JFrame {
 
         StateLabel.setText("State");
 
-        jLabel3.setText("Specialization");
+        SpecializationLabel.setText("Specialization");
 
-        jLabel4.setText("Status");
+        StatusLabel.setText("Status");
 
         StatusChoice.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
@@ -115,18 +115,18 @@ public class UpdateProviderGUI extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MainPanelLayout.createSequentialGroup()
                         .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, MainPanelLayout.createSequentialGroup()
-                                .addComponent(jLabel1)
+                                .addComponent(FirstNameLabel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(FirstNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, MainPanelLayout.createSequentialGroup()
                                 .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2)
+                                    .addComponent(LastNameLabel)
                                     .addComponent(StreetLabel)
                                     .addComponent(CityLabel)
                                     .addComponent(StateLabel)
                                     .addComponent(ZipCodeLabel)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel4))
+                                    .addComponent(SpecializationLabel)
+                                    .addComponent(StatusLabel))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(StreetField)
@@ -147,11 +147,11 @@ public class UpdateProviderGUI extends javax.swing.JFrame {
                     .addComponent(ProviderIDChoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
+                    .addComponent(FirstNameLabel)
                     .addComponent(FirstNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
+                    .addComponent(LastNameLabel)
                     .addComponent(LastNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -174,12 +174,12 @@ public class UpdateProviderGUI extends javax.swing.JFrame {
                         .addComponent(ZipCodeField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
+                    .addComponent(SpecializationLabel)
                     .addComponent(SpecializationField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(StatusChoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
+                    .addComponent(StatusLabel))
                 .addGap(18, 18, 18)
                 .addComponent(UpdateButton)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -199,6 +199,7 @@ public class UpdateProviderGUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //Update the first name
      private void UpdateFirstName() {                                             
         // TODO add your handling code here:
         try {
@@ -213,7 +214,7 @@ public class UpdateProviderGUI extends javax.swing.JFrame {
         Logger.getLogger(MainGUIInterface.class.getName()).log(Level.SEVERE, null, ex);
     }
     }
-     
+     //Update the last name
      private void UpdateLastName() {                                             
         // TODO add your handling code here:
         try {
@@ -229,6 +230,7 @@ public class UpdateProviderGUI extends javax.swing.JFrame {
     }
     }
      
+     //Update the street in the system 
      private void UpdateStreet() {                                             
         // TODO add your handling code here:
         try {
@@ -243,7 +245,7 @@ public class UpdateProviderGUI extends javax.swing.JFrame {
         Logger.getLogger(MainGUIInterface.class.getName()).log(Level.SEVERE, null, ex);
     }
     }
-     
+     //Update the city
      private void UpdateCity() {                                             
         // TODO add your handling code here:
         try {
@@ -259,6 +261,7 @@ public class UpdateProviderGUI extends javax.swing.JFrame {
     }
     }
      
+     //Update the state
      private void UpdateState() {                                             
         // TODO add your handling code here:
         try {
@@ -274,6 +277,7 @@ public class UpdateProviderGUI extends javax.swing.JFrame {
     }
     }
      
+     //Update the zip code
      private void UpdateZipCode() {                                             
         // TODO add your handling code here:
         try {
@@ -288,6 +292,8 @@ public class UpdateProviderGUI extends javax.swing.JFrame {
         Logger.getLogger(MainGUIInterface.class.getName()).log(Level.SEVERE, null, ex);
     }
     }
+     
+     //Update the specialization
      private void UpdateSpecialization() {                                             
         // TODO add your handling code here:
         try {
@@ -303,6 +309,7 @@ public class UpdateProviderGUI extends javax.swing.JFrame {
     }
     }
      
+     //Update the status
      private void UpdateStatus() {                                             
         // TODO add your handling code here:
         try {
@@ -317,8 +324,10 @@ public class UpdateProviderGUI extends javax.swing.JFrame {
         Logger.getLogger(MainGUIInterface.class.getName()).log(Level.SEVERE, null, ex);
     }
     }
+     //Execution of update button
     private void UpdateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateButtonActionPerformed
         // TODO add your handling code here:
+        //Update where fields are filled
          if(!FirstNameTextField.getText().trim().equals(""))
        UpdateFirstName();
        if(!LastNameTextField.getText().trim().equals(""))
@@ -335,27 +344,25 @@ public class UpdateProviderGUI extends javax.swing.JFrame {
        UpdateSpecialization();
       if(statusChanged)
         UpdateStatus();
+      //Close and hide the window
 	this.setVisible(false);
     
     }//GEN-LAST:event_UpdateButtonActionPerformed
-
+          //Indicated the status button has changed
     private void StatusChoiceItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_StatusChoiceItemStateChanged
         // TODO add your handling code here:
         statusChanged = true;
     }//GEN-LAST:event_StatusChoiceItemStateChanged
 
+    //Locate the corresponding status id
     private int getStatusID(){
-        
+        //Search the Status table
         try {
-        
         Connection con = DriverManager.getConnection(connectionUrl);
-        
-        Statement statement = con.createStatement();
        String query = "SELECT * FROM Status Where StatusDesc = ?";
        PreparedStatement prest = con.prepareStatement(query);
        prest.setString(1,StatusChoice.getSelectedItem());
        ResultSet resultSet = prest.executeQuery();
-       
 	while(resultSet.next()){
 	return resultSet.getInt("StatusID");
 	 }
@@ -364,14 +371,14 @@ public class UpdateProviderGUI extends javax.swing.JFrame {
     } catch (SQLException ex) {
         Logger.getLogger(MainGUIInterface.class.getName()).log(Level.SEVERE, null, ex);
     }
+      //If id cannot be found, return -1
       return -1;
     }
+    //Setup the provider menu
      private void setUpProviderMenu(){
-        
+        //Get the list of Provider IDs and list them
         try {
-        
         Connection con = DriverManager.getConnection(connectionUrl);
-        
         Statement statement = con.createStatement();
        String query = "SELECT * FROM Provider";
        ResultSet resultSet = statement.executeQuery(query);
@@ -385,7 +392,7 @@ public class UpdateProviderGUI extends javax.swing.JFrame {
     }
    
     }
-     
+     //Add the different status states to the menu
       private void setUpStatusMenu(){
         StatusChoice.add("Active");
         StatusChoice.add("Suspended");
@@ -430,23 +437,23 @@ public class UpdateProviderGUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField CityField;
     private javax.swing.JLabel CityLabel;
+    private javax.swing.JLabel FirstNameLabel;
     private javax.swing.JTextField FirstNameTextField;
+    private javax.swing.JLabel LastNameLabel;
     private javax.swing.JTextField LastNameTextField;
     private javax.swing.JPanel MainPanel;
     private java.awt.Choice ProviderIDChoice;
     private javax.swing.JLabel ProviderIDLabel;
     private javax.swing.JTextField SpecializationField;
+    private javax.swing.JLabel SpecializationLabel;
     private javax.swing.JTextField StateField;
     private javax.swing.JLabel StateLabel;
     private java.awt.Choice StatusChoice;
+    private javax.swing.JLabel StatusLabel;
     private javax.swing.JTextField StreetField;
     private javax.swing.JLabel StreetLabel;
     private javax.swing.JButton UpdateButton;
     private javax.swing.JTextField ZipCodeField;
     private javax.swing.JLabel ZipCodeLabel;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     // End of variables declaration//GEN-END:variables
 }

@@ -25,21 +25,6 @@ import javax.swing.JFrame;
 public class CSC640Project {
 
 //Main class for execution of project
-
-    //This is a group project simulating ChocAn for CSC640(Software Engineering) at Carroll University
-
-
-
-    //This is a group project simulating ChocAn for the Software Engineering Class
-
-
-
-    
-
-    //This is going to be a valuable learning experience
-
-
-
     /**
 
      * @param args the command line arguments
@@ -51,7 +36,6 @@ public class CSC640Project {
         // TODO code application logic here
 
        //This calls the main method of MainGUIInterface 
-
         MainGUIInterface gui = new MainGUIInterface();
         gui.setVisible(true);
         gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

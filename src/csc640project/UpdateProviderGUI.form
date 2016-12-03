@@ -214,6 +214,9 @@
           </Properties>
         </Component>
         <Component class="java.awt.Choice" name="StatusChoice">
+          <Events>
+            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="StatusChoiceItemStateChanged"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="UpdateButton">
           <Properties>

@@ -21,7 +21,7 @@ import java.util.logging.Logger;
 public class UpdateProviderGUI extends javax.swing.JFrame {
     private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +  
 					   "databaseName=csc550_fall2015_akoltun;user=csc550_fall2015_akoltun;password=480772;";
-
+     private boolean statusChanged = false;
 
     /**
      * Creates new form UpdateProviderGUI
@@ -83,6 +83,12 @@ public class UpdateProviderGUI extends javax.swing.JFrame {
         jLabel3.setText("Specialization");
 
         jLabel4.setText("Status");
+
+        StatusChoice.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                StatusChoiceItemStateChanged(evt);
+            }
+        });
 
         UpdateButton.setText("Update");
         UpdateButton.addActionListener(new java.awt.event.ActionListener() {
@@ -193,32 +199,150 @@ public class UpdateProviderGUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void UpdateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateButtonActionPerformed
+     private void UpdateFirstName() {                                             
         // TODO add your handling code here:
         try {
-    
         Connection con = DriverManager.getConnection(connectionUrl);
-        
-        Statement statement = con.createStatement();
-       String sql = "Update Provider Set ProviderFirstName = ?, ProviderLastName = ?, ProviderStreet = ?, ProviderCity = ?, ProviderState = ?, ProviderZipCode = ?, Specialization = ?, StatusID = ? Where ProviderID = ?";
-       System.out.println(sql);
+       String sql = "Update Provider Set ProviderFirstName = ? Where ProviderID = ?";
        PreparedStatement prest = con.prepareStatement(sql);  
        prest.setString(1, FirstNameTextField.getText());
-       prest.setString(2,LastNameTextField.getText());
-       prest.setString(3,StreetField.getText());
-       prest.setString(4,CityField.getText());
-       prest.setString(5,StateField.getText());
-       prest.setString(6,ZipCodeField.getText());
-        prest.setString(7,SpecializationField.getText());
-       prest.setInt(8,getStatusID());
-       prest.setInt(9,Integer.parseInt(ProviderIDChoice.getSelectedItem())) ;
+       prest.setInt(2,Integer.parseInt(ProviderIDChoice.getSelectedItem())) ;
        prest.executeUpdate();
        con.close();
-	this.setVisible(false);
     } catch (SQLException ex) {
         Logger.getLogger(MainGUIInterface.class.getName()).log(Level.SEVERE, null, ex);
     }
+    }
+     
+     private void UpdateLastName() {                                             
+        // TODO add your handling code here:
+        try {
+        Connection con = DriverManager.getConnection(connectionUrl);
+       String sql = "Update Provider Set ProviderLastName = ? Where ProviderID = ?";
+       PreparedStatement prest = con.prepareStatement(sql);  
+       prest.setString(1, LastNameTextField.getText());
+       prest.setInt(2,Integer.parseInt(ProviderIDChoice.getSelectedItem())) ;
+       prest.executeUpdate();
+       con.close();
+    } catch (SQLException ex) {
+        Logger.getLogger(MainGUIInterface.class.getName()).log(Level.SEVERE, null, ex);
+    }
+    }
+     
+     private void UpdateStreet() {                                             
+        // TODO add your handling code here:
+        try {
+        Connection con = DriverManager.getConnection(connectionUrl);
+       String sql = "Update Provider Set ProviderStreet = ? Where ProviderID = ?";
+       PreparedStatement prest = con.prepareStatement(sql);  
+       prest.setString(1, StreetField.getText());
+       prest.setInt(2,Integer.parseInt(ProviderIDChoice.getSelectedItem())) ;
+       prest.executeUpdate();
+       con.close();
+    } catch (SQLException ex) {
+        Logger.getLogger(MainGUIInterface.class.getName()).log(Level.SEVERE, null, ex);
+    }
+    }
+     
+     private void UpdateCity() {                                             
+        // TODO add your handling code here:
+        try {
+        Connection con = DriverManager.getConnection(connectionUrl);
+       String sql = "Update Provider Set ProviderCity = ? Where ProviderID = ?";
+       PreparedStatement prest = con.prepareStatement(sql);  
+       prest.setString(1, CityField.getText());
+       prest.setInt(2,Integer.parseInt(ProviderIDChoice.getSelectedItem())) ;
+       prest.executeUpdate();
+       con.close();
+    } catch (SQLException ex) {
+        Logger.getLogger(MainGUIInterface.class.getName()).log(Level.SEVERE, null, ex);
+    }
+    }
+     
+     private void UpdateState() {                                             
+        // TODO add your handling code here:
+        try {
+        Connection con = DriverManager.getConnection(connectionUrl);
+       String sql = "Update Provider Set ProviderState = ? Where ProviderID = ?";
+       PreparedStatement prest = con.prepareStatement(sql);  
+       prest.setString(1, StateField.getText());
+       prest.setInt(2,Integer.parseInt(ProviderIDChoice.getSelectedItem())) ;
+       prest.executeUpdate();
+       con.close();
+    } catch (SQLException ex) {
+        Logger.getLogger(MainGUIInterface.class.getName()).log(Level.SEVERE, null, ex);
+    }
+    }
+     
+     private void UpdateZipCode() {                                             
+        // TODO add your handling code here:
+        try {
+        Connection con = DriverManager.getConnection(connectionUrl);
+       String sql = "Update Provider Set ProviderZipCode = ? Where ProviderID = ?";
+       PreparedStatement prest = con.prepareStatement(sql);  
+       prest.setString(1, ZipCodeField.getText());
+       prest.setInt(2,Integer.parseInt(ProviderIDChoice.getSelectedItem())) ;
+       prest.executeUpdate();
+       con.close();
+    } catch (SQLException ex) {
+        Logger.getLogger(MainGUIInterface.class.getName()).log(Level.SEVERE, null, ex);
+    }
+    }
+     private void UpdateSpecialization() {                                             
+        // TODO add your handling code here:
+        try {
+        Connection con = DriverManager.getConnection(connectionUrl);
+       String sql = "Update Provider Set Specialization = ? Where ProviderID = ?";
+       PreparedStatement prest = con.prepareStatement(sql);  
+       prest.setString(1, SpecializationField.getText());
+       prest.setInt(2,Integer.parseInt(ProviderIDChoice.getSelectedItem())) ;
+       prest.executeUpdate();
+       con.close();
+    } catch (SQLException ex) {
+        Logger.getLogger(MainGUIInterface.class.getName()).log(Level.SEVERE, null, ex);
+    }
+    }
+     
+     private void UpdateStatus() {                                             
+        // TODO add your handling code here:
+        try {
+        Connection con = DriverManager.getConnection(connectionUrl);
+       String sql = "Update Provider Set StatusID = ? Where ProviderID = ?";
+       PreparedStatement prest = con.prepareStatement(sql);  
+       prest.setInt(1, getStatusID());
+       prest.setInt(2,Integer.parseInt(ProviderIDChoice.getSelectedItem())) ;
+       prest.executeUpdate();
+       con.close();
+    } catch (SQLException ex) {
+        Logger.getLogger(MainGUIInterface.class.getName()).log(Level.SEVERE, null, ex);
+    }
+    }
+    private void UpdateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateButtonActionPerformed
+        // TODO add your handling code here:
+         if(!FirstNameTextField.getText().trim().equals(""))
+       UpdateFirstName();
+       if(!LastNameTextField.getText().trim().equals(""))
+       UpdateLastName();
+       if(!StreetField.getText().trim().equals(""))
+       UpdateStreet();
+       if(!CityField.getText().trim().equals(""))
+       UpdateCity();
+       if(!StateField.getText().trim().equals(""))
+       UpdateState();
+       if(!ZipCodeField.getText().trim().equals(""))
+       UpdateZipCode();
+      if(!SpecializationField.getText().trim().equals(""))
+       UpdateSpecialization();
+      if(statusChanged)
+        UpdateStatus();
+	this.setVisible(false);
+    
     }//GEN-LAST:event_UpdateButtonActionPerformed
+
+    private void StatusChoiceItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_StatusChoiceItemStateChanged
+        // TODO add your handling code here:
+        statusChanged = true;
+    }//GEN-LAST:event_StatusChoiceItemStateChanged
 
     private int getStatusID(){
         

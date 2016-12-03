@@ -5,14 +5,7 @@
  */
 package csc640project;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import java.awt.Font;
+
 import javax.swing.JFrame;
 public class MainGUIInterface extends javax.swing.JFrame {
 
@@ -21,7 +14,7 @@ public class MainGUIInterface extends javax.swing.JFrame {
 private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +  
 					   "databaseName=csc550_fall2015_akoltun;user=csc550_fall2015_akoltun;password=480772;";
 //Flag to indicate Interactive Record Mode has been entered
-private boolean interactiveRecordMode=false;
+//private boolean interactiveRecordMode=false;
 
     /**
      * Creates new form MainGUIInterface
@@ -178,57 +171,15 @@ private boolean interactiveRecordMode=false;
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+//Activated when enter button is pressed
     private void EnterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnterButtonActionPerformed
         // TODO add your handling code here:
-    
-        //If interactive record mode has been entered     
-        if(interactiveRecordMode){
-           
-            String input = DataEntryArea.getText();
-            if(!isValidModeSymbol(input))
-                return;
-            CommandDisplayArea.setFont(new Font(null,Font.PLAIN,12));
-             if(input.equalsIgnoreCase("mi"))
-          CommandDisplayArea.setText("Inserting member record");
-      else if (input.equalsIgnoreCase("mu"))
-          CommandDisplayArea.setText("Updating member record");
-      else if (input.equalsIgnoreCase("md"))
-          CommandDisplayArea.setText("Deleting member record");
-      else if (input.equalsIgnoreCase("pi"))
-          CommandDisplayArea.setText("Inserting provider record");
-      else if (input.equalsIgnoreCase("pu"))
-          CommandDisplayArea.setText("Updating provider record");
-      else if (input.equalsIgnoreCase("pd"))
-          CommandDisplayArea.setText("Deleting provider record");
-      else 
-          CommandDisplayArea.setText("");
-            interactiveRecordMode = false;
-        }
-            
-        
     }//GEN-LAST:event_EnterButtonActionPerformed
-
+//Activated when Login button is pressed
     private void Login_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Login_ButtonActionPerformed
     //This text will be replaced, but I wanted to test out SQL Connection
-        try {
-        
-        Connection con = DriverManager.getConnection(connectionUrl);
-        DataEntryArea.setText(DataEntryArea.getText()+"\nSuccess");
-        Statement statement = con.createStatement();
-       String query = "SELECT * FROM Task";
-       ResultSet resultSet = statement.executeQuery(query);
-	while(resultSet.next()){
-	DataEntryArea.setText(DataEntryArea.getText()+"\n"+resultSet.getString("Status"));
-	 }
-	con.close();
-			
-    } catch (SQLException ex) {
-        Logger.getLogger(MainGUIInterface.class.getName()).log(Level.SEVERE, null, ex);
-    }
-        
     }//GEN-LAST:event_Login_ButtonActionPerformed
-
+   //Activated when Look Up Service Code button is pressed
     private void Look_Up_Service_CodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Look_Up_Service_CodeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Look_Up_Service_CodeActionPerformed
@@ -238,7 +189,8 @@ private boolean interactiveRecordMode=false;
         //String asking for which option they want to select and is displayed on the top text area
        
        //Found default code at https://docs.oracle.com/javase/8/docs/api/javax/swing/JFrame.html#setDefaultCloseOperation-int-
-      InteractiveRecordMode InteractiveGUI = new InteractiveRecordMode();
+      //Create and show interactive GUI
+       InteractiveRecordMode InteractiveGUI = new InteractiveRecordMode();
       InteractiveGUI.setVisible(true);
       InteractiveGUI.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
        
@@ -251,19 +203,17 @@ private boolean interactiveRecordMode=false;
     private void DataEntryAreaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_DataEntryAreaKeyTyped
         // TODO add your handling code here:
     }//GEN-LAST:event_DataEntryAreaKeyTyped
-
+//Activated when Calculate Weekly Fees button is pressed
     private void Calculate_Weekly_Fees_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Calculate_Weekly_Fees_ButtonActionPerformed
         // TODO add your handling code here:
          //Found default code at https://docs.oracle.com/javase/8/docs/api/javax/swing/JFrame.html#setDefaultCloseOperation-int-
-      CalculateWeeklyFeeGUI weeklyFeeGUI = new CalculateWeeklyFeeGUI();
+     //Create and display CalculateWeeklyFeeGUI
+         CalculateWeeklyFeeGUI weeklyFeeGUI = new CalculateWeeklyFeeGUI();
       weeklyFeeGUI.setVisible(true);
+      //Close only on when x button is clicked
      weeklyFeeGUI.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
     }//GEN-LAST:event_Calculate_Weekly_Fees_ButtonActionPerformed
 
-    private boolean isValidModeSymbol(String symbol){
-        String str = symbol.trim();
-        return str.equalsIgnoreCase("mi")||str.equalsIgnoreCase("mu")||str.equalsIgnoreCase("md")||str.equalsIgnoreCase("pi")||str.equalsIgnoreCase("pu")||str.equalsIgnoreCase("pd");
-    }
     /**
      * @param args the command line arguments
      */

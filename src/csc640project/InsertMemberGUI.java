@@ -278,20 +278,8 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
         for(int month=1;month<=12;month++){
             MonthChoice.add(""+month);
         }
-        //Set the max day
-        int currentMonth = Integer.parseInt(MonthChoice.getSelectedItem());
-        int currentYear = Integer.parseInt(YearChoice.getSelectedItem());
-        int maxDay = 0;
-        if(currentMonth==2&&currentYear%4==0)
-            maxDay=29;
-        else if(currentMonth==2&&currentYear%4!=0)
-            maxDay=28;
-        else if(currentMonth==4||currentMonth==6||currentMonth==9||currentMonth==11)
-            maxDay=30;
-        else
-            maxDay=31;
-        
-        for(int day=1;day<=maxDay;day++)
+       
+        for(int day=1;day<=31;day++)
             DayChoice.add(""+day);
     }
     
@@ -315,10 +303,6 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
         try {
     
         Connection con = DriverManager.getConnection(connectionUrl);
-        
-        Statement statement = con.createStatement();
-        java.util.Calendar date = java.util.GregorianCalendar.getInstance();
-        long time = date.getTimeInMillis();
        String sql = "INSERT INTO Member(MemberID,MemberFirstName,MemberLastName,MemberDOB,Street,City,State,Country,ZipCode,StatusID,CreatedDate,ModifiedDate) " +   "VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
        PreparedStatement prest = con.prepareStatement(sql);

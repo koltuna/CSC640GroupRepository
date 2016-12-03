@@ -48,13 +48,13 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="StreetLabel" min="-2" max="-2" attributes="0"/>
+                              <Component id="CityLabel" min="-2" max="-2" attributes="0"/>
+                              <Component id="CountryLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="ZipCodeLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="StatusLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="StateLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                              <Component id="DOBLabel" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Group type="102" attributes="0">
@@ -88,7 +88,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="FirstNameLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="LastNameLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="MemberIDLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
@@ -123,7 +123,7 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      <Component id="LastNameLabel" min="-2" max="-2" attributes="0"/>
                       <Component id="LastNameTextField" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
@@ -136,18 +136,18 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                              <Component id="DOBLabel" min="-2" max="-2" attributes="0"/>
                               <Component id="DayChoice" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="YearChoice" alignment="1" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                              <Component id="StreetLabel" min="-2" max="-2" attributes="0"/>
                               <Component id="StreetField" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                              <Component id="CityLabel" min="-2" max="-2" attributes="0"/>
                               <Component id="CityField" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="7" max="32767" attributes="0"/>
@@ -157,12 +157,12 @@
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                              <Component id="CountryLabel" min="-2" max="-2" attributes="0"/>
                               <Component id="CountryField" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="ZipCodeLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="ZipCodeField" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
@@ -172,7 +172,7 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="UpdateButton" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                              <Component id="StatusLabel" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" attributes="0">
@@ -200,39 +200,39 @@
         </Component>
         <Component class="javax.swing.JTextField" name="FirstNameTextField">
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel1">
+        <Component class="javax.swing.JLabel" name="LastNameLabel">
           <Properties>
             <Property name="text" type="java.lang.String" value="Last Name"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="LastNameTextField">
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel2">
+        <Component class="javax.swing.JLabel" name="DOBLabel">
           <Properties>
             <Property name="text" type="java.lang.String" value="Date of Birth"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel3">
+        <Component class="javax.swing.JLabel" name="StreetLabel">
           <Properties>
             <Property name="text" type="java.lang.String" value="Street"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel4">
+        <Component class="javax.swing.JLabel" name="CityLabel">
           <Properties>
             <Property name="text" type="java.lang.String" value="City"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel5">
+        <Component class="javax.swing.JLabel" name="CountryLabel">
           <Properties>
             <Property name="text" type="java.lang.String" value="Country"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel6">
+        <Component class="javax.swing.JLabel" name="ZipCodeLabel">
           <Properties>
             <Property name="text" type="java.lang.String" value="Zip Code"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel7">
+        <Component class="javax.swing.JLabel" name="StatusLabel">
           <Properties>
             <Property name="text" type="java.lang.String" value="Status"/>
           </Properties>

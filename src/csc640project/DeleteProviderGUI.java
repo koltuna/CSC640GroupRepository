@@ -29,12 +29,11 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
         setUpMenu();
     }
 
+    //Setup the menu of provider ids
     private void setUpMenu(){
-        
+        //Select from the Provider table and populate
         try {
-        
-        Connection con = DriverManager.getConnection(connectionUrl);
-        
+        Connection con = DriverManager.getConnection(connectionUrl); 
         Statement statement = con.createStatement();
        String query = "SELECT * FROM Provider";
        ResultSet resultSet = statement.executeQuery(query);
@@ -114,13 +113,11 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+//Activated when deleted button is pressed
     private void DeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteButtonActionPerformed
         // TODO add your handling code here:
          try {
-        
         Connection con = DriverManager.getConnection(connectionUrl);
-        
         Statement statement = con.createStatement();
        String sql = "Delete FROM Provider WHERE ProviderID = "+ProviderChoice.getSelectedItem();
        statement.executeUpdate(sql);
@@ -130,6 +127,7 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
     } catch (SQLException ex) {
         Logger.getLogger(MainGUIInterface.class.getName()).log(Level.SEVERE, null, ex);
     }
+         //Close and hide the window
          this.setVisible(false);
     }//GEN-LAST:event_DeleteButtonActionPerformed
 

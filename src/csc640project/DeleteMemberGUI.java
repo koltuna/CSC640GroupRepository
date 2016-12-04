@@ -99,17 +99,15 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+//Execution of when the delete button is clicked
     private void DeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteButtonActionPerformed
         // TODO add your handling code here:
+        //Delete the member with the given member id
         try {
-        
         Connection con = DriverManager.getConnection(connectionUrl);
-        
         Statement statement = con.createStatement();
        String sql = "Delete FROM Member WHERE MemberID = "+MemberChoice.getSelectedItem();
        statement.executeUpdate(sql);
-	
 	con.close();
         this.setVisible(false);
 			
@@ -118,13 +116,12 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
     }
     
     }//GEN-LAST:event_DeleteButtonActionPerformed
-
+       
+    //Set up the menu with the different member ids
      private void setUpMenu(){
-        
+         //Add members with select ids
         try {
-        
         Connection con = DriverManager.getConnection(connectionUrl);
-        
         Statement statement = con.createStatement();
        String query = "SELECT * FROM Member";
        ResultSet resultSet = statement.executeQuery(query);
@@ -132,6 +129,7 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
 	MemberChoice.add(resultSet.getString("MemberID"));
 	 }
 	con.close();
+        //Close and hide the window
        this.setVisible(false);
     } catch (SQLException ex) {
         Logger.getLogger(MainGUIInterface.class.getName()).log(Level.SEVERE, null, ex);

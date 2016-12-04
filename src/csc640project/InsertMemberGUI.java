@@ -14,7 +14,6 @@ import java.text.SimpleDateFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.Calendar;
-import java.util.GregorianCalendar;
 import javax.swing.JOptionPane;
 
 /**
@@ -32,7 +31,7 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
      */
     public InsertMemberGUI() {
         initComponents();
-        
+        setUpDateMenu();
     }
 
     /**
@@ -44,13 +43,12 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        dayChoice = new javax.swing.JPanel();
         FirstNameTextField = new javax.swing.JTextField();
         EnterButton = new javax.swing.JButton();
         LastNameTextField = new javax.swing.JTextField();
         FirstNameLabel = new javax.swing.JLabel();
         LastNameLabel = new javax.swing.JLabel();
-        DOBField = new javax.swing.JTextField();
         DOBLabel = new javax.swing.JLabel();
         StreetField = new javax.swing.JTextField();
         StreetLabel = new javax.swing.JLabel();
@@ -62,10 +60,16 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
         CountryLabel = new javax.swing.JLabel();
         StateField = new javax.swing.JTextField();
         CountryField = new javax.swing.JTextField();
+        YearChoice = new java.awt.Choice();
+        YearLabel = new javax.swing.JLabel();
+        MonthLabel = new javax.swing.JLabel();
+        MonthChoice = new java.awt.Choice();
+        DayLabel = new javax.swing.JLabel();
+        DayChoice = new java.awt.Choice();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(166, 83, 0));
+        dayChoice.setBackground(new java.awt.Color(166, 83, 0));
 
         EnterButton.setText("Enter");
         EnterButton.addActionListener(new java.awt.event.ActionListener() {
@@ -78,7 +82,7 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
 
         LastNameLabel.setText("Last Name");
 
-        DOBLabel.setText("Date of Birth (yyyy-mm-dd)");
+        DOBLabel.setText("Date of Birth ");
 
         StreetLabel.setText("Street");
 
@@ -90,13 +94,31 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
 
         CountryLabel.setText("Country");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        YearChoice.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                YearChoiceItemStateChanged(evt);
+            }
+        });
+
+        YearLabel.setText("year");
+
+        MonthLabel.setText("Month");
+
+        MonthChoice.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                MonthChoiceItemStateChanged(evt);
+            }
+        });
+
+        DayLabel.setText("Day");
+
+        javax.swing.GroupLayout dayChoiceLayout = new javax.swing.GroupLayout(dayChoice);
+        dayChoice.setLayout(dayChoiceLayout);
+        dayChoiceLayout.setHorizontalGroup(
+            dayChoiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(dayChoiceLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(dayChoiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(FirstNameLabel)
                     .addComponent(LastNameLabel)
                     .addComponent(DOBLabel)
@@ -105,51 +127,72 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
                     .addComponent(ZipCodeLabel)
                     .addComponent(StateLabel)
                     .addComponent(CountryLabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(EnterButton)
-                        .addContainerGap(170, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(CountryField, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(CityField)
-                            .addComponent(StreetField, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(DOBField)
-                            .addComponent(FirstNameTextField, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(LastNameTextField, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ZipCodeField)
-                            .addComponent(StateField, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addGap(51, 51, 51))))
+                .addGroup(dayChoiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(dayChoiceLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(dayChoiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(dayChoiceLayout.createSequentialGroup()
+                                .addComponent(EnterButton)
+                                .addContainerGap(238, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dayChoiceLayout.createSequentialGroup()
+                                .addGroup(dayChoiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(CountryField, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(CityField)
+                                    .addComponent(StreetField, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(FirstNameTextField, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(LastNameTextField, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(ZipCodeField)
+                                    .addComponent(StateField, javax.swing.GroupLayout.Alignment.LEADING))
+                                .addGap(51, 51, 51))))
+                    .addGroup(dayChoiceLayout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(YearLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(YearChoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(MonthLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(MonthChoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(1, 1, 1)
+                        .addComponent(DayLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(DayChoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        dayChoiceLayout.setVerticalGroup(
+            dayChoiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(dayChoiceLayout.createSequentialGroup()
                 .addGap(69, 69, 69)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(dayChoiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(dayChoiceLayout.createSequentialGroup()
                         .addComponent(StateLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(CountryLabel)
                         .addGap(10, 10, 10))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(dayChoiceLayout.createSequentialGroup()
+                        .addGroup(dayChoiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(FirstNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(FirstNameLabel))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(dayChoiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(LastNameLabel)
                             .addComponent(LastNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(dayChoiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(dayChoiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(DOBLabel)
+                                .addComponent(YearLabel))
+                            .addComponent(YearChoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(MonthLabel)
+                            .addComponent(MonthChoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(DayChoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(DayLabel))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(DOBField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(DOBLabel))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(dayChoiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(StreetField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(StreetLabel))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(dayChoiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(CityField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(StreetLabel1))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -157,10 +200,10 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(CountryField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(3, 3, 3)))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(dayChoiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(ZipCodeLabel)
                     .addComponent(ZipCodeField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                 .addComponent(EnterButton)
                 .addGap(19, 19, 19))
         );
@@ -171,29 +214,29 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 375, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(dayChoice, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 374, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(dayChoice, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //Check to see whether a member with the given id exists
     private boolean idExists(int id){
-        
+        //Check Member table
         try {
-        
         Connection con = DriverManager.getConnection(connectionUrl);
-        
         Statement statement = con.createStatement();
        String query = "SELECT * FROM Member";
        ResultSet resultSet = statement.executeQuery(query);
 	while(resultSet.next()){
 	int rowID = resultSet.getInt("MemberID");
+        //Return true when you find the appropriate id
         if(rowID==id)
             return true;
 	 }
@@ -202,15 +245,17 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
     } catch (SQLException ex) {
         Logger.getLogger(MainGUIInterface.class.getName()).log(Level.SEVERE, null, ex);
     }
+    //Return false if the given id was found
    return false;
     }
     
+    //Find the given member
     private int getMemberCount(){
-        int count=-1;   
+        //Initialize count
+        int count=0;  
+        //Search the Member table and count
         try {
-        count=0;
         Connection con = DriverManager.getConnection(connectionUrl);
-        
         Statement statement = con.createStatement();
        String query = "SELECT * FROM Member";
        ResultSet resultSet = statement.executeQuery(query);
@@ -224,31 +269,60 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
     }
    return count;
     }
+    //Setup the date menu
+    private void setUpDateMenu(){
+        //Set up the years
+        for(int year=1900;year<=2010;year++){
+            YearChoice.add(""+year);
+        }
+        //Set up the months
+        for(int month=1;month<=12;month++){
+            MonthChoice.add(""+month);
+        }
+       //Add the days
+        for(int day=1;day<=31;day++)
+            DayChoice.add(""+day);
+    }
+    //Check if any fields are empty
+    private boolean anyFieldsEmpty(){
+        boolean firstNameEmpty = FirstNameTextField.getText().trim().equals("");
+       boolean lastNameEmpty = LastNameTextField.getText().trim().equals("");
+       boolean streetEmpty = StreetField.getText().trim().equals("");
+       boolean cityEmpty = CityField.getText().trim().equals("");
+       boolean stateEmpty = StateField.getText().trim().equals("");
+       boolean countryEmpty = CountryField.getText().trim().equals("");
+       boolean zipCodeEmpty = ZipCodeField.getText().trim().equals("");
+       return firstNameEmpty||lastNameEmpty||streetEmpty||cityEmpty||stateEmpty||countryEmpty||zipCodeEmpty;
+    }
     
+    //What happens when enter button is entered
     private void EnterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnterButtonActionPerformed
         // TODO add your handling code here:
+        //If any fields are empty, alert user
+        if(anyFieldsEmpty()){
+            JOptionPane.showMessageDialog(null, "Need to complete all fields");
+            return;
+        }
         try {
-    
         Connection con = DriverManager.getConnection(connectionUrl);
-        
-        Statement statement = con.createStatement();
-        java.util.Calendar date = java.util.GregorianCalendar.getInstance();
-        long time = date.getTimeInMillis();
        String sql = "INSERT INTO Member(MemberID,MemberFirstName,MemberLastName,MemberDOB,Street,City,State,Country,ZipCode,StatusID,CreatedDate,ModifiedDate) " +   "VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
-       System.out.println(sql);
        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-       System.out.println(formatter.format(Calendar.getInstance().getTime()));
        PreparedStatement prest = con.prepareStatement(sql);
+       //Create a new id
        int newID = 700000000+getMemberCount();
        int count = 0;
+       //Look for new id if it conflicts with an already existing id 
        while(idExists(newID)){
            count++;
            newID = 700000000+getMemberCount()+count;
        }
+       //Add the fields
        prest.setInt(1, newID);
        prest.setString(2, FirstNameTextField.getText());
        prest.setString(3,LastNameTextField.getText());
-       prest.setString(4, DOBField.getText());
+       //Construct date string based on menu selections
+       String dateString = YearChoice.getSelectedItem()+"-"+MonthChoice.getSelectedItem()+"-"+DayChoice.getSelectedItem();
+       prest.setString(4, dateString);
        prest.setString(5,StreetField.getText());
        prest.setString(6,CityField.getText());
        prest.setString(7,StateField.getText());
@@ -259,14 +333,58 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
        prest.setDate(12, java.sql.Date.valueOf(formatter.format(Calendar.getInstance().getTime())));
        prest.executeUpdate();
        con.close();
+       //Alert the user a new id has been created
        //Got code from http://stackoverflow.com/questions/9119481/how-to-present-a-simple-alert-message-in-java
        JOptionPane.showMessageDialog(null, "Member# "+newID+": "+FirstNameTextField.getText()+" "+LastNameTextField.getText());
+       //Close and hide the window
        this.setVisible(false);
 			
     } catch (SQLException ex) {
         Logger.getLogger(MainGUIInterface.class.getName()).log(Level.SEVERE, null, ex);
     }
     }//GEN-LAST:event_EnterButtonActionPerformed
+     //What happens when year menu is selected
+    private void YearChoiceItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_YearChoiceItemStateChanged
+        // TODO add your handling code here:
+        //We are resetting
+        DayChoice.removeAll();
+        //Come up with number of days based on month and year
+        int currentMonth = Integer.parseInt(MonthChoice.getSelectedItem());
+        int currentYear = Integer.parseInt(YearChoice.getSelectedItem());
+        int maxDay = 0;
+        if(currentMonth==2&&currentYear%4==0)
+            maxDay=29;
+        else if(currentMonth==2&&currentYear%4!=0)
+            maxDay=28;
+        else if(currentMonth==4||currentMonth==6||currentMonth==9||currentMonth==11)
+            maxDay=30;
+        else
+            maxDay=31;
+        //Add the days
+        for(int day=1;day<=maxDay;day++)
+            DayChoice.add(""+day);
+    }//GEN-LAST:event_YearChoiceItemStateChanged
+     //What happens when the month choice is selected
+    private void MonthChoiceItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_MonthChoiceItemStateChanged
+        // TODO add your handling code here:
+        //We are resetting
+        DayChoice.removeAll();
+        //Choose number of days based on month and year
+         int currentMonth = Integer.parseInt(MonthChoice.getSelectedItem());
+        int currentYear = Integer.parseInt(YearChoice.getSelectedItem());
+        int maxDay = 0;
+        if(currentMonth==2&&currentYear%4==0)
+            maxDay=29;
+        else if(currentMonth==2&&currentYear%4!=0)
+            maxDay=28;
+        else if(currentMonth==4||currentMonth==6||currentMonth==9||currentMonth==11)
+            maxDay=30;
+        else
+            maxDay=31;
+        //Add the days
+        for(int day=1;day<=maxDay;day++)
+            DayChoice.add(""+day);
+    }//GEN-LAST:event_MonthChoiceItemStateChanged
 
     /**
      * @param args the command line arguments
@@ -309,20 +427,25 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
     private javax.swing.JTextField CityField;
     private javax.swing.JTextField CountryField;
     private javax.swing.JLabel CountryLabel;
-    private javax.swing.JTextField DOBField;
     private javax.swing.JLabel DOBLabel;
+    private java.awt.Choice DayChoice;
+    private javax.swing.JLabel DayLabel;
     private javax.swing.JButton EnterButton;
     private javax.swing.JLabel FirstNameLabel;
     private javax.swing.JTextField FirstNameTextField;
     private javax.swing.JLabel LastNameLabel;
     private javax.swing.JTextField LastNameTextField;
+    private java.awt.Choice MonthChoice;
+    private javax.swing.JLabel MonthLabel;
     private javax.swing.JTextField StateField;
     private javax.swing.JLabel StateLabel;
     private javax.swing.JTextField StreetField;
     private javax.swing.JLabel StreetLabel;
     private javax.swing.JLabel StreetLabel1;
+    private java.awt.Choice YearChoice;
+    private javax.swing.JLabel YearLabel;
     private javax.swing.JTextField ZipCodeField;
     private javax.swing.JLabel ZipCodeLabel;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel dayChoice;
     // End of variables declaration//GEN-END:variables
 }

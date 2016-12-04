@@ -13,13 +13,10 @@ import javax.swing.JFrame;
  * @author Alex
  */
 public class InteractiveRecordMode extends javax.swing.JFrame {
-private boolean enterButtonClicked,insertMemberMode;
     /**
      * Creates new form InteractiveRecordMode
      */
     public InteractiveRecordMode() {
-        enterButtonClicked = false;
-        insertMemberMode=false;
         initComponents();
     }
 
@@ -47,6 +44,7 @@ private boolean enterButtonClicked,insertMemberMode;
 
         MainPanel.setBackground(new java.awt.Color(166, 83, 0));
 
+        InsertMemberButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         InsertMemberButton.setText("Insert Member");
         InsertMemberButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -54,6 +52,7 @@ private boolean enterButtonClicked,insertMemberMode;
             }
         });
 
+        InsertProviderButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         InsertProviderButton.setText("Insert Provider");
         InsertProviderButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -99,28 +98,24 @@ private boolean enterButtonClicked,insertMemberMode;
             MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MainPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(MainPanelLayout.createSequentialGroup()
-                        .addComponent(DeleteMemberButton, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(DeleteProviderButton, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(MainPanelLayout.createSequentialGroup()
-                        .addComponent(InsertMemberButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(InsertProviderButton, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(MainPanelLayout.createSequentialGroup()
-                        .addComponent(UpdateMemberButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(UpdateProviderButton)))
+                .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(DeleteMemberButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(UpdateMemberButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(InsertMemberButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(10, 10, 10)
+                .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(InsertProviderButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(UpdateProviderButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(DeleteProviderButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(23, Short.MAX_VALUE))
         );
         MainPanelLayout.setVerticalGroup(
             MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MainPanelLayout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(InsertMemberButton)
-                    .addComponent(InsertProviderButton))
+                .addContainerGap()
+                .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(InsertProviderButton, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+                    .addComponent(InsertMemberButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(UpdateMemberButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -145,44 +140,51 @@ private boolean enterButtonClicked,insertMemberMode;
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+//Activated when insert member button is pressed
     private void InsertMemberButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InsertMemberButtonActionPerformed
         // TODO add your handling code here:
+        //Create and display Insert Member GUI
        InsertMemberGUI insertMemberGUI = new InsertMemberGUI();
        insertMemberGUI.setVisible(true);
+       //Closes only when x button is hit
        insertMemberGUI.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
     }//GEN-LAST:event_InsertMemberButtonActionPerformed
-
+    //Activated when insert provider button is pressed
     private void InsertProviderButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InsertProviderButtonActionPerformed
         // TODO add your handling code here:
+        //Create and display Insert Provider GUI
         InsertProviderGUI insertProviderGUI = new InsertProviderGUI();
        insertProviderGUI.setVisible(true);
        insertProviderGUI.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
     }//GEN-LAST:event_InsertProviderButtonActionPerformed
-
+//Activated when delete member button is pressed
     private void DeleteMemberButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteMemberButtonActionPerformed
         // TODO add your handling code here:
+        //Create and display Delete Member GUI
          DeleteMemberGUI deleteMemberGUI = new DeleteMemberGUI();
        deleteMemberGUI.setVisible(true);
        deleteMemberGUI.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
     }//GEN-LAST:event_DeleteMemberButtonActionPerformed
-
+//Activated when delete provider button is pressed
     private void DeleteProviderButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteProviderButtonActionPerformed
         // TODO add your handling code here:
+        //Create and display Delete Provider GUI
            DeleteProviderGUI deleteProviderGUI = new DeleteProviderGUI();
        deleteProviderGUI.setVisible(true);
        deleteProviderGUI.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
     }//GEN-LAST:event_DeleteProviderButtonActionPerformed
-
+//Activate when update member button is pressed
     private void UpdateMemberButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateMemberButtonActionPerformed
         // TODO add your handling code here:
+        //Create and display Update Member GUI
         UpdateMemberGUI updateMemberGUI = new UpdateMemberGUI();
        updateMemberGUI.setVisible(true);
        updateMemberGUI.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
     }//GEN-LAST:event_UpdateMemberButtonActionPerformed
-
+//Activate when update provider is pressed
     private void UpdateProviderButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateProviderButtonActionPerformed
         // TODO add your handling code here:
+        //Create and display Update Provider GUI
          UpdateProviderGUI updateProviderGUI = new UpdateProviderGUI();
        updateProviderGUI.setVisible(true);
        updateProviderGUI.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);

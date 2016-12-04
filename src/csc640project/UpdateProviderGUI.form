@@ -59,19 +59,19 @@
                       <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="FirstNameLabel" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
                                   <Component id="FirstNameTextField" min="-2" pref="141" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                                      <Component id="LastNameLabel" min="-2" max="-2" attributes="0"/>
                                       <Component id="StreetLabel" min="-2" max="-2" attributes="0"/>
                                       <Component id="CityLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="StateLabel" min="-2" max="-2" attributes="0"/>
                                       <Component id="ZipCodeLabel" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                                      <Component id="SpecializationLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="StatusLabel" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -101,12 +101,12 @@
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="FirstNameLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="FirstNameTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="LastNameLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="LastNameTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -136,13 +136,13 @@
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="SpecializationLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="SpecializationField" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="StatusChoice" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                      <Component id="StatusLabel" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="UpdateButton" min="-2" max="-2" attributes="0"/>
@@ -159,12 +159,12 @@
             <Property name="text" type="java.lang.String" value="ProviderID"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel1">
+        <Component class="javax.swing.JLabel" name="FirstNameLabel">
           <Properties>
             <Property name="text" type="java.lang.String" value="First Name"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel2">
+        <Component class="javax.swing.JLabel" name="LastNameLabel">
           <Properties>
             <Property name="text" type="java.lang.String" value="Last Name"/>
           </Properties>
@@ -201,19 +201,22 @@
         </Component>
         <Component class="javax.swing.JTextField" name="ZipCodeField">
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel3">
+        <Component class="javax.swing.JLabel" name="SpecializationLabel">
           <Properties>
             <Property name="text" type="java.lang.String" value="Specialization"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="SpecializationField">
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel4">
+        <Component class="javax.swing.JLabel" name="StatusLabel">
           <Properties>
             <Property name="text" type="java.lang.String" value="Status"/>
           </Properties>
         </Component>
         <Component class="java.awt.Choice" name="StatusChoice">
+          <Events>
+            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="StatusChoiceItemStateChanged"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="UpdateButton">
           <Properties>

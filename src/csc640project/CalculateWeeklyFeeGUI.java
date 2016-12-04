@@ -32,13 +32,11 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
         initComponents();
         setUpProviderMenu();
     }
-    
+    //Set up the provider menu
      private void setUpProviderMenu(){
-        
+        //Search the Provider table and populate
         try {
-        
         Connection con = DriverManager.getConnection(connectionUrl);
-        
         Statement statement = con.createStatement();
        String query = "SELECT * FROM Provider";
        ResultSet resultSet = statement.executeQuery(query);
@@ -128,30 +126,31 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+//Activated when Calculate button is pressed
     private void CalculateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CalculateButtonActionPerformed
         // TODO add your handling code here:
         try {
-        
+            //Connect
         Connection con = DriverManager.getConnection(connectionUrl);
-        
-        
+        //Generate report and set up prepared statement
        String sql = "EXECUTE GetProviderServiceDetails_Report ?,?,?";
        PreparedStatement prest = con.prepareStatement(sql);
        prest.setString(1,ProviderIDChoice.getSelectedItem());
-       Calendar currentDate = GregorianCalendar.getInstance();
-       Calendar prevDate = (Calendar) currentDate.clone();
-        prevDate.add(Calendar.DAY_OF_YEAR,-6);
-       String currentDateString = currentDate.get(Calendar.YEAR)+"-"+(currentDate.get(Calendar.MONTH)+1)+"-"+(currentDate.get(Calendar.DAY_OF_MONTH));
-       String prevDateString = prevDate.get(Calendar.YEAR)+"-"+(prevDate.get(Calendar.MONTH)+1)+"-"+(prevDate.get(Calendar.DAY_OF_MONTH));
-       prest.setString(2, prevDateString);
-       prest.setString(3, currentDateString);
+       //Setup start date (being the beginning of the week) and the end date (end of the week)
+       Calendar endDate = GregorianCalendar.getInstance();
+       Calendar startDate = (Calendar) endDate.clone();
+        startDate.add(Calendar.DAY_OF_YEAR,-6);
+       String endDateString = endDate.get(Calendar.YEAR)+"-"+(endDate.get(Calendar.MONTH)+1)+"-"+(endDate.get(Calendar.DAY_OF_MONTH));
+       String startDateString = startDate.get(Calendar.YEAR)+"-"+(startDate.get(Calendar.MONTH)+1)+"-"+(startDate.get(Calendar.DAY_OF_MONTH));
+       prest.setString(2, startDateString);
+       prest.setString(3, endDateString);
        ResultSet resultSet = prest.executeQuery();
-       
+       //Gather total cost
        double total=0;
 	while(resultSet.next()){
            total+= resultSet.getDouble("Cost");
 	 }
+        //Display total of fees
         FeeCalculationDisplay.setText("The weekly sum of fees is $"+new DecimalFormat("0.00").format(total));
 	con.close();
 			

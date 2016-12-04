@@ -26,6 +26,8 @@ public class CSC640Project {
 
 //Main class for execution of project
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
     //This is a group project simulating ChocAn
     //I love software engineering!
 =======
@@ -36,6 +38,7 @@ public class CSC640Project {
 
 
 
+>>>>>>> refs/remotes/origin/master
 >>>>>>> refs/remotes/origin/master
     /**
 
@@ -48,7 +51,6 @@ public class CSC640Project {
         // TODO code application logic here
 
        //This calls the main method of MainGUIInterface 
-
         MainGUIInterface gui = new MainGUIInterface();
         gui.setVisible(true);
         gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

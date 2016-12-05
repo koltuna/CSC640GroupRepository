@@ -94,6 +94,11 @@ private boolean interactiveRecordMode=false;
         Calculate_Weekly_Fees_Button.setText("Calculate Weekly Fees");
 
         Check_In_Button.setText("Check-In");
+        Check_In_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Check_In_ButtonActionPerformed(evt);
+            }
+        });
 
         Login_Button.setText("Login ");
         Login_Button.addActionListener(new java.awt.event.ActionListener() {
@@ -204,8 +209,10 @@ private boolean interactiveRecordMode=false;
     }//GEN-LAST:event_EnterButtonActionPerformed
 
     private void Login_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Login_ButtonActionPerformed
-    //This text will be replaced, but I wanted to test out SQL Connection
-        try {
+    
+   new LoginPage().setVisible(true); 
+//This text will be replaced, but I wanted to test out SQL Connection
+      /*  try {
         
         Connection con = DriverManager.getConnection(connectionUrl);
         DataEntryArea.setText(DataEntryArea.getText()+"\nSuccess");
@@ -219,10 +226,10 @@ private boolean interactiveRecordMode=false;
 			
     } catch (SQLException ex) {
         Logger.getLogger(MainGUIInterface.class.getName()).log(Level.SEVERE, null, ex);
-    }
+    }*/
         
     }//GEN-LAST:event_Login_ButtonActionPerformed
-
+ 
     private void Look_Up_Service_CodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Look_Up_Service_CodeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Look_Up_Service_CodeActionPerformed
@@ -292,6 +299,11 @@ private boolean interactiveRecordMode=false;
             
         textReady=false;*/
     }//GEN-LAST:event_DataEntryAreaKeyTyped
+
+    private void Check_In_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Check_In_ButtonActionPerformed
+        // TODO add your handling code here:
+         new RegistrationPage().setVisible(true); 
+    }//GEN-LAST:event_Check_In_ButtonActionPerformed
 
     private boolean isValidModeSymbol(String symbol){
         String str = symbol.trim();

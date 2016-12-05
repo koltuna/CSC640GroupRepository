@@ -10,6 +10,8 @@
 
 package csc640project;
 
+import javax.swing.JFrame;
+
 
 
 /**
@@ -23,6 +25,12 @@ package csc640project;
 public class CSC640Project {
 
 //Main class for execution of project
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> refs/remotes/origin/master
     //This is a group project simulating ChocAn
     //I love software engineering!
 
@@ -32,7 +40,12 @@ public class CSC640Project {
 
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> refs/remotes/origin/master
+>>>>>>> refs/remotes/origin/master
+>>>>>>> refs/remotes/origin/master
     /**
 
      * @param args the command line arguments
@@ -44,8 +57,9 @@ public class CSC640Project {
         // TODO code application logic here
 
        //This calls the main method of MainGUIInterface 
-
-        MainGUIInterface.main(null);
+        MainGUIInterface gui = new MainGUIInterface();
+        gui.setVisible(true);
+        gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
     }
 

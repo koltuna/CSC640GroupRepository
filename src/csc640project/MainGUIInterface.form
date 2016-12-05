@@ -176,6 +176,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Calculate Weekly Fees"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Calculate_Weekly_Fees_ButtonActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="Check_In_Button">
           <Properties>

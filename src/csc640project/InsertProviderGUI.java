@@ -255,6 +255,7 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
             JOptionPane.showMessageDialog(null, "Zip Code is too long");
             return false;
         }
+        
         if(!isNumeric(ZipCodeField.getText())){
             JOptionPane.showMessageDialog(null,"Zip Code needs to be numeric");
             return false;

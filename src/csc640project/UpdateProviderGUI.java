@@ -325,7 +325,18 @@ public class UpdateProviderGUI extends javax.swing.JFrame {
         Logger.getLogger(MainGUIInterface.class.getName()).log(Level.SEVERE, null, ex);
     }
     }
-     
+     //Found code at https://coderanch.com/t/405258/java/String-IsNumeric
+      private boolean isNumeric(String s){
+          try{
+              Integer.parseInt(s);
+          }
+          catch(NumberFormatException e){
+              return false;
+          }
+          
+          return true;
+      }
+    
      
     //Does length validation for all the fields
     private boolean lengthValidation(){
@@ -347,6 +358,10 @@ public class UpdateProviderGUI extends javax.swing.JFrame {
         }
         if(ZipCodeField.getText().length()>5){
             JOptionPane.showMessageDialog(null, "Zip Code is too long");
+            return false;
+        }
+         if(!isNumeric(ZipCodeField.getText())){
+            JOptionPane.showMessageDialog(null,"Zip Code needs to be numeric");
             return false;
         }
         return true;

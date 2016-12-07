@@ -436,6 +436,10 @@ private boolean dateChanged = false,statusChanged = false;
             JOptionPane.showMessageDialog(null, "Zip Code is too long");
             return false;
         }
+         if(!isNumeric(ZipCodeField.getText())){
+            JOptionPane.showMessageDialog(null,"Zip Code needs to be numeric");
+            return false;
+        }
         return true;
     }
     
@@ -578,6 +582,19 @@ private boolean dateChanged = false,statusChanged = false;
         StatusChoice.add("Suspended");
         StatusChoice.add("In Active");
     }
+    
+    //Found code at https://coderanch.com/t/405258/java/String-IsNumeric
+      private boolean isNumeric(String s){
+          try{
+              Integer.parseInt(s);
+          }
+          catch(NumberFormatException e){
+              return false;
+          }
+          
+          return true;
+      }
+    
     /**
      * @param args the command line arguments
      */

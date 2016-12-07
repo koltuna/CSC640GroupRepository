@@ -295,28 +295,28 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
        return firstNameEmpty||lastNameEmpty||streetEmpty||cityEmpty||stateEmpty||countryEmpty||zipCodeEmpty;
     }
     //Does length validation for all the fields
-    private void lengthValidation(){
+    private boolean lengthValidation(){
         if(FirstNameTextField.getText().length()+LastNameTextField.getText().length()>25&&FirstNameTextField.getText().length()+LastNameTextField.getText().length()<=4){
             JOptionPane.showMessageDialog(null, "Member name is too long");
-            return;
+            return false;
         }
         if(StreetField.getText().length()>25&&StreetField.getText().length()<0){
             JOptionPane.showMessageDialog(null, "Street name is too long");
-            return;
+            return false;
         }
         if(CityField.getText().length()>14&&CityField.getText().length()<0){
             JOptionPane.showMessageDialog(null, "City name is too long");
-            return;
+            return false;
         }
         if(StateField.getText().length()>2&&StateField.getText().length()<0){
             JOptionPane.showMessageDialog(null, "State Abbreviation is too long");
-            return;
+            return false;
         }
         if(ZipCodeField.getText().length()>5&&ZipCodeField.getText().length()<0){
             JOptionPane.showMessageDialog(null, "Zip Code is too long");
-            return;
+            return false;
         }
-        
+        return true;
     }
     //What happens when enter button is entered
     private void EnterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnterButtonActionPerformed
@@ -327,7 +327,8 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
             return;
         }
         //Check length of fields
-        lengthValidation();
+        if(!lengthValidation())
+            return;
         try {
         Connection con = DriverManager.getConnection(connectionUrl);
        String sql = "INSERT INTO Member(MemberID,MemberFirstName,MemberLastName,MemberDOB,Street,City,State,Country,ZipCode,StatusID,CreatedDate,ModifiedDate) " +   "VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";

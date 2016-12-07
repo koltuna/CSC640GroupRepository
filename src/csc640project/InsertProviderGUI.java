@@ -218,34 +218,52 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
     }
    return count;
     }
-      
+    //Found code at https://coderanch.com/t/405258/java/String-IsNumeric
+      private boolean isNumeric(String s){
+          try{
+              Integer.parseInt(s);
+          }
+          catch(NumberFormatException e){
+              return false;
+          }
+          
+          return true;
+      }
+     
     private void CityFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CityFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CityFieldActionPerformed
     //Does length validation for all the fields
-    private void lengthValidation(){
+    private boolean lengthValidation(){
         if(FirstNameTextField.getText().length()+LastNameTextField.getText().length()>25&&FirstNameTextField.getText().length()+LastNameTextField.getText().length()<=4){
             JOptionPane.showMessageDialog(null, "Member name is too long");
-            return;
+            return false;
         }
         if(StreetField.getText().length()>25&&StreetField.getText().length()<0){
             JOptionPane.showMessageDialog(null, "Street name is too long");
-            return;
+            return false;
         }
         if(CityField.getText().length()>14&&CityField.getText().length()<0){
             JOptionPane.showMessageDialog(null, "City name is too long");
-            return;
+            return false;
         }
         if(StateField.getText().length()>2&&StateField.getText().length()<0){
             JOptionPane.showMessageDialog(null, "State Abbreviation is too long");
-            return;
+            return false;
         }
         if(ZipCodeField.getText().length()>5&&ZipCodeField.getText().length()<0){
             JOptionPane.showMessageDialog(null, "Zip Code is too long");
-            return;
+            return false;
         }
-        
+        if(!isNumeric(ZipCodeField.getText())){
+            JOptionPane.showMessageDialog(null,"Zip Code needs to be numeric");
+            return false;
+        }
+            
+        return true;
     }
+    
+    
     
     //Activated when enter button is clicked
     private void EnterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnterButtonActionPerformed
@@ -256,7 +274,8 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
             return;
         }
         //Conduct length validation of fields
-        lengthValidation();
+        if(!lengthValidation())
+            return;
         try {
         Connection con = DriverManager.getConnection(connectionUrl);
        String sql = "INSERT INTO Provider(ProviderID,ProviderFirstName,ProviderLastName,ProviderStreet,ProviderCity,ProviderState,ProviderZipCode,Specialization,StatusID,CreateDate,ModifiedDate) " +   "VALUES(?,?,?,?,?,?,?,?,?,?,?)";

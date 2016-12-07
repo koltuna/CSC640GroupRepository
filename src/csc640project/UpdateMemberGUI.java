@@ -412,6 +412,8 @@ private boolean dateChanged = false,statusChanged = false;
         Logger.getLogger(MainGUIInterface.class.getName()).log(Level.SEVERE, null, ex);
     }
 }
+    
+    
     //What happens when the update button is pressed
     private void UpdateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateButtonActionPerformed
         // TODO add your handling code here:

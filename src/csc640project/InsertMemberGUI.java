@@ -316,8 +316,25 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
             JOptionPane.showMessageDialog(null, "Zip Code is too long");
             return false;
         }
+         if(!isNumeric(ZipCodeField.getText())){
+            JOptionPane.showMessageDialog(null,"Zip Code needs to be numeric");
+            return false;
+        }
         return true;
     }
+    
+    //Found code at https://coderanch.com/t/405258/java/String-IsNumeric
+      private boolean isNumeric(String s){
+          try{
+              Integer.parseInt(s);
+          }
+          catch(NumberFormatException e){
+              return false;
+          }
+          
+          return true;
+      }
+    
     //What happens when enter button is entered
     private void EnterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnterButtonActionPerformed
         // TODO add your handling code here:

@@ -360,6 +360,7 @@ public class UpdateProviderGUI extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Zip Code is too long");
             return false;
         }
+        
          if(!isNumeric(ZipCodeField.getText())){
             JOptionPane.showMessageDialog(null,"Zip Code needs to be numeric");
             return false;

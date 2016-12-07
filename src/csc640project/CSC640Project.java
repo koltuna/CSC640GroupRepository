@@ -25,12 +25,9 @@ import javax.swing.JFrame;
 public class CSC640Project {
 
 //Main class for execution of project
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
+
     //This is a group project simulating ChocAn
     //I love software engineering!
-=======
 
     //This is a group project simulating ChocAn for CSC640(Software Engineering) at Carroll University
     //This is a group project simulating ChocAn for the Software Engineering Class
@@ -38,8 +35,7 @@ public class CSC640Project {
 
 
 
->>>>>>> refs/remotes/origin/master
->>>>>>> refs/remotes/origin/master
+
     /**
 
      * @param args the command line arguments

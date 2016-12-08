@@ -432,6 +432,9 @@ private boolean dateChanged = false,statusChanged = false;
             JOptionPane.showMessageDialog(null, "State Abbreviation is too long");
             return false;
         }
+        if(CountryField.getText().length()>12){
+          JOptionPane.showMessageDialog(null,"Country name is too long");
+        }
         if(ZipCodeField.getText().length()>5){
             JOptionPane.showMessageDialog(null, "Zip Code is too long");
             return false;

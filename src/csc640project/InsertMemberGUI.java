@@ -316,6 +316,9 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
             JOptionPane.showMessageDialog(null, "Zip Code is too long");
             return false;
         }
+        if(CountryField.getText().length()>12&&CountryField.getText().length()<0){
+          JOptionPane.showMessageDialog(null,"Country name is too long");
+        }
          if(!isNumeric(ZipCodeField.getText())){
             JOptionPane.showMessageDialog(null,"Zip Code needs to be numeric");
             return false;

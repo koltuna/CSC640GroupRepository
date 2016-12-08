@@ -28,9 +28,11 @@ public class CSC640Project {
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> refs/remotes/origin/master
     //This is a group project simulating ChocAn
     //I love software engineering!
-=======
 
     //This is a group project simulating ChocAn for CSC640(Software Engineering) at Carroll University
     //This is a group project simulating ChocAn for the Software Engineering Class
@@ -38,6 +40,10 @@ public class CSC640Project {
 
 
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> refs/remotes/origin/master
 >>>>>>> refs/remotes/origin/master
 >>>>>>> refs/remotes/origin/master
     /**

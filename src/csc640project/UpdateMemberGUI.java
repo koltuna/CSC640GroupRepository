@@ -13,6 +13,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -412,9 +413,45 @@ private boolean dateChanged = false,statusChanged = false;
         Logger.getLogger(MainGUIInterface.class.getName()).log(Level.SEVERE, null, ex);
     }
 }
+    
+    //Does length validation for all the fields
+    private boolean lengthValidation(){
+        if(FirstNameTextField.getText().length()+LastNameTextField.getText().length()>25){
+            JOptionPane.showMessageDialog(null, "Member name is too long");
+            return false;
+        }
+        if(StreetField.getText().length()>14){
+            JOptionPane.showMessageDialog(null, "Street name is too long");
+            return false;
+        }
+        if(CityField.getText().length()>14){
+            JOptionPane.showMessageDialog(null, "City name is too long");
+            return false;
+        }
+        if(StateField.getText().length()>2){
+            JOptionPane.showMessageDialog(null, "State Abbreviation is too long");
+            return false;
+        }
+        if(CountryField.getText().length()>12){
+          JOptionPane.showMessageDialog(null,"Country name is too long");
+        }
+        if(ZipCodeField.getText().length()>5){
+            JOptionPane.showMessageDialog(null, "Zip Code is too long");
+            return false;
+        }
+         if(!isNumeric(ZipCodeField.getText())){
+            JOptionPane.showMessageDialog(null,"Zip Code needs to be numeric");
+            return false;
+        }
+        return true;
+    }
+    
     //What happens when the update button is pressed
     private void UpdateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateButtonActionPerformed
         // TODO add your handling code here:
+        //Length validation
+        if(!lengthValidation())
+            return;
         //Update where fields are filled
        if(!FirstNameTextField.getText().trim().equals(""))
        UpdateFirstName();
@@ -548,6 +585,19 @@ private boolean dateChanged = false,statusChanged = false;
         StatusChoice.add("Suspended");
         StatusChoice.add("In Active");
     }
+    
+    //Found code at https://coderanch.com/t/405258/java/String-IsNumeric
+      private boolean isNumeric(String s){
+          try{
+              Integer.parseInt(s);
+          }
+          catch(NumberFormatException e){
+              return false;
+          }
+          
+          return true;
+      }
+    
     /**
      * @param args the command line arguments
      */

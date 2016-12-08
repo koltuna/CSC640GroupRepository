@@ -26,11 +26,15 @@ public class CSC640Project {
 
 //Main class for execution of project
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
 >>>>>>> refs/remotes/origin/master
+=======
+
+>>>>>>> origin/alex_code
     //This is a group project simulating ChocAn
     //I love software engineering!
 
@@ -41,11 +45,15 @@ public class CSC640Project {
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> refs/remotes/origin/master
 >>>>>>> refs/remotes/origin/master
 >>>>>>> refs/remotes/origin/master
+=======
+
+>>>>>>> origin/alex_code
     /**
 
      * @param args the command line arguments

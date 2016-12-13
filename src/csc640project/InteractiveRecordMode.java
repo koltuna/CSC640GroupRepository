@@ -3,23 +3,43 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+<<<<<<< HEAD
 package csc640project;
 
 import com.sun.glass.events.KeyEvent;
 import javax.swing.JFrame;
 
+=======
+package chocanproject;
+　
+import com.sun.glass.events.KeyEvent;
+import javax.swing.JFrame;
+　
+>>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
 /**
  *
  * @author Alex
  */
 public class InteractiveRecordMode extends javax.swing.JFrame {
+<<<<<<< HEAD
+=======
+private boolean enterButtonClicked,insertMemberMode;
+>>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
     /**
      * Creates new form InteractiveRecordMode
      */
     public InteractiveRecordMode() {
+<<<<<<< HEAD
         initComponents();
     }
 
+=======
+        enterButtonClicked = false;
+        insertMemberMode=false;
+        initComponents();
+    }
+　
+>>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -28,7 +48,11 @@ public class InteractiveRecordMode extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+<<<<<<< HEAD
 
+=======
+　
+>>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
         jTextField1 = new javax.swing.JTextField();
         MainPanel = new javax.swing.JPanel();
         InsertMemberButton = new javax.swing.JButton();
@@ -37,6 +61,7 @@ public class InteractiveRecordMode extends javax.swing.JFrame {
         UpdateProviderButton = new javax.swing.JButton();
         DeleteMemberButton = new javax.swing.JButton();
         DeleteProviderButton = new javax.swing.JButton();
+<<<<<<< HEAD
 
         jTextField1.setText("jTextField1");
 
@@ -45,21 +70,38 @@ public class InteractiveRecordMode extends javax.swing.JFrame {
         MainPanel.setBackground(new java.awt.Color(166, 83, 0));
 
         InsertMemberButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+=======
+　
+        jTextField1.setText("jTextField1");
+　
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+　
+        MainPanel.setBackground(new java.awt.Color(166, 83, 0));
+　
+>>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
         InsertMemberButton.setText("Insert Member");
         InsertMemberButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 InsertMemberButtonActionPerformed(evt);
             }
         });
+<<<<<<< HEAD
 
         InsertProviderButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+=======
+　
+>>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
         InsertProviderButton.setText("Insert Provider");
         InsertProviderButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 InsertProviderButtonActionPerformed(evt);
             }
         });
+<<<<<<< HEAD
 
+=======
+　
+>>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
         UpdateMemberButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         UpdateMemberButton.setText("Update Member");
         UpdateMemberButton.addActionListener(new java.awt.event.ActionListener() {
@@ -67,7 +109,11 @@ public class InteractiveRecordMode extends javax.swing.JFrame {
                 UpdateMemberButtonActionPerformed(evt);
             }
         });
+<<<<<<< HEAD
 
+=======
+　
+>>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
         UpdateProviderButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         UpdateProviderButton.setText("Update Provider");
         UpdateProviderButton.addActionListener(new java.awt.event.ActionListener() {
@@ -75,7 +121,11 @@ public class InteractiveRecordMode extends javax.swing.JFrame {
                 UpdateProviderButtonActionPerformed(evt);
             }
         });
+<<<<<<< HEAD
 
+=======
+　
+>>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
         DeleteMemberButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         DeleteMemberButton.setText("Delete Member");
         DeleteMemberButton.addActionListener(new java.awt.event.ActionListener() {
@@ -83,7 +133,11 @@ public class InteractiveRecordMode extends javax.swing.JFrame {
                 DeleteMemberButtonActionPerformed(evt);
             }
         });
+<<<<<<< HEAD
 
+=======
+　
+>>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
         DeleteProviderButton.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         DeleteProviderButton.setText("Delete Provider");
         DeleteProviderButton.addActionListener(new java.awt.event.ActionListener() {
@@ -91,13 +145,18 @@ public class InteractiveRecordMode extends javax.swing.JFrame {
                 DeleteProviderButtonActionPerformed(evt);
             }
         });
+<<<<<<< HEAD
 
+=======
+　
+>>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
         javax.swing.GroupLayout MainPanelLayout = new javax.swing.GroupLayout(MainPanel);
         MainPanel.setLayout(MainPanelLayout);
         MainPanelLayout.setHorizontalGroup(
             MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MainPanelLayout.createSequentialGroup()
                 .addContainerGap()
+<<<<<<< HEAD
                 .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(DeleteMemberButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(UpdateMemberButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -107,15 +166,37 @@ public class InteractiveRecordMode extends javax.swing.JFrame {
                     .addComponent(InsertProviderButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(UpdateProviderButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(DeleteProviderButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+=======
+                .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(MainPanelLayout.createSequentialGroup()
+                        .addComponent(DeleteMemberButton, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(DeleteProviderButton, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(MainPanelLayout.createSequentialGroup()
+                        .addComponent(InsertMemberButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(InsertProviderButton, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(MainPanelLayout.createSequentialGroup()
+                        .addComponent(UpdateMemberButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(UpdateProviderButton)))
+>>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
                 .addContainerGap(23, Short.MAX_VALUE))
         );
         MainPanelLayout.setVerticalGroup(
             MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MainPanelLayout.createSequentialGroup()
+<<<<<<< HEAD
                 .addContainerGap()
                 .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(InsertProviderButton, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
                     .addComponent(InsertMemberButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+=======
+                .addGap(25, 25, 25)
+                .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(InsertMemberButton)
+                    .addComponent(InsertProviderButton))
+>>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(UpdateMemberButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -126,7 +207,11 @@ public class InteractiveRecordMode extends javax.swing.JFrame {
                     .addComponent(DeleteProviderButton, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(23, Short.MAX_VALUE))
         );
+<<<<<<< HEAD
 
+=======
+　
+>>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -137,6 +222,7 @@ public class InteractiveRecordMode extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(MainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
+<<<<<<< HEAD
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -153,43 +239,86 @@ public class InteractiveRecordMode extends javax.swing.JFrame {
     private void InsertProviderButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InsertProviderButtonActionPerformed
         // TODO add your handling code here:
         //Create and display Insert Provider GUI
+=======
+　
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
+　
+    private void InsertMemberButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InsertMemberButtonActionPerformed
+        // TODO add your handling code here:
+       InsertMemberGUI insertMemberGUI = new InsertMemberGUI();
+       insertMemberGUI.setVisible(true);
+       insertMemberGUI.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+    }//GEN-LAST:event_InsertMemberButtonActionPerformed
+　
+    private void InsertProviderButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InsertProviderButtonActionPerformed
+        // TODO add your handling code here:
+>>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
         InsertProviderGUI insertProviderGUI = new InsertProviderGUI();
        insertProviderGUI.setVisible(true);
        insertProviderGUI.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
     }//GEN-LAST:event_InsertProviderButtonActionPerformed
+<<<<<<< HEAD
 //Activated when delete member button is pressed
     private void DeleteMemberButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteMemberButtonActionPerformed
         // TODO add your handling code here:
         //Create and display Delete Member GUI
+=======
+　
+    private void DeleteMemberButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteMemberButtonActionPerformed
+        // TODO add your handling code here:
+>>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
          DeleteMemberGUI deleteMemberGUI = new DeleteMemberGUI();
        deleteMemberGUI.setVisible(true);
        deleteMemberGUI.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
     }//GEN-LAST:event_DeleteMemberButtonActionPerformed
+<<<<<<< HEAD
 //Activated when delete provider button is pressed
     private void DeleteProviderButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteProviderButtonActionPerformed
         // TODO add your handling code here:
         //Create and display Delete Provider GUI
+=======
+　
+    private void DeleteProviderButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteProviderButtonActionPerformed
+        // TODO add your handling code here:
+>>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
            DeleteProviderGUI deleteProviderGUI = new DeleteProviderGUI();
        deleteProviderGUI.setVisible(true);
        deleteProviderGUI.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
     }//GEN-LAST:event_DeleteProviderButtonActionPerformed
+<<<<<<< HEAD
 //Activate when update member button is pressed
     private void UpdateMemberButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateMemberButtonActionPerformed
         // TODO add your handling code here:
         //Create and display Update Member GUI
+=======
+　
+    private void UpdateMemberButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateMemberButtonActionPerformed
+        // TODO add your handling code here:
+>>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
         UpdateMemberGUI updateMemberGUI = new UpdateMemberGUI();
        updateMemberGUI.setVisible(true);
        updateMemberGUI.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
     }//GEN-LAST:event_UpdateMemberButtonActionPerformed
+<<<<<<< HEAD
 //Activate when update provider is pressed
     private void UpdateProviderButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateProviderButtonActionPerformed
         // TODO add your handling code here:
         //Create and display Update Provider GUI
+=======
+　
+    private void UpdateProviderButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateProviderButtonActionPerformed
+        // TODO add your handling code here:
+>>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
          UpdateProviderGUI updateProviderGUI = new UpdateProviderGUI();
        updateProviderGUI.setVisible(true);
        updateProviderGUI.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
     }//GEN-LAST:event_UpdateProviderButtonActionPerformed
+<<<<<<< HEAD
 
+=======
+　
+>>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
     /**
      * @param args the command line arguments
      */
@@ -216,7 +345,12 @@ public class InteractiveRecordMode extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(InteractiveRecordMode.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+<<<<<<< HEAD
 
+=======
+        //</editor-fold>
+　
+>>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -224,7 +358,11 @@ public class InteractiveRecordMode extends javax.swing.JFrame {
             }
         });
     }
+<<<<<<< HEAD
 
+=======
+　
+>>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton DeleteMemberButton;
     private javax.swing.JButton DeleteProviderButton;
@@ -236,3 +374,7 @@ public class InteractiveRecordMode extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
+<<<<<<< HEAD
+=======
+　
+>>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f

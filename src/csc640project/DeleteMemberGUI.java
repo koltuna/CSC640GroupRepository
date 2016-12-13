@@ -3,8 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+<<<<<<< HEAD
 package csc640project;
 
+=======
+package chocanproject;
+　
+>>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -12,15 +17,23 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+<<<<<<< HEAD
 
+=======
+　
+>>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
 /**
  *
  * @author Alex
  */
 public class DeleteMemberGUI extends javax.swing.JFrame {
+<<<<<<< HEAD
 private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +  
 					   "databaseName=csc550_fall2015_akoltun;user=csc550_fall2015_akoltun;password=480772;";
 
+=======
+private final String connectionUrl = "jdbc:sqlserver://PRADEEP-PC\\PRADEEP-PC\\PJ:60665;databaseName=ChocAn;user=ChocAnUser;password=pass1234;";
+>>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
     /**
      * Creates new form DeleteMemberGUI
      */
@@ -28,7 +41,11 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
         initComponents();
         setUpMenu();
     }
+<<<<<<< HEAD
 
+=======
+　
+>>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -37,25 +54,43 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+<<<<<<< HEAD
 
+=======
+　
+>>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
         MainPanel = new javax.swing.JPanel();
         MemberChoice = new java.awt.Choice();
         DeleteButton = new javax.swing.JButton();
         MemberIDLabel = new javax.swing.JLabel();
+<<<<<<< HEAD
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         MainPanel.setBackground(new java.awt.Color(166, 83, 0));
 
+=======
+　
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+　
+        MainPanel.setBackground(new java.awt.Color(166, 83, 0));
+　
+>>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
         DeleteButton.setText("Delete");
         DeleteButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DeleteButtonActionPerformed(evt);
             }
         });
+<<<<<<< HEAD
 
         MemberIDLabel.setText("MemberID");
 
+=======
+　
+        MemberIDLabel.setText("MemberID");
+　
+>>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
         javax.swing.GroupLayout MainPanelLayout = new javax.swing.GroupLayout(MainPanel);
         MainPanel.setLayout(MainPanelLayout);
         MainPanelLayout.setHorizontalGroup(
@@ -83,7 +118,11 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
                 .addComponent(DeleteButton)
                 .addContainerGap(93, Short.MAX_VALUE))
         );
+<<<<<<< HEAD
 
+=======
+　
+>>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -96,6 +135,7 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(MainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
+<<<<<<< HEAD
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -108,10 +148,27 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
         Statement statement = con.createStatement();
        String sql = "Delete FROM Member WHERE MemberID = "+MemberChoice.getSelectedItem();
        statement.executeUpdate(sql);
+=======
+　
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
+　
+    private void DeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteButtonActionPerformed
+        // TODO add your handling code here:
+        try {
+        
+        Connection con = DriverManager.getConnection(connectionUrl);
+        
+        Statement statement = con.createStatement();
+       String sql = "Delete FROM Member WHERE MemberID = "+MemberChoice.getSelectedItem();
+       statement.executeUpdate(sql);
+	
+>>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
 	con.close();
         this.setVisible(false);
 			
     } catch (SQLException ex) {
+<<<<<<< HEAD
         Logger.getLogger(MainGUIInterface.class.getName()).log(Level.SEVERE, null, ex);
     }
     
@@ -122,6 +179,19 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
          //Add members with select ids
         try {
         Connection con = DriverManager.getConnection(connectionUrl);
+=======
+        Logger.getLogger(ChocAnOperatorTerminal.class.getName()).log(Level.SEVERE, null, ex);
+    }
+    
+    }//GEN-LAST:event_DeleteButtonActionPerformed
+　
+     private void setUpMenu(){
+        
+        try {
+        
+        Connection con = DriverManager.getConnection(connectionUrl);
+        
+>>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
         Statement statement = con.createStatement();
        String query = "SELECT * FROM Member";
        ResultSet resultSet = statement.executeQuery(query);
@@ -129,10 +199,16 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
 	MemberChoice.add(resultSet.getString("MemberID"));
 	 }
 	con.close();
+<<<<<<< HEAD
         //Close and hide the window
        this.setVisible(false);
     } catch (SQLException ex) {
         Logger.getLogger(MainGUIInterface.class.getName()).log(Level.SEVERE, null, ex);
+=======
+       this.setVisible(false);
+    } catch (SQLException ex) {
+        Logger.getLogger(ChocAnOperatorTerminal.class.getName()).log(Level.SEVERE, null, ex);
+>>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
     }
    
     }
@@ -162,7 +238,12 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
             java.util.logging.Logger.getLogger(DeleteMemberGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+<<<<<<< HEAD
 
+=======
+        //</editor-fold>
+　
+>>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -170,7 +251,11 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
             }
         });
     }
+<<<<<<< HEAD
 
+=======
+　
+>>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton DeleteButton;
     private javax.swing.JPanel MainPanel;
@@ -178,3 +263,7 @@ private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +
     private javax.swing.JLabel MemberIDLabel;
     // End of variables declaration//GEN-END:variables
 }
+<<<<<<< HEAD
+=======
+　
+>>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f

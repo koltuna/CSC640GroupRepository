@@ -44,6 +44,7 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
+<<<<<<< HEAD
                   <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
@@ -105,6 +106,60 @@
                       </Group>
                   </Group>
                   <EmptySpace pref="45" max="32767" attributes="0"/>
+=======
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="MemberIDLabel" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
+                              <Component id="MemberIDChoice" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="FirstNameLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="FirstNameTextField" min="-2" pref="136" max="-2" attributes="0"/>
+                                  <Component id="LastNameTextField" min="-2" pref="136" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="StateLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="UpdateButton" min="-2" max="-2" attributes="0"/>
+                              <Component id="DOBField" max="32767" attributes="0"/>
+                              <Component id="StreetField" max="32767" attributes="0"/>
+                              <Component id="CityField" alignment="0" max="32767" attributes="0"/>
+                              <Component id="CountryField" alignment="0" max="32767" attributes="0"/>
+                              <Component id="ZipCodeField" alignment="0" max="32767" attributes="0"/>
+                              <Component id="StatusChoice" min="-2" max="-2" attributes="0"/>
+                              <Component id="StateField" alignment="0" pref="134" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <EmptySpace pref="35" max="32767" attributes="0"/>
+>>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
               </Group>
           </Group>
         </DimensionLayout>
@@ -123,6 +178,7 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
                       <Component id="LastNameLabel" min="-2" max="-2" attributes="0"/>
                       <Component id="LastNameTextField" min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -179,6 +235,49 @@
                           <Component id="MonthChoice" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
+=======
+                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      <Component id="LastNameTextField" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                      <Component id="DOBField" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                      <Component id="StreetField" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                      <Component id="CityField" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="StateLabel" min="-2" max="-2" attributes="0"/>
+                      <Component id="StateField" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                      <Component id="CountryField" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="ZipCodeField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="StatusChoice" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="UpdateButton" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+>>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -200,39 +299,70 @@
         </Component>
         <Component class="javax.swing.JTextField" name="FirstNameTextField">
         </Component>
+<<<<<<< HEAD
         <Component class="javax.swing.JLabel" name="LastNameLabel">
+=======
+        <Component class="javax.swing.JLabel" name="jLabel1">
+>>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
           <Properties>
             <Property name="text" type="java.lang.String" value="Last Name"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="LastNameTextField">
         </Component>
+<<<<<<< HEAD
         <Component class="javax.swing.JLabel" name="DOBLabel">
           <Properties>
             <Property name="text" type="java.lang.String" value="Date of Birth"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="StreetLabel">
+=======
+        <Component class="javax.swing.JLabel" name="jLabel2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Date of Birth (yyyy-mm-dd)"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="DOBField">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel3">
+>>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
           <Properties>
             <Property name="text" type="java.lang.String" value="Street"/>
           </Properties>
         </Component>
+<<<<<<< HEAD
         <Component class="javax.swing.JLabel" name="CityLabel">
+=======
+        <Component class="javax.swing.JLabel" name="jLabel4">
+>>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
           <Properties>
             <Property name="text" type="java.lang.String" value="City"/>
           </Properties>
         </Component>
+<<<<<<< HEAD
         <Component class="javax.swing.JLabel" name="CountryLabel">
+=======
+        <Component class="javax.swing.JLabel" name="jLabel5">
+>>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
           <Properties>
             <Property name="text" type="java.lang.String" value="Country"/>
           </Properties>
         </Component>
+<<<<<<< HEAD
         <Component class="javax.swing.JLabel" name="ZipCodeLabel">
+=======
+        <Component class="javax.swing.JLabel" name="jLabel6">
+>>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
           <Properties>
             <Property name="text" type="java.lang.String" value="Zip Code"/>
           </Properties>
         </Component>
+<<<<<<< HEAD
         <Component class="javax.swing.JLabel" name="StatusLabel">
+=======
+        <Component class="javax.swing.JLabel" name="jLabel7">
+>>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
           <Properties>
             <Property name="text" type="java.lang.String" value="Status"/>
           </Properties>
@@ -249,9 +379,12 @@
           </Events>
         </Component>
         <Component class="java.awt.Choice" name="StatusChoice">
+<<<<<<< HEAD
           <Events>
             <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="StatusChoiceItemStateChanged"/>
           </Events>
+=======
+>>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
         </Component>
         <Component class="javax.swing.JButton" name="UpdateButton">
           <Properties>
@@ -268,6 +401,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="StateField">
         </Component>
+<<<<<<< HEAD
         <Component class="java.awt.Choice" name="YearChoice">
           <Events>
             <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="YearChoiceItemStateChanged"/>
@@ -295,6 +429,8 @@
             <Property name="text" type="java.lang.String" value="Day"/>
           </Properties>
         </Component>
+=======
+>>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
       </SubComponents>
     </Container>
   </SubComponents>

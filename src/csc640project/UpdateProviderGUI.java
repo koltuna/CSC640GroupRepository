@@ -5,10 +5,14 @@
  */
 <<<<<<< HEAD
 package csc640project;
+<<<<<<< HEAD
 =======
 package chocanproject;
 >>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
 
+=======
+　
+>>>>>>> origin/alex_code
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -19,9 +23,13 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 <<<<<<< HEAD
 import javax.swing.JOptionPane;
+<<<<<<< HEAD
 =======
 >>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
 
+=======
+　
+>>>>>>> origin/alex_code
 /**
  *
  * @author Alex
@@ -31,10 +39,14 @@ public class UpdateProviderGUI extends javax.swing.JFrame {
     private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +  
 					   "databaseName=csc550_fall2015_akoltun;user=csc550_fall2015_akoltun;password=480772;";
      private boolean statusChanged = false;
+<<<<<<< HEAD
 =======
     private final String connectionUrl = "jdbc:sqlserver://PRADEEP-PC\\PRADEEP-PC\\PJ:60665;databaseName=ChocAn;user=ChocAnUser;password=pass1234;";
 >>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
 
+=======
+　
+>>>>>>> origin/alex_code
     /**
      * Creates new form UpdateProviderGUI
      */
@@ -43,7 +55,7 @@ public class UpdateProviderGUI extends javax.swing.JFrame {
         setUpProviderMenu();
         setUpStatusMenu();
     }
-
+　
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -51,12 +63,16 @@ public class UpdateProviderGUI extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
 <<<<<<< HEAD
+<<<<<<< HEAD
     // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
 =======
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
 >>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
+=======
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+>>>>>>> origin/alex_code
     private void initComponents() {
-
+　
         MainPanel = new javax.swing.JPanel();
         ProviderIDChoice = new java.awt.Choice();
         ProviderIDLabel = new javax.swing.JLabel();
@@ -88,54 +104,70 @@ public class UpdateProviderGUI extends javax.swing.JFrame {
 >>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
         StatusChoice = new java.awt.Choice();
         UpdateButton = new javax.swing.JButton();
-
+　
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
+　
         MainPanel.setBackground(new java.awt.Color(166, 83, 0));
-
+　
         ProviderIDLabel.setText("ProviderID");
+<<<<<<< HEAD
 
 <<<<<<< HEAD
+=======
+　
+>>>>>>> origin/alex_code
         FirstNameLabel.setText("First Name");
-
+　
         LastNameLabel.setText("Last Name");
+<<<<<<< HEAD
 =======
         jLabel1.setText("First Name");
 
         jLabel2.setText("Last Name");
 >>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
 
+=======
+　
+>>>>>>> origin/alex_code
         StreetLabel.setText("Street");
-
+　
         CityLabel.setText("City");
-
+　
         ZipCodeLabel.setText("Zip Code");
-
+　
         StateLabel.setText("State");
+<<<<<<< HEAD
 
 <<<<<<< HEAD
+=======
+　
+>>>>>>> origin/alex_code
         SpecializationLabel.setText("Specialization");
-
+　
         StatusLabel.setText("Status");
-
+　
         StatusChoice.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 StatusChoiceItemStateChanged(evt);
             }
         });
+<<<<<<< HEAD
 =======
         jLabel3.setText("Specialization");
 
         jLabel4.setText("Status");
 >>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
 
+=======
+　
+>>>>>>> origin/alex_code
         UpdateButton.setText("Update");
         UpdateButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 UpdateButtonActionPerformed(evt);
             }
         });
-
+　
         javax.swing.GroupLayout MainPanelLayout = new javax.swing.GroupLayout(MainPanel);
         MainPanel.setLayout(MainPanelLayout);
         MainPanelLayout.setHorizontalGroup(
@@ -252,7 +284,7 @@ public class UpdateProviderGUI extends javax.swing.JFrame {
                 .addComponent(UpdateButton)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-
+　
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -263,11 +295,16 @@ public class UpdateProviderGUI extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(MainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-
+　
         pack();
+<<<<<<< HEAD
 <<<<<<< HEAD
     }// </editor-fold>                        
 
+=======
+    }// </editor-fold>//GEN-END:initComponents
+　
+>>>>>>> origin/alex_code
     //Update the first name
      private void UpdateFirstName() {                                             
         // TODO add your handling code here:
@@ -412,7 +449,7 @@ public class UpdateProviderGUI extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Member name is too long");
             return false;
         }
-        if(StreetField.getText().length()>14){
+        if(StreetField.getText().length()>25){
             JOptionPane.showMessageDialog(null, "Street name is too long");
             return false;
         }
@@ -436,7 +473,7 @@ public class UpdateProviderGUI extends javax.swing.JFrame {
         return true;
     }
      //Execution of update button
-    private void UpdateButtonActionPerformed(java.awt.event.ActionEvent evt) {                                             
+    private void UpdateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateButtonActionPerformed
         // TODO add your handling code here:
        //Length validation 
           if(!lengthValidation())
@@ -461,13 +498,13 @@ public class UpdateProviderGUI extends javax.swing.JFrame {
       //Close and hide the window
 	this.setVisible(false);
     
-    }                                            
+    }//GEN-LAST:event_UpdateButtonActionPerformed
           //Indicated the status button has changed
-    private void StatusChoiceItemStateChanged(java.awt.event.ItemEvent evt) {                                              
+    private void StatusChoiceItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_StatusChoiceItemStateChanged
         // TODO add your handling code here:
         statusChanged = true;
-    }                                             
-
+    }//GEN-LAST:event_StatusChoiceItemStateChanged
+　
     //Locate the corresponding status id
     private int getStatusID(){
         //Search the Status table
@@ -603,10 +640,14 @@ public class UpdateProviderGUI extends javax.swing.JFrame {
         }
         //</editor-fold>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         //</editor-fold>
 >>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
 
+=======
+　
+>>>>>>> origin/alex_code
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -614,9 +655,14 @@ public class UpdateProviderGUI extends javax.swing.JFrame {
             }
         });
     }
+<<<<<<< HEAD
 
 <<<<<<< HEAD
     // Variables declaration - do not modify                     
+=======
+　
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+>>>>>>> origin/alex_code
     private javax.swing.JTextField CityField;
     private javax.swing.JLabel CityLabel;
     private javax.swing.JLabel FirstNameLabel;
@@ -650,6 +696,7 @@ public class UpdateProviderGUI extends javax.swing.JFrame {
     private javax.swing.JTextField ZipCodeField;
     private javax.swing.JLabel ZipCodeLabel;
 <<<<<<< HEAD
+<<<<<<< HEAD
     // End of variables declaration                   
 =======
     private javax.swing.JLabel jLabel1;
@@ -658,4 +705,8 @@ public class UpdateProviderGUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     // End of variables declaration//GEN-END:variables
 >>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
+=======
+    // End of variables declaration//GEN-END:variables
+>>>>>>> origin/alex_code
 }
+　

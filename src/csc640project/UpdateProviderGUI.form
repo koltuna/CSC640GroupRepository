@@ -59,19 +59,32 @@
                       <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
+<<<<<<< HEAD
                                   <Component id="FirstNameLabel" min="-2" max="-2" attributes="0"/>
+=======
+                                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+>>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
                                   <EmptySpace max="32767" attributes="0"/>
                                   <Component id="FirstNameTextField" min="-2" pref="141" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
                                       <Component id="LastNameLabel" min="-2" max="-2" attributes="0"/>
+=======
+                                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+>>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
                                       <Component id="StreetLabel" min="-2" max="-2" attributes="0"/>
                                       <Component id="CityLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="StateLabel" min="-2" max="-2" attributes="0"/>
                                       <Component id="ZipCodeLabel" min="-2" max="-2" attributes="0"/>
+<<<<<<< HEAD
                                       <Component id="SpecializationLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="StatusLabel" min="-2" max="-2" attributes="0"/>
+=======
+                                      <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+>>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
                                   </Group>
                                   <EmptySpace max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -101,12 +114,20 @@
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
+<<<<<<< HEAD
                       <Component id="FirstNameLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+=======
+                      <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+>>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
                       <Component id="FirstNameTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
+<<<<<<< HEAD
                       <Component id="LastNameLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+=======
+                      <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+>>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
                       <Component id="LastNameTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -136,13 +157,21 @@
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
+<<<<<<< HEAD
                       <Component id="SpecializationLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+=======
+                      <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+>>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
                       <Component id="SpecializationField" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="StatusChoice" min="-2" max="-2" attributes="0"/>
+<<<<<<< HEAD
                       <Component id="StatusLabel" min="-2" max="-2" attributes="0"/>
+=======
+                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+>>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="UpdateButton" min="-2" max="-2" attributes="0"/>
@@ -159,12 +188,20 @@
             <Property name="text" type="java.lang.String" value="ProviderID"/>
           </Properties>
         </Component>
+<<<<<<< HEAD
         <Component class="javax.swing.JLabel" name="FirstNameLabel">
+=======
+        <Component class="javax.swing.JLabel" name="jLabel1">
+>>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
           <Properties>
             <Property name="text" type="java.lang.String" value="First Name"/>
           </Properties>
         </Component>
+<<<<<<< HEAD
         <Component class="javax.swing.JLabel" name="LastNameLabel">
+=======
+        <Component class="javax.swing.JLabel" name="jLabel2">
+>>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
           <Properties>
             <Property name="text" type="java.lang.String" value="Last Name"/>
           </Properties>
@@ -201,22 +238,33 @@
         </Component>
         <Component class="javax.swing.JTextField" name="ZipCodeField">
         </Component>
+<<<<<<< HEAD
         <Component class="javax.swing.JLabel" name="SpecializationLabel">
+=======
+        <Component class="javax.swing.JLabel" name="jLabel3">
+>>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
           <Properties>
             <Property name="text" type="java.lang.String" value="Specialization"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="SpecializationField">
         </Component>
+<<<<<<< HEAD
         <Component class="javax.swing.JLabel" name="StatusLabel">
+=======
+        <Component class="javax.swing.JLabel" name="jLabel4">
+>>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
           <Properties>
             <Property name="text" type="java.lang.String" value="Status"/>
           </Properties>
         </Component>
         <Component class="java.awt.Choice" name="StatusChoice">
+<<<<<<< HEAD
           <Events>
             <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="StatusChoiceItemStateChanged"/>
           </Events>
+=======
+>>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
         </Component>
         <Component class="javax.swing.JButton" name="UpdateButton">
           <Properties>

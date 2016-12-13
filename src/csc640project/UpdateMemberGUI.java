@@ -5,10 +5,14 @@
  */
 <<<<<<< HEAD
 package csc640project;
+<<<<<<< HEAD
+　
+=======
 =======
 package chocanproject;
 >>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
 
+>>>>>>> refs/remotes/origin/master
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -19,6 +23,9 @@ import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+<<<<<<< HEAD
+　
+=======
 =======
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -26,6 +33,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 >>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
 
+>>>>>>> refs/remotes/origin/master
 /**
  *
  * @author Alex
@@ -50,7 +58,7 @@ private final String connectionUrl = "jdbc:sqlserver://PRADEEP-PC\\PRADEEP-PC\\P
         setUpMemberMenu();
         setUpStatusMenu();
     }
-
+　
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -58,12 +66,16 @@ private final String connectionUrl = "jdbc:sqlserver://PRADEEP-PC\\PRADEEP-PC\\P
      */
     @SuppressWarnings("unchecked")
 <<<<<<< HEAD
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+=======
+<<<<<<< HEAD
     // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
 =======
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
 >>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
+>>>>>>> refs/remotes/origin/master
     private void initComponents() {
-
+　
         MainPanel = new javax.swing.JPanel();
         MemberIDLabel = new javax.swing.JLabel();
         MemberIDChoice = new java.awt.Choice();
@@ -104,31 +116,42 @@ private final String connectionUrl = "jdbc:sqlserver://PRADEEP-PC\\PRADEEP-PC\\P
         YearLabel = new javax.swing.JLabel();
         MonthLabel = new javax.swing.JLabel();
         DayLabel = new javax.swing.JLabel();
+<<<<<<< HEAD
+　
+=======
 =======
 >>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
 
+>>>>>>> refs/remotes/origin/master
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
+　
         MainPanel.setBackground(new java.awt.Color(166, 83, 0));
-
+　
         MemberIDLabel.setText("MemberID");
-
+　
         FirstNameLabel.setText("First Name");
+<<<<<<< HEAD
+　
+=======
 
 <<<<<<< HEAD
+>>>>>>> refs/remotes/origin/master
         LastNameLabel.setText("Last Name");
-
+　
         DOBLabel.setText("Date of Birth");
-
+　
         StreetLabel.setText("Street");
-
+　
         CityLabel.setText("City");
-
+　
         CountryLabel.setText("Country");
-
+　
         ZipCodeLabel.setText("Zip Code");
-
+　
         StatusLabel.setText("Status");
+<<<<<<< HEAD
+　
+=======
 =======
         jLabel1.setText("Last Name");
 
@@ -145,51 +168,68 @@ private final String connectionUrl = "jdbc:sqlserver://PRADEEP-PC\\PRADEEP-PC\\P
         jLabel7.setText("Status");
 >>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
 
+>>>>>>> refs/remotes/origin/master
         ZipCodeField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ZipCodeFieldActionPerformed(evt);
             }
         });
+<<<<<<< HEAD
+　
+=======
 
 <<<<<<< HEAD
+>>>>>>> refs/remotes/origin/master
         StatusChoice.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 StatusChoiceItemStateChanged(evt);
             }
         });
+<<<<<<< HEAD
+　
+=======
 
 =======
 >>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
+>>>>>>> refs/remotes/origin/master
         UpdateButton.setText("Update");
         UpdateButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 UpdateButtonActionPerformed(evt);
             }
         });
-
+　
         StateLabel.setText("State");
+<<<<<<< HEAD
+　
+=======
 
 <<<<<<< HEAD
+>>>>>>> refs/remotes/origin/master
         YearChoice.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 YearChoiceItemStateChanged(evt);
             }
         });
-
+　
         MonthChoice.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 MonthChoiceItemStateChanged(evt);
             }
         });
-
+　
         YearLabel.setText("Year");
-
+　
         MonthLabel.setText("Month");
-
+　
         DayLabel.setText("Day");
+<<<<<<< HEAD
+　
+=======
 
 =======
 >>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
+>>>>>>> refs/remotes/origin/master
         javax.swing.GroupLayout MainPanelLayout = new javax.swing.GroupLayout(MainPanel);
         MainPanel.setLayout(MainPanelLayout);
         MainPanelLayout.setHorizontalGroup(
@@ -381,7 +421,7 @@ private final String connectionUrl = "jdbc:sqlserver://PRADEEP-PC\\PRADEEP-PC\\P
 >>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
                 .addContainerGap())
         );
-
+　
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -392,16 +432,21 @@ private final String connectionUrl = "jdbc:sqlserver://PRADEEP-PC\\PRADEEP-PC\\P
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(MainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-
+　
         pack();
+<<<<<<< HEAD
+    }// </editor-fold>//GEN-END:initComponents
+　
+=======
 <<<<<<< HEAD
     }// </editor-fold>                        
 
+>>>>>>> refs/remotes/origin/master
     
     
-    private void ZipCodeFieldActionPerformed(java.awt.event.ActionEvent evt) {                                             
+    private void ZipCodeFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ZipCodeFieldActionPerformed
         // TODO add your handling code here:
-    }                                            
+    }//GEN-LAST:event_ZipCodeFieldActionPerformed
     //Update the first name
     private void UpdateFirstName(){
      try {
@@ -571,7 +616,7 @@ private final String connectionUrl = "jdbc:sqlserver://PRADEEP-PC\\PRADEEP-PC\\P
             JOptionPane.showMessageDialog(null, "Member name is too long");
             return false;
         }
-        if(StreetField.getText().length()>14){
+        if(StreetField.getText().length()>25){
             JOptionPane.showMessageDialog(null, "Street name is too long");
             return false;
         }
@@ -583,8 +628,9 @@ private final String connectionUrl = "jdbc:sqlserver://PRADEEP-PC\\PRADEEP-PC\\P
             JOptionPane.showMessageDialog(null, "State Abbreviation is too long");
             return false;
         }
-        if(CountryField.getText().length()>12){
+        if(CountryField.getText().length()>3){
           JOptionPane.showMessageDialog(null,"Country name is too long");
+          return false;
         }
         if(ZipCodeField.getText().length()>5){
             JOptionPane.showMessageDialog(null, "Zip Code is too long");
@@ -598,7 +644,7 @@ private final String connectionUrl = "jdbc:sqlserver://PRADEEP-PC\\PRADEEP-PC\\P
     }
     
     //What happens when the update button is pressed
-    private void UpdateButtonActionPerformed(java.awt.event.ActionEvent evt) {                                             
+    private void UpdateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateButtonActionPerformed
         // TODO add your handling code here:
         //Length validation
         if(!lengthValidation())
@@ -625,9 +671,9 @@ private final String connectionUrl = "jdbc:sqlserver://PRADEEP-PC\\PRADEEP-PC\\P
        //Close and hide the screen
        this.setVisible(false);
 			
-    }                                            
+    }//GEN-LAST:event_UpdateButtonActionPerformed
       //When the month menu is selected
-    private void MonthChoiceItemStateChanged(java.awt.event.ItemEvent evt) {                                             
+    private void MonthChoiceItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_MonthChoiceItemStateChanged
         // TODO add your handling code here:
         //Indicate the date has changed
         dateChanged = true;
@@ -649,10 +695,10 @@ private final String connectionUrl = "jdbc:sqlserver://PRADEEP-PC\\PRADEEP-PC\\P
         //Add the days
         for(int day=1;day<=maxDay;day++)
             DayChoice.add(""+day);
-    }                                            
-
+    }//GEN-LAST:event_MonthChoiceItemStateChanged
+　
     //When the month menu is selected
-    private void YearChoiceItemStateChanged(java.awt.event.ItemEvent evt) {                                            
+    private void YearChoiceItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_YearChoiceItemStateChanged
         // TODO add your handling code here:
        //Indicate menu has been selected
         dateChanged = true;
@@ -673,12 +719,12 @@ private final String connectionUrl = "jdbc:sqlserver://PRADEEP-PC\\PRADEEP-PC\\P
          //Add the days
         for(int day=1;day<=maxDay;day++)
             DayChoice.add(""+day);
-    }                                           
+    }//GEN-LAST:event_YearChoiceItemStateChanged
      //Indicate the status menu has been selected
-    private void StatusChoiceItemStateChanged(java.awt.event.ItemEvent evt) {                                              
+    private void StatusChoiceItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_StatusChoiceItemStateChanged
         // TODO add your handling code here:
         statusChanged = true;
-    }                                             
+    }//GEN-LAST:event_StatusChoiceItemStateChanged
 //Setup the date menu
     private void setUpDateMenu(){
         //Set up the years
@@ -843,10 +889,14 @@ private final String connectionUrl = "jdbc:sqlserver://PRADEEP-PC\\PRADEEP-PC\\P
         }
         //</editor-fold>
 <<<<<<< HEAD
+　
+=======
+<<<<<<< HEAD
 =======
         //</editor-fold>
 >>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
 
+>>>>>>> refs/remotes/origin/master
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -854,10 +904,14 @@ private final String connectionUrl = "jdbc:sqlserver://PRADEEP-PC\\PRADEEP-PC\\P
             }
         });
     }
-
+　
     
 <<<<<<< HEAD
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+=======
+<<<<<<< HEAD
     // Variables declaration - do not modify                     
+>>>>>>> refs/remotes/origin/master
     private javax.swing.JTextField CityField;
     private javax.swing.JLabel CityLabel;
     private javax.swing.JTextField CountryField;
@@ -894,6 +948,9 @@ private final String connectionUrl = "jdbc:sqlserver://PRADEEP-PC\\PRADEEP-PC\\P
     private javax.swing.JLabel YearLabel;
     private javax.swing.JTextField ZipCodeField;
     private javax.swing.JLabel ZipCodeLabel;
+<<<<<<< HEAD
+    // End of variables declaration//GEN-END:variables
+=======
     // End of variables declaration                   
 =======
     private javax.swing.JTextField StateField;
@@ -911,4 +968,6 @@ private final String connectionUrl = "jdbc:sqlserver://PRADEEP-PC\\PRADEEP-PC\\P
     private javax.swing.JLabel jLabel7;
     // End of variables declaration//GEN-END:variables
 >>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
+>>>>>>> refs/remotes/origin/master
 }
+　

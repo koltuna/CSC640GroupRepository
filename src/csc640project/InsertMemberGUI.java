@@ -20,12 +20,16 @@ import java.util.logging.Logger;
 import java.util.Calendar;
 <<<<<<< HEAD
 import javax.swing.JOptionPane;
+<<<<<<< HEAD
+　
+=======
 
 =======
 import java.util.GregorianCalendar;
 import javax.swing.JOptionPane;
 　
 >>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
+>>>>>>> refs/remotes/origin/master
 /**
  *
  * @author Alex
@@ -35,12 +39,17 @@ public class InsertMemberGUI extends javax.swing.JFrame {
 <<<<<<< HEAD
 private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +  
 					   "databaseName=csc550_fall2015_akoltun;user=csc550_fall2015_akoltun;password=480772;";
+<<<<<<< HEAD
+　
+　
+=======
 
 
 =======
 private final String connectionUrl = "jdbc:sqlserver://PRADEEP-PC\\PRADEEP-PC\\PJ:60665;databaseName=ChocAn;user=ChocAnUser;password=pass1234;";
 　
 >>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
+>>>>>>> refs/remotes/origin/master
     /**
      * Creates new form InsertMemberGUI
      */
@@ -49,12 +58,16 @@ private final String connectionUrl = "jdbc:sqlserver://PRADEEP-PC\\PRADEEP-PC\\P
 <<<<<<< HEAD
         setUpDateMenu();
     }
+<<<<<<< HEAD
+　
+=======
 
 =======
         
     }
 　
 >>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
+>>>>>>> refs/remotes/origin/master
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -62,9 +75,13 @@ private final String connectionUrl = "jdbc:sqlserver://PRADEEP-PC\\PRADEEP-PC\\P
      */
     @SuppressWarnings("unchecked")
 <<<<<<< HEAD
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+=======
+<<<<<<< HEAD
     // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
+>>>>>>> refs/remotes/origin/master
     private void initComponents() {
-
+　
         dayChoice = new javax.swing.JPanel();
 =======
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -99,10 +116,13 @@ private final String connectionUrl = "jdbc:sqlserver://PRADEEP-PC\\PRADEEP-PC\\P
         MonthChoice = new java.awt.Choice();
         DayLabel = new javax.swing.JLabel();
         DayChoice = new java.awt.Choice();
-
+　
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
+　
         dayChoice.setBackground(new java.awt.Color(166, 83, 0));
+<<<<<<< HEAD
+　
+=======
 
 =======
 　
@@ -111,6 +131,7 @@ private final String connectionUrl = "jdbc:sqlserver://PRADEEP-PC\\PRADEEP-PC\\P
         jPanel1.setBackground(new java.awt.Color(166, 83, 0));
 　
 >>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
+>>>>>>> refs/remotes/origin/master
         EnterButton.setText("Enter");
         EnterButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -118,41 +139,45 @@ private final String connectionUrl = "jdbc:sqlserver://PRADEEP-PC\\PRADEEP-PC\\P
             }
         });
 <<<<<<< HEAD
+　
+=======
+<<<<<<< HEAD
 
+>>>>>>> refs/remotes/origin/master
         FirstNameLabel.setText("First Name");
-
+　
         LastNameLabel.setText("Last Name");
-
+　
         DOBLabel.setText("Date of Birth ");
-
+　
         StreetLabel.setText("Street");
-
+　
         StreetLabel1.setText("City");
-
+　
         StateLabel.setText("State");
-
+　
         ZipCodeLabel.setText("Zip Code");
-
+　
         CountryLabel.setText("Country");
-
+　
         YearChoice.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 YearChoiceItemStateChanged(evt);
             }
         });
-
+　
         YearLabel.setText("year");
-
+　
         MonthLabel.setText("Month");
-
+　
         MonthChoice.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 MonthChoiceItemStateChanged(evt);
             }
         });
-
+　
         DayLabel.setText("Day");
-
+　
         javax.swing.GroupLayout dayChoiceLayout = new javax.swing.GroupLayout(dayChoice);
         dayChoice.setLayout(dayChoiceLayout);
         dayChoiceLayout.setHorizontalGroup(
@@ -322,6 +347,9 @@ private final String connectionUrl = "jdbc:sqlserver://PRADEEP-PC\\PRADEEP-PC\\P
                 .addComponent(EnterButton)
                 .addGap(19, 19, 19))
         );
+<<<<<<< HEAD
+　
+=======
 
 =======
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -333,6 +361,7 @@ private final String connectionUrl = "jdbc:sqlserver://PRADEEP-PC\\PRADEEP-PC\\P
         );
 　
 >>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
+>>>>>>> refs/remotes/origin/master
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -352,10 +381,10 @@ private final String connectionUrl = "jdbc:sqlserver://PRADEEP-PC\\PRADEEP-PC\\P
 <<<<<<< HEAD
                 .addComponent(dayChoice, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-
+　
         pack();
-    }// </editor-fold>                        
-
+    }// </editor-fold>//GEN-END:initComponents
+　
     //Check to see whether a member with the given id exists
     private boolean idExists(int id){
         //Check Member table
@@ -501,7 +530,7 @@ private final String connectionUrl = "jdbc:sqlserver://PRADEEP-PC\\PRADEEP-PC\\P
       }
     
     //What happens when enter button is entered
-    private void EnterButtonActionPerformed(java.awt.event.ActionEvent evt) {                                            
+    private void EnterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnterButtonActionPerformed
         // TODO add your handling code here:
         //If any fields are empty, alert user
         if(anyFieldsEmpty()){
@@ -581,9 +610,9 @@ private final String connectionUrl = "jdbc:sqlserver://PRADEEP-PC\\PRADEEP-PC\\P
     } catch (SQLException ex) {
         Logger.getLogger(MainGUIInterface.class.getName()).log(Level.SEVERE, null, ex);
     }
-    }                                           
+    }//GEN-LAST:event_EnterButtonActionPerformed
      //What happens when year menu is selected
-    private void YearChoiceItemStateChanged(java.awt.event.ItemEvent evt) {                                            
+    private void YearChoiceItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_YearChoiceItemStateChanged
         // TODO add your handling code here:
         //We are resetting
         DayChoice.removeAll();
@@ -602,9 +631,9 @@ private final String connectionUrl = "jdbc:sqlserver://PRADEEP-PC\\PRADEEP-PC\\P
         //Add the days
         for(int day=1;day<=maxDay;day++)
             DayChoice.add(""+day);
-    }                                           
+    }//GEN-LAST:event_YearChoiceItemStateChanged
      //What happens when the month choice is selected
-    private void MonthChoiceItemStateChanged(java.awt.event.ItemEvent evt) {                                             
+    private void MonthChoiceItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_MonthChoiceItemStateChanged
         // TODO add your handling code here:
         //We are resetting
         DayChoice.removeAll();
@@ -623,6 +652,10 @@ private final String connectionUrl = "jdbc:sqlserver://PRADEEP-PC\\PRADEEP-PC\\P
         //Add the days
         for(int day=1;day<=maxDay;day++)
             DayChoice.add(""+day);
+<<<<<<< HEAD
+    }//GEN-LAST:event_MonthChoiceItemStateChanged
+　
+=======
     }                                            
 
 =======
@@ -636,6 +669,7 @@ private final String connectionUrl = "jdbc:sqlserver://PRADEEP-PC\\PRADEEP-PC\\P
     }//GEN-LAST:event_EnterButtonActionPerformed
 　
 >>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
+>>>>>>> refs/remotes/origin/master
     /**
      * @param args the command line arguments
      */
@@ -663,11 +697,15 @@ private final String connectionUrl = "jdbc:sqlserver://PRADEEP-PC\\PRADEEP-PC\\P
         }
         //</editor-fold>
 <<<<<<< HEAD
+　
+=======
+<<<<<<< HEAD
 
 =======
         //</editor-fold>
 　
 >>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
+>>>>>>> refs/remotes/origin/master
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -678,8 +716,13 @@ private final String connectionUrl = "jdbc:sqlserver://PRADEEP-PC\\PRADEEP-PC\\P
         });
     }
 <<<<<<< HEAD
+　
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+=======
+<<<<<<< HEAD
 
     // Variables declaration - do not modify                     
+>>>>>>> refs/remotes/origin/master
     private javax.swing.JTextField CityField;
     private javax.swing.JTextField CountryField;
     private javax.swing.JLabel CountryLabel;
@@ -716,8 +759,11 @@ private final String connectionUrl = "jdbc:sqlserver://PRADEEP-PC\\PRADEEP-PC\\P
     private javax.swing.JTextField ZipCodeField;
     private javax.swing.JLabel ZipCodeLabel;
     private javax.swing.JPanel dayChoice;
-    // End of variables declaration                   
+    // End of variables declaration//GEN-END:variables
 }
+<<<<<<< HEAD
+　
+=======
 =======
     private javax.swing.JTextField ZipCodeField;
     private javax.swing.JLabel ZipCodeLabel;
@@ -726,3 +772,4 @@ private final String connectionUrl = "jdbc:sqlserver://PRADEEP-PC\\PRADEEP-PC\\P
 }
 　
 >>>>>>> 62e1ffe9d592baa80b0e11b3c8c167534daf691f
+>>>>>>> refs/remotes/origin/master

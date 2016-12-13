@@ -5,14 +5,8 @@
  */
 package csc640project;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import java.awt.Font;
+
+import javax.swing.JFrame;
 public class MainGUIInterface extends javax.swing.JFrame {
 
     
@@ -20,7 +14,7 @@ public class MainGUIInterface extends javax.swing.JFrame {
 private final String connectionUrl = "jdbc:sqlserver://cscsql2.carrollu.edu;" +  
 					   "databaseName=csc550_fall2015_akoltun;user=csc550_fall2015_akoltun;password=480772;";
 //Flag to indicate Interactive Record Mode has been entered
-private boolean interactiveRecordMode=false;
+//private boolean interactiveRecordMode=false;
 
     /**
      * Creates new form MainGUIInterface
@@ -92,8 +86,18 @@ private boolean interactiveRecordMode=false;
         });
 
         Calculate_Weekly_Fees_Button.setText("Calculate Weekly Fees");
+        Calculate_Weekly_Fees_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Calculate_Weekly_Fees_ButtonActionPerformed(evt);
+            }
+        });
 
         Check_In_Button.setText("Check-In");
+        Check_In_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Check_In_ButtonActionPerformed(evt);
+            }
+        });
 
         Login_Button.setText("Login ");
         Login_Button.addActionListener(new java.awt.event.ActionListener() {
@@ -172,40 +176,17 @@ private boolean interactiveRecordMode=false;
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+//Activated when enter button is pressed
     private void EnterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnterButtonActionPerformed
         // TODO add your handling code here:
-    
-        //If interactive record mode has been entered     
-        if(interactiveRecordMode){
-           
-            String input = DataEntryArea.getText();
-            if(!isValidModeSymbol(input))
-                return;
-            CommandDisplayArea.setFont(new Font(null,Font.PLAIN,12));
-             if(input.equalsIgnoreCase("mi"))
-          CommandDisplayArea.setText("Inserting member record");
-      else if (input.equalsIgnoreCase("mu"))
-          CommandDisplayArea.setText("Updating member record");
-      else if (input.equalsIgnoreCase("md"))
-          CommandDisplayArea.setText("Deleting member record");
-      else if (input.equalsIgnoreCase("pi"))
-          CommandDisplayArea.setText("Inserting provider record");
-      else if (input.equalsIgnoreCase("pu"))
-          CommandDisplayArea.setText("Updating provider record");
-      else if (input.equalsIgnoreCase("pd"))
-          CommandDisplayArea.setText("Deleting provider record");
-      else 
-          CommandDisplayArea.setText("");
-            interactiveRecordMode = false;
-        }
-            
-        
     }//GEN-LAST:event_EnterButtonActionPerformed
-
+//Activated when Login button is pressed
     private void Login_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Login_ButtonActionPerformed
-    //This text will be replaced, but I wanted to test out SQL Connection
-        try {
+<<<<<<< HEAD
+    
+   new LoginPage().setVisible(true); 
+//This text will be replaced, but I wanted to test out SQL Connection
+      /*  try {
         
         Connection con = DriverManager.getConnection(connectionUrl);
         DataEntryArea.setText(DataEntryArea.getText()+"\nSuccess");
@@ -219,10 +200,15 @@ private boolean interactiveRecordMode=false;
 			
     } catch (SQLException ex) {
         Logger.getLogger(MainGUIInterface.class.getName()).log(Level.SEVERE, null, ex);
-    }
+    }*/
         
     }//GEN-LAST:event_Login_ButtonActionPerformed
-
+ 
+=======
+    //This text will be replaced, but I wanted to test out SQL Connection
+    }//GEN-LAST:event_Login_ButtonActionPerformed
+   //Activated when Look Up Service Code button is pressed
+>>>>>>> refs/remotes/origin/master
     private void Look_Up_Service_CodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Look_Up_Service_CodeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Look_Up_Service_CodeActionPerformed
@@ -230,73 +216,45 @@ private boolean interactiveRecordMode=false;
     private void Interactive_Record_Mode_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Interactive_Record_Mode_ButtonActionPerformed
         // TODO add your handling code here:
         //String asking for which option they want to select and is displayed on the top text area
-        CommandDisplayArea.setFont(new Font(null,Font.PLAIN,7));
-        String determinant = "Do you wish to insert new member (mi), update member (mu), delete member (md), insert new provider (pi), update provider (pu), or delete provider (pd)?\n";
-      CommandDisplayArea.setText(determinant);
-       String input = DataEntryArea.getText();
-    interactiveRecordMode = true;
-       //Wait for the enter button on the terminal to be pressed and the text in the lower display area to be in the proper format
+       
+       //Found default code at https://docs.oracle.com/javase/8/docs/api/javax/swing/JFrame.html#setDefaultCloseOperation-int-
+      //Create and show interactive GUI
+       InteractiveRecordMode InteractiveGUI = new InteractiveRecordMode();
+      InteractiveGUI.setVisible(true);
+      InteractiveGUI.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+       
     }//GEN-LAST:event_Interactive_Record_Mode_ButtonActionPerformed
 
     private void DataEntryAreaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_DataEntryAreaKeyPressed
         // TODO add your handling code here:
-     /*   if(!textReady)
-            return;
-        if(interactiveRecordMode){
-            System.out.println("Interactive Record Mode");
-            String input = DataEntryArea.getText();
-             if(input.equalsIgnoreCase("mi"))
-          CommandDisplayArea.setText("Inserting member record");
-      else if (input.equalsIgnoreCase("mu"))
-          CommandDisplayArea.setText("Updating member record");
-      else if (input.equalsIgnoreCase("md"))
-          CommandDisplayArea.setText("Deleting member record");
-      else if (input.equalsIgnoreCase("pi"))
-          CommandDisplayArea.setText("Inserting provider record");
-      else if (input.equalsIgnoreCase("pu"))
-          CommandDisplayArea.setText("Updating provider record");
-      else if (input.equalsIgnoreCase("pd"))
-          CommandDisplayArea.setText("Deleting provider record");
-      else 
-          CommandDisplayArea.setText("");
-            interactiveRecordMode = false;
-        }
-            
-        textReady=false;*/
     }//GEN-LAST:event_DataEntryAreaKeyPressed
 
     private void DataEntryAreaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_DataEntryAreaKeyTyped
         // TODO add your handling code here:
-     /*   System.out.println("Key Typed");
-             if(!textReady)
-            return;
-        if(interactiveRecordMode){
-            System.out.println("Interactive Record Mode");
-            String input = DataEntryArea.getText();
-             if(input.equalsIgnoreCase("mi"))
-          CommandDisplayArea.setText("Inserting member record");
-      else if (input.equalsIgnoreCase("mu"))
-          CommandDisplayArea.setText("Updating member record");
-      else if (input.equalsIgnoreCase("md"))
-          CommandDisplayArea.setText("Deleting member record");
-      else if (input.equalsIgnoreCase("pi"))
-          CommandDisplayArea.setText("Inserting provider record");
-      else if (input.equalsIgnoreCase("pu"))
-          CommandDisplayArea.setText("Updating provider record");
-      else if (input.equalsIgnoreCase("pd"))
-          CommandDisplayArea.setText("Deleting provider record");
-      else 
-          CommandDisplayArea.setText("");
-            interactiveRecordMode = false;
-        }
-            
-        textReady=false;*/
     }//GEN-LAST:event_DataEntryAreaKeyTyped
+//Activated when Calculate Weekly Fees button is pressed
+    private void Calculate_Weekly_Fees_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Calculate_Weekly_Fees_ButtonActionPerformed
+        // TODO add your handling code here:
+         //Found default code at https://docs.oracle.com/javase/8/docs/api/javax/swing/JFrame.html#setDefaultCloseOperation-int-
+     //Create and display CalculateWeeklyFeeGUI
+         CalculateWeeklyFeeGUI weeklyFeeGUI = new CalculateWeeklyFeeGUI();
+      weeklyFeeGUI.setVisible(true);
+      //Close only on when x button is clicked
+     weeklyFeeGUI.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+    }//GEN-LAST:event_Calculate_Weekly_Fees_ButtonActionPerformed
+
+<<<<<<< HEAD
+    private void Check_In_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Check_In_ButtonActionPerformed
+        // TODO add your handling code here:
+         new RegistrationPage().setVisible(true); 
+    }//GEN-LAST:event_Check_In_ButtonActionPerformed
 
     private boolean isValidModeSymbol(String symbol){
         String str = symbol.trim();
         return str.equalsIgnoreCase("mi")||str.equalsIgnoreCase("mu")||str.equalsIgnoreCase("md")||str.equalsIgnoreCase("pi")||str.equalsIgnoreCase("pu")||str.equalsIgnoreCase("pd");
     }
+=======
+>>>>>>> refs/remotes/origin/master
     /**
      * @param args the command line arguments
      */
@@ -332,7 +290,7 @@ private boolean interactiveRecordMode=false;
             public void run() {
                MainGUIInterface main_gui = new MainGUIInterface();
                main_gui.setVisible(true);
-               main_gui.setDefaultCloseOperation(EXIT_ON_CLOSE);
+               main_gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             }
         });
     }
